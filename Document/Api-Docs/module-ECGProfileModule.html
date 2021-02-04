@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: ECGProfileModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: ECGProfileModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ACTION_BATTERY_ECG"><span class="type-signature">(static) </span>ACTION_BATTERY_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicates the battery of ECG device.<br/>
+The key and value will be as below: <br/>
+
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+     <tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_BATTERY_ECG">ECGProfileModule.ACTION_BATTERY_ECG("battery_ecg")</a></td></tr>
+     <tr><td><a href="module-ECGProfileModule.html#.BATTERY_ECG">ECGProfileModule.BATTERY_ECG("battery")</a></td><td>Battery status.<br/> e.g. 90</td></tr>
+</table>
+
+<b>message example:</b><br/>
+<b>{<br/>
+&nbsp; &nbsp; "battery": 90<br/>
+}<br/></b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line95">line 95</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_DELETEDATA_ECGUSB"><span class="type-signature">(static) </span>ACTION_DELETEDATA_ECGUSB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_DELETEDATA_ECGUSB. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_ERROR_ECG"><span class="type-signature">(static) </span>ACTION_ERROR_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicates the error of ECG device.<br/>
+The key and value will be as below: <br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+     <tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_ERROR_ECG">ECGProfileModule.ACTION_ERROR_ECG("error_ecg")</a></td></tr>
+     <tr><td><a href="module-ECGProfileModule.html#.ERROR_NUM_ECG">ECGProfileModule.ERROR_NUM_ECG("error")</a></td><td>the error of ECG device.<br/> e.g. 400</td></tr>
+</table>
+
+<b>message example:</b><br/>
+<b>{<br/>
+&nbsp; &nbsp; "error": 400,<br/>
+&nbsp; &nbsp; "description": "setUnit() parameter unit should be 0 or 1."<br/>
+}<br/></b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_FINISHSYNCDATA_ECGUSB"><span class="type-signature">(static) </span>ACTION_FINISHSYNCDATA_ECGUSB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_FINISHSYNCDATA_ECGUSB. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line183">line 183</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALL_CONNECTED_DEVICES"><span class="type-signature">(static) </span>ACTION_GET_ALL_CONNECTED_DEVICES<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates get all connected devices.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line209">line 209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_MEASURE_ECG"><span class="type-signature">(static) </span>ACTION_MEASURE_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Measure. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line124">line 124</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_MEASURE_ECGPulse"><span class="type-signature">(static) </span>ACTION_MEASURE_ECGPulse<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_MEASURE_ECGPulse. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line147">line 147</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_MEASURE_WAVEData"><span class="type-signature">(static) </span>ACTION_MEASURE_WAVEData<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_MEASURE_WAVEData. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line140">line 140</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_STARTSYNCDATA_ECGUSB"><span class="type-signature">(static) </span>ACTION_STARTSYNCDATA_ECGUSB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_STARTSYNCDATA_ECGUSB. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line162">line 162</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_STOPMEASURE_ECG"><span class="type-signature">(static) </span>ACTION_STOPMEASURE_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Stop Measure.<br/>
+<b>Value Format:</b> 32 bits Hex String.
+<p>Example:</p>
+"810D4F4CED95759AB738EBC1E74EA8F6"
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line132">line 132</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNCDATA_ECGUSB"><span class="type-signature">(static) </span>ACTION_SYNCDATA_ECGUSB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_SYNCDATA_ECGUSB. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNCDATAINFO_ECGUSB"><span class="type-signature">(static) </span>ACTION_SYNCDATAINFO_ECGUSB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_SYNCDATAINFO_ECGUSB. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line169">line 169</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNCDATAPROGRESS_ECGUSB"><span class="type-signature">(static) </span>ACTION_SYNCDATAPROGRESS_ECGUSB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    ACTION_SYNCDATAPROGRESS_ECGUSB. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line190">line 190</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYSTIME"><span class="type-signature">(static) </span>ACTION_SYSTIME<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    sync time.<br/>
+The key and value will be as below: <br/>
+
+<table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+    <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+    <tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_SYSTIME">ECGProfileModule.ACTION_SYSTIME("ACTION_SYSTIME")</a></td></tr>
+</table>
+
+<b>message example:</b><br/>
+<b> null </b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line116">line 116</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BATTERY_ECG"><span class="type-signature">(static) </span>BATTERY_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The Key of BATTERY_ECG for ECG device. <br/>
+<b>Value range:</b><br/>
+0-100.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATAINFO"><span class="type-signature">(static) </span>DATAINFO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    DATAINFO. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line176">line 176</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_DESCRIPTION_ECG"><span class="type-signature">(static) </span>ERROR_DESCRIPTION_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The Key of error description of ECG device. <br/>
+
+<b>Value range:</b><br/>
+<p>1:Electrode Loss.</p>
+<p>2:Electrode Loss Recovery.</p>
+<p>3:Electrode Loss Timeout.</p>
+<p>4:SDCard Communication Error.</p>
+<p>5:Collection Module Error.</p>
+<p>6:Low Power.</p>
+<p>7:Device Memory Full.</p>
+<p>8:Disconnect.</p>
+<p>9:Over Time.</p>
+<p>10:Delete Error.</p>
+<p>11:Error Data.</p>
+<p>12:No Data.</p>
+<p>13:Reset SDCard Error.</p>
+<p>400:Parameter Error.</p>
+<p>401:Firmware Version Is Not Supported.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_NUM_ECG"><span class="type-signature">(static) </span>ERROR_NUM_ECG<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The Key of error number of ECG device. <br/>
+
+<b>Value range:</b><br/>
+<p>1:Electrode Loss.</p>
+<p>2:Electrode Loss Recovery.</p>
+<p>3:Electrode Loss Timeout.</p>
+<p>4:SDCard Communication Error.</p>
+<p>5:Collection Module Error.</p>
+<p>6:Low Power.</p>
+<p>7:Device Memory Full.</p>
+<p>8:Disconnect.</p>
+<p>9:Over Time.</p>
+<p>10:Delete Error.</p>
+<p>11:Error Data.</p>
+<p>12:No Data.</p>
+<p>13:Reset SDCard Error.</p>
+<p>400:Parameter Error.</p>
+<p>401:Firmware Version Is Not Supported.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".PROGRESS"><span class="type-signature">(static) </span>PROGRESS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    PROGRESS. <br>
+<b>Value range:</b><br/><br/>
+<b>true: sufficiently</b><br/>
+<b>false: insufficiently</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGProfileModule.js.html">ECGProfileModule.js</a>, <a href="ECGProfileModule.js.html#line197">line 197</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: POProfileModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: POProfileModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ACTION_BATTERY_PO"><span class="type-signature">(static) </span>ACTION_BATTERY_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the battery of PO3 device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-POProfileModule.html#.ACTION_BATTERY_PO">POProfileModule.ACTION_BATTERY_PO("battery_po")</a></td></tr>
+<tr><td><a href="module-POProfileModule.html#.BATTERY_PO">POProfileModule.BATTERY_PO("battery")</a></td><td>Battery percentage.<br/>Value range:0-100(0xff)</td></tr>
+</tbody>
+</table>
+<b>message example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "battery": 90<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_ERROR_PO"><span class="type-signature">(static) </span>ACTION_ERROR_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Callback indicating no the error for Po device.<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-POProfileModule.html#.ACTION_ERROR_PO">POProfileModule.ACTION_ERROR_PO("error_po")</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line120">line 120</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALL_CONNECTED_DEVICES"><span class="type-signature">(static) </span>ACTION_GET_ALL_CONNECTED_DEVICES<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates get all connected devices.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_LIVEDA_PO"><span class="type-signature">(static) </span>ACTION_LIVEDA_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the start measure of PO3 device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-POProfileModule.html#.ACTION_LIVEDA_PO">POProfileModule.ACTION_LIVEDA_PO("liveData_po")</a></td></tr>
+<tr><td><a href="module-POProfileModule.html#.PULSE_WAVE_PO">POProfileModule.PULSE_WAVE_PO("pulseWave")</a></td><td>The pulse wave data.<br/>Example: [2415,2371,2279]</td></tr>
+<tr><td><a href="module-POProfileModule.html#.PI_PO">POProfileModule.PI_PO("pi")</a></td><td>The perfusion index data.<br/>Example: 0.03999999910593033</td></tr>
+<tr><td><a href="module-POProfileModule.html#.PULSE_STRENGTH_PO">POProfileModule.PULSE_STRENGTH_PO("pulsestrength")</a></td><td>The pulse strength data.<br/>Example: 6</td></tr>
+<tr><td><a href="module-POProfileModule.html#.BLOOD_OXYGEN_PO">POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")</a></td><td>The blood oxygen data.<br/>Example: 70</td></tr>
+<tr><td><a href="module-POProfileModule.html#.PULSE_RATE_PO">POProfileModule.PULSE_RATE_PO("heartrate")</a></td><td>The heart rate data.<br/>Example: 30</td></tr>
+</tbody>
+</table>
+<b>message example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "pulseWave": [2415,2371,2279],<br/>
+&nbsp; &nbsp; "pi": 0.03999999910593033,<br/>
+&nbsp; &nbsp; "pulsestrength": 6,<br/>
+&nbsp; &nbsp; "bloodoxygen": 70,<br/>
+&nbsp; &nbsp; "heartrate": 30<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_NO_OFFLINEDATA_PO"><span class="type-signature">(static) </span>ACTION_NO_OFFLINEDATA_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the no history data of PO3 device.<br/>
+Callback indicating no historical data for Po device.<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-POProfileModule.html#.ACTION_NO_OFFLINEDATA_PO">POProfileModule.ACTION_NO_OFFLINEDATA_PO("noOfflineData_po")</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line110">line 110</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_OFFLINEDATA_PO"><span class="type-signature">(static) </span>ACTION_OFFLINEDATA_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the history data of PO3 device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-POProfileModule.html#.ACTION_OFFLINEDATA_PO">POProfileModule.ACTION_OFFLINEDATA_PO("offlineData_po")</a></td></tr>
+<tr><td><a href="module-POProfileModule.html#.OFFLINEDATA_PO">POProfileModule.OFFLINEDATA_PO("offlineData")</a></td><td>
+<a href="module-POProfileModule.html#.DATAID">POProfileModule.DATAID("dataID")</a> The data id. Example: 67FFC7A454148723718144A604D4152B<br/>
+<a href="module-POProfileModule.html#.MEASURE_DATE_PO">POProfileModule.MEASURE_DATE_PO("measureDate")</a> The measure data.<br/>
+<a href="module-POProfileModule.html#.BLOOD_OXYGEN_PO">POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")</a> The blood oxygen data. Example: 99<br/>
+<a href="module-POProfileModule.html#.PULSE_RATE_PO">POProfileModule.PULSE_RATE_PO("heartrate")</a> The heart rate data. Example: 65<br/>
+<a href="module-POProfileModule.html#.PULSE_WAVE_PO">POProfileModule.PULSE_WAVE_PO("pulseWave")</a> The pulse wave data. Example: [0,0,0]
+</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_RESULTDATA_PO"><span class="type-signature">(static) </span>ACTION_RESULTDATA_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the stop measure of PO3 device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-POProfileModule.html#.ACTION_RESULTDATA_PO">POProfileModule.ACTION_RESULTDATA_PO("resultData_po")</a></td></tr>
+<tr><td><a href="module-POProfileModule.html#.PULSE_WAVE_PO">POProfileModule.PULSE_WAVE_PO("pulseWave")</a></td><td>The pulse wave data.<br/>Example: [0,0,0]</td></tr>
+<tr><td><a href="module-POProfileModule.html#.DATAID">POProfileModule.DATAID("dataID")</a></td><td>The data id.<br/>Example: 67FFC7A454148723718144A604D4152B</td></tr>
+<tr><td><a href="module-POProfileModule.html#.PI_PO">POProfileModule.PI_PO("pi")</a></td><td>The perfusion index data.<br/>Example: 0.0430000014603138</td></tr>
+<tr><td><a href="module-POProfileModule.html#.PULSE_STRENGTH_PO">POProfileModule.PULSE_STRENGTH_PO("pulsestrength")</a></td><td>The pulse strength data.<br/>Example: 0</td></tr>
+<tr><td><a href="module-POProfileModule.html#.BLOOD_OXYGEN_PO">POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")</a></td><td>The blood oxygen data.<br/>Example: 99</td></tr>
+<tr><td><a href="module-POProfileModule.html#.PULSE_RATE_PO">POProfileModule.PULSE_RATE_PO("heartrate")</a></td><td>The heart rate data.<br/>Example: 65</td></tr>
+</tbody>
+</table>
+<b>message example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "pulseWave": [0,0,0],<br/>
+&nbsp; &nbsp; "dataID": 67FFC7A454148723718144A604D4152B,<br/>
+&nbsp; &nbsp; "pi": 0.0430000014603138,<br/>
+&nbsp; &nbsp; "pulsestrength": 0,<br/>
+&nbsp; &nbsp; "bloodoxygen": 99,<br/>
+&nbsp; &nbsp; "heartrate": 65<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BATTERY_PO"><span class="type-signature">(static) </span>BATTERY_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the power of battery for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BATTERY_PO ----> "battery".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-100(0xff)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line134">line 134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BLOOD_OXYGEN_PO"><span class="type-signature">(static) </span>BLOOD_OXYGEN_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the blood oxygen data for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BLOOD_OXYGEN_PO ----> "bloodoxygen".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line182">line 182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATAID"><span class="type-signature">(static) </span>DATAID<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the data id for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+DATAID ----> "dataID".<br/>
+</li>
+</ul>
+<b>Example: </b><br/>
+67FFC7A454148723718144A604D4152B
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line206">line 206</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".MEASURE_DATE_PO"><span class="type-signature">(static) </span>MEASURE_DATE_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the measure date for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+MEASURE_DATE_PO ----> "measureDate".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line226">line 226</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".OFFLINEDATA_PO"><span class="type-signature">(static) </span>OFFLINEDATA_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the historical data for Po device.<br/>
+Returns the message Key corresponding relation:
+<ul>
+<li>
+OFFLINEDATA_PO ----> "offlineData".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".PI_PO"><span class="type-signature">(static) </span>PI_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the PI data for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+PI_PO ----> "pi".<br/>
+</li>
+</ul>
+<b>Example: </b><br/>
+0.03999999910593033
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".PULSE_RATE_PO"><span class="type-signature">(static) </span>PULSE_RATE_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the pulse rate data for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+PULSE_RATE_PO ----> "heartrate".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line194">line 194</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".PULSE_STRENGTH_PO"><span class="type-signature">(static) </span>PULSE_STRENGTH_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the pulse strength data for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+PULSE_STRENGTH_PO ----> "pulsestrength".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-255(0xff)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".PULSE_WAVE_PO"><span class="type-signature">(static) </span>PULSE_WAVE_PO<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the pulse wave for Po device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+PULSE_WAVE_PO ----> "pulseWave".<br/>
+</li>
+</ul>
+<b>Example: </b><br/>
+[2415,2371,2279]
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="POProfileModule.js.html">POProfileModule.js</a>, <a href="POProfileModule.js.html#line146">line 146</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

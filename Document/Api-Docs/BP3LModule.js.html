@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: BP3LModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: BP3LModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by zhangxu on 16/11/14.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.BP3LModule;
+
+/**
+ * @module BP3LModule
+ */
+module.exports = {
+    /**
+     * Notify event type for BP3L.
+     */
+    Event_Notify: RCTModule.Event_Notify,
+
+    /**
+     * Start measure blood pressure monitor
+     * &lt;ul>
+     *     &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     *     &lt;li>If get successfully, following event will be emit:&lt;br/>
+     *     {@link module:BP3LModule.Event_Notify BP3LModule.Event_Notify("event_notify_bp3l")}&lt;br/>
+     *     The key and value will be as below:
+     *     &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *         &lt;caption>Device Zeroing&lt;/caption>
+     *         &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *         &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ZOREING_BP BPProfileModule.ACTION_ZOREING_BP("zoreing_bp")}&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *         &lt;caption>Device ZeroOver&lt;/caption>
+     *         &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *         &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ZOREOVER_BP BPProfileModule.ACTION_ZOREOVER_BP("zoreover_bp")}&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *         &lt;caption>Device OnlinePressure&lt;/caption>
+     *         &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *         &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ONLINE_PRESSURE_BP BPProfileModule.ACTION_ONLINE_PRESSURE_BP("online_pressure_bp")}&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.BLOOD_PRESSURE_BP BPProfileModule.BLOOD_PRESSURE_BP("pressure")}&lt;/td>&lt;td>Real time pressure.&lt;br/>e.g. 23&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *         &lt;caption>Device online pressure and wave&lt;/caption>
+     *         &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *         &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ONLINE_PULSEWAVE_BP BPProfileModule.ACTION_ONLINE_PULSEWAVE_BP("online_pulsewave_bp")}&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.BLOOD_PRESSURE_BP BPProfileModule.BLOOD_PRESSURE_BP("pressure")}&lt;/td>&lt;td>Real time pressure.&lt;br/> e.g. 23&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.PULSEWAVE_BP BPProfileModule.PULSEWAVE_BP("wave")}&lt;/td>&lt;td>Blood pressure pulse wave.&lt;br/> e.g. [15,15,15,15,15]&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.FLAG_HEARTBEAT_BP BPProfileModule.FLAG_HEARTBEAT_BP("heartbeat")}&lt;/td>&lt;td>heartbeat.&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &amp;nbsp
+     *     &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *         &lt;caption>Measure result&lt;/caption>
+     *         &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *         &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ONLINE_RESULT_BP BPProfileModule.ACTION_ONLINE_RESULT_BP("online_result_bp")}&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.HIGH_BLOOD_PRESSURE_BP BPProfileModule.HIGH_BLOOD_PRESSURE_BP("sys")}&lt;/td>&lt;td>The high pressure for blood pressure.&lt;br/> e.g. 118&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.LOW_BLOOD_PRESSURE_BP BPProfileModule.LOW_BLOOD_PRESSURE_BP("dia")}&lt;/td>&lt;td>The low pressure for blood pressure.&lt;br/> e.g. 77&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.PULSE_BP BPProfileModule.PULSE_BP("heartRate")}&lt;/td>&lt;td>Blood pressure pulse, e.g. 77&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_AHR_BP BPProfileModule.MEASUREMENT_AHR_BP("arrhythmia")}&lt;/td>&lt;td>The key of measurement is arrhythmia or not.&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_HSD_BP BPProfileModule.MEASUREMENT_HSD_BP("hsd")}(ios hsd 0:false 1:true)&lt;/td>&lt;td>The key of hemodynamic stability diagnosis, that Determines.&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *         &lt;tr>&lt;td>{@link module:BPProfileModule.DATAID BPProfileModule.DATAID("dataID")}&lt;/td>&lt;td>return blood pressure data id.&lt;br/> e.g. 9F78D808BAB380CC8B8DA5F2DECA24F3&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &lt;/li>
+     *
+     *     &lt;li>
+     *         If error happens, following event will be emit:&lt;/br>
+     *         {@link module:BP3LModule.Event_Notify BP3LModule.Event_Notify("event_notify_bp3l")}&lt;/br>
+     *         The key and value will be as below:
+     *         &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *             &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *             &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ERROR_BP BPProfileModule.ACTION_ERROR_BP("error_bp")}&lt;/td>&lt;/tr>
+     *             &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_NUM_BP BPProfileModule.ERROR_NUM_BP("error")}&lt;/td>&lt;td>the error of Bp device.&lt;br/> e.g. 400&lt;/td>&lt;/tr>
+     *             &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_DESCRIPTION_BP BPProfileModule.ERROR_DESCRIPTION_BP("description")}&lt;/td>&lt;td>the description of error.&lt;br/> e.g. the argument of method is illegal&lt;/td>&lt;/tr>
+     *         &lt;/table>
+     *     &lt;/li>
+     *
+     *     &lt;li>
+     *         &lt;b>Attention&lt;/b>, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     *         &lt;b>DeviceEventEmitter.addListener(BP3LModule.Event_Notify, function (e: Event){});&lt;/b>
+     *     &lt;/li>
+     * &lt;/ul>
+     *
+     * @param {string} mac Device's mac address
+     */
+    startMeasure: function (mac) {
+
+        if (RCTModule != null) {
+            RCTModule.startMeasure(mac);
+        } else {
+            console.log('~~~~~ RCTModule is null')
+        }
+
+    },
+
+
+    /**
+     * Interrupt the measuring process immediately if device is in measuring state.
+     * &lt;ul>
+     *     &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     *     &lt;li>If get successfully, following event will be emit:&lt;br/>
+     *     {@link module:BP3LModule.Event_Notify BP3LModule.Event_Notify("event_notify_bp3l")}&lt;br/>
+     *     The key and value will be as below:
+     *     &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *          &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *          &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_INTERRUPTED_BP BPProfileModule.ACTION_INTERRUPTED_BP("interrupted_bp")}&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &lt;/li>
+     *
+     *     &lt;li>
+     *         If error happens, following event will be emit:&lt;/br>
+     *         {@link module:BP3LModule.Event_Notify BP3LModule.Event_Notify("event_notify_bp3l")}&lt;/br>
+     *         The key and value will be as below:
+     *         &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *             &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *             &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ERROR_BP BPProfileModule.ACTION_ERROR_BP("error_bp")}&lt;/td>&lt;/tr>
+     *             &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_NUM_BP BPProfileModule.ERROR_NUM_BP("error")}&lt;/td>&lt;td>the error of Bp device.&lt;br/> e.g. 400&lt;/td>&lt;/tr>
+     *             &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_DESCRIPTION_BP BPProfileModule.ERROR_DESCRIPTION_BP("description")}&lt;/td>&lt;td>the description of error.&lt;br/> e.g. the argument of method is illegal&lt;/td>&lt;/tr>
+     *         &lt;/table>
+     *     &lt;/li>
+     *
+     *     &lt;li>
+     *         &lt;b>Attention&lt;/b>, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     *         &lt;b>DeviceEventEmitter.addListener(BP3LModule.Event_Notify, function (e: Event){});&lt;/b>
+     *     &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     */
+    stopMeasure: function (mac) {
+        if (RCTModule != null) {
+            RCTModule.stopMeasure(mac);
+        } else {
+            console.log('~~~~~ RCTModule is null')
+        }
+
+    },
+
+    /**
+     * Get the BP3L device's battery.
+     * &lt;ul>
+     *     &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     *     &lt;li>If get successfully, following event will be emit:&lt;br/>
+     *     {@link module:BP3LModule.Event_Notify BP3LModule.Event_Notify("event_notify_bp3l")}&lt;br/>
+     *     The key and value will be as below:
+     *     &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *          &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *          &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_BATTERY_BP BPProfileModule.ACTION_BATTERY_BP("battery_bp")}&lt;/td>&lt;/tr>
+     *          &lt;tr>&lt;td>{@link module:BPProfileModule.BATTERY_BP BPProfileModule.BATTERY_BP("battery")}&lt;/td>&lt;td>Battery status.&lt;br/> e.g. 90&lt;/td>&lt;/tr>
+     *     &lt;/table>
+     *     &lt;/li>
+     *
+     *     &lt;li>
+     *         If error happens, following event will be emit:&lt;/br>
+     *         {@link module:BP3LModule.Event_Notify BP3LModule.Event_Notify("event_notify_bp3l")}&lt;/br>
+     *         The key and value will be as below:
+     *         &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *             &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *             &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ERROR_BP BPProfileModule.ACTION_ERROR_BP("error_bp")}&lt;/td>&lt;/tr>
+     *             &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_NUM_BP BPProfileModule.ERROR_NUM_BP("error")}&lt;/td>&lt;td>the error of Bp device.&lt;br/> e.g. 400&lt;/td>&lt;/tr>
+     *             &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_DESCRIPTION_BP BPProfileModule.ERROR_DESCRIPTION_BP("description")}&lt;/td>&lt;td>the description of error.&lt;br/> e.g. the argument of method is illegal&lt;/td>&lt;/tr>
+     *         &lt;/table>
+     *     &lt;/li>
+     *
+     *     &lt;li>
+     *         &lt;b>Attention&lt;/b>, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     *         &lt;b>DeviceEventEmitter.addListener(BP3LModule.Event_Notify, function (e: Event){});&lt;/b>
+     *     &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     */
+
+    getBattery: function (mac) {
+
+        if (RCTModule != null) {
+            RCTModule.getBattery(mac);
+        } else {
+            console.log('~~~~~ RCTModule is null')
+        }
+
+    },
+
+    /**
+     * Disconnect the BP3L
+     *
+     * @param {string} mac Device's mac address
+     */
+
+    disconnect: function (mac) {
+
+        if (RCTModule != null) {
+            RCTModule.disconnect(mac);
+        } else {
+            console.log('~~~~~ RCTModule is null')
+        }
+    },
+
+    /**
+     * Get all connected AM3S device
+     *
+     * e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
+     */
+    getAllConnectedDevices: function () {
+        RCTModule.getAllConnectedDevices()
+    },
+
+
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

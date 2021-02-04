@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: BGProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: BGProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by gaoyuanlong on 16/11/16.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.BGProfileModule
+
+/**
+ * @module BGProfileModule
+ */
+module.exports = {
+
+    /**
+     * The action value of event indicating the error of BG device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_ERROR_BG BGProfileModule.ACTION_ERROR_BG("action_measure_error")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.ERROR_NUM_BG BGProfileModule.ERROR_NUM_BG("error_num")}&lt;/td>&lt;td> The error num&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.ERROR_DESCRIPTION_BG BGProfileModule.ERROR_DESCRIPTION_BG("description")}&lt;/td>&lt;td>Detailed description of the error&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"description":"Strip removed in the middle of reading, repeat the test with a new strip.","error_num":9,"mac":"8CDE52B5FAC2","type":"BG5","action":"action_measure_error"}
+     * &lt;br/>
+     */
+    ACTION_ERROR_BG: RCTModule.ACTION_ERROR_BG,
+
+    /**
+     * The action value of event indicating keep link success.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_KEEP_LINK BGProfileModule.ACTION_KEEP_LINK("action_keep_link")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_keep_link"}&lt;br/>
+     */
+    ACTION_KEEP_LINK: RCTModule.ACTION_KEEP_LINK,
+
+    /**
+     * The action value of event indicating set time success.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_SET_TIME BGProfileModule.ACTION_SET_TIME("action_set_time")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_set_time"}&lt;br/>
+     */
+    ACTION_SET_TIME: RCTModule.ACTION_SET_TIME,
+
+    /**
+     * The action value of event indicating set unit success.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_SET_UNIT BGProfileModule.ACTION_SET_UNIT("action_set_unit")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_set_unit"}&lt;br/>
+     */
+    ACTION_SET_UNIT: RCTModule.ACTION_SET_UNIT,
+
+    /**
+     * The action value of event indicating the result of get battery command.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_GET_BATTERY BGProfileModule.ACTION_GET_BATTERY("action_battery_bg")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.GET_BATTERY BGProfileModule.GET_BATTERY("battery")}&lt;/td>&lt;td>The battery value.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","battery":32,"type":"BG5","action":"action_battery_bg"}&lt;br/>
+     */
+    ACTION_GET_BATTERY: RCTModule.ACTION_GET_BATTERY,
+
+    /**
+     * The action value of event indicating start measure success.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_START_MEASURE BGProfileModule.ACTION_START_MEASURE("action_start_measure")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {mac":"8CDE52B5FAC2","type":"BG5","action":"action_start_measure"}&lt;br/>
+     */
+    ACTION_START_MEASURE: RCTModule.ACTION_START_MEASURE,
+
+    /**
+     * The action value of event indicating the offline data count.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_GET_OFFLINEDATA_COUNT BGProfileModule.ACTION_GET_OFFLINEDATA_COUNT("action_historicalnum_bg")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.GET_OFFLINEDATA_COUNT BGProfileModule.GET_OFFLINEDATA_COUNT("count")}&lt;/td>&lt;td>The offline data count value.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"count":2,"mac":"8CDE52B5FAC2","type":"BG5","action":"action_historicalnum_bg"}
+     * &lt;br/>
+     */
+    ACTION_GET_OFFLINEDATA_COUNT: RCTModule.ACTION_GET_OFFLINEDATA_COUNT,
+
+    /**
+     * The action value of event indicating the result of offline data.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_GET_OFFLINEDATA BGProfileModule.ACTION_GET_OFFLINEDATA("action_historicaldata_bg")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.GET_OFFLINEDATA BGProfileModule.GET_OFFLINEDATA("his_data_bg")}&lt;/td>&lt;td>Get offline data command result&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * {"his_data_bg":{"history":[{"dataID":"1B92511DE36F54508415257160F9D0EA","value":39,"date":"2017-06-08 15:08:00"},
+     * {"dataID":"862D10B79A8560505720B983D658E095","timeProofing":0,"value":38,"date":"2017-06-08 15:09:01"}]},
+     * "mac":"8CDE52B5FAC2","type":"BG5","action":"action_historicaldata_bg"}
+     * &lt;br/>
+     */
+    ACTION_GET_OFFLINEDATA: RCTModule.ACTION_GET_OFFLINEDATA,
+
+    /**
+     * The action value of event indicating delete offline data success.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_DELETE_OFFLINEDATA BGProfileModule.ACTION_DELETE_OFFLINEDATA("action_delete_historical_data")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_delete_historical_data"}
+     * &lt;br/>
+     */
+    ACTION_DELETE_OFFLINEDATA: RCTModule.ACTION_DELETE_OFFLINEDATA,
+
+    /**
+     * The action value of event indicating the result of set bottle message command.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_SET_BOTTLEMESSAGE BGProfileModule.ACTION_SET_BOTTLEMESSAGE("action_set_bottle_message_success")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.SET_BOTTLEMESSAGE BGProfileModule.SET_BOTTLEMESSAGE("set_bottle_message")}&lt;/td>&lt;td>Set bottle message command result&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.START_MODE BGProfileModule.START_MODE("start_mode")}&lt;/td>&lt;td>The start mode of Bg5 device.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"start_mode":2,"set_bottle_message":true,"mac":"8CDE52B5FAC2","type":"BG5","action":"action_set_bottle_message_success"}
+     * &lt;br/>
+     */
+    ACTION_SET_BOTTLEMESSAGE: RCTModule.ACTION_SET_BOTTLEMESSAGE,
+
+    /**
+     * The action value of event indicating the result of get bottle message command.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_GET_BOTTLEMESSAGE BGProfileModule.ACTION_GET_BOTTLEMESSAGE("action_get_codeinfo")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.GET_EXPIRECTIME BGProfileModule.GET_EXPIRECTIME("expiretime")}&lt;/td>&lt;td>The strip expire time of Bg5 device.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.GET_USENUM BGProfileModule.GET_USENUM("usenum")}&lt;/td>&lt;td>The strip used num, from offline data by Bg5 device.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"expiretime":"2099-12-16","usenum":0,"mac":"8CDE52B5FAC2","type":"BG5","action":"action_get_codeinfo"}
+     * &lt;br/>
+     */
+    ACTION_GET_BOTTLEMESSAGE: RCTModule.ACTION_GET_BOTTLEMESSAGE,
+
+    /**
+     * The action value of event indicating set bottleID success.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_SET_BOTTLEID BGProfileModule.ACTION_SET_BOTTLEID("action_setbottleid_success")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_setbottleid_success"}
+     * &lt;br/>
+     */
+    ACTION_SET_BOTTLEID: RCTModule.ACTION_SET_BOTTLEID,
+
+    /**
+     * The action value of event indicating the result of get bottleID command.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_GET_BOTTLEID BGProfileModule.ACTION_GET_BOTTLEID("action_get_bottleid")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.GET_BOTTLEID BGProfileModule.GET_BOTTLEID("bottleid")}&lt;/td>&lt;td>The bottleId of Bg5 device.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"bottleid":926305,"mac":"8CDE52B5FAC2","type":"BG5","action":"action_get_bottleid"}
+     * &lt;br/>
+     */
+    ACTION_GET_BOTTLEID: RCTModule.ACTION_GET_BOTTLEID,
+
+
+    /**
+     * The action value of event indicating the result of strip was put in the devices.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_STRIP_IN BGProfileModule.ACTION_STRIP_IN("action_measure_strip_in")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_measure_strip_in"}&lt;br/>
+     */
+    ACTION_STRIP_IN: RCTModule.ACTION_STRIP_IN,
+
+    /**
+     * The action value of event indicating the result of strip out of the devices.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_STRIP_OUT BGProfileModule.ACTION_STRIP_OUT("action_measure_strip_out")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_measure_strip_out"}
+     * &lt;br/>
+     */
+    ACTION_STRIP_OUT: RCTModule.ACTION_STRIP_OUT,
+
+    /**
+     * The action value of event indicating the result of get the blood.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_GET_BLOOD BGProfileModule.ACTION_GET_BLOOD("action_measure_get_blood")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"mac":"8CDE52B5FAC2","type":"BG5","action":"action_measure_get_blood"}
+     * &lt;br/>
+     */
+    ACTION_GET_BLOOD: RCTModule.ACTION_GET_BLOOD,
+
+    /**
+     * The action value of event indicating the result of get measure value from devices.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_ONLINE_RESULT_BG BGProfileModule.ACTION_ONLINE_RESULT_BG("action_value_bg")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.ONLINE_RESULT_BG BGProfileModule.ONLINE_RESULT_BG("result")}&lt;/td>&lt;td>The bg value measured by device&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.DATA_ID BGProfileModule.DATA_ID("dataID")}&lt;/td>&lt;td>The dataID measured by device&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"dataID":"E0A831AE7D2220A6417D4E050EA3FCA1","result":141,"mac":"8CDE52B5FAC2","type":"BG5","action":"action_value_bg"}
+     * &lt;br/>
+     */
+    ACTION_ONLINE_RESULT_BG: RCTModule.ACTION_ONLINE_RESULT_BG,
+
+    /**
+     * The error num means different error.
+     * &lt;p>0:Battery is low.&lt;/p>
+     * &lt;p>1:Glucose test result is out of the measurement range.&lt;/p>
+     * &lt;p>2:Unknown interference detected, please repeat the test.&lt;/p>
+     * &lt;p>3:Strip is used or unknown moisture detected, discard the test strip and repeat the test with a new strip..&lt;/p>
+     * &lt;p>4:Reading transmission error. Repeat the test with a new test strip. If the problem persists, contact iHealth customer service for assistance.&lt;/p>
+     * &lt;p>5:The environmental temperature is beyond normal range, place the meter at room temperature for at least 30 minutes, then repeat the test.&lt;/p>
+     * &lt;p>6:The environmental temperature is beyond normal range, place the meter at room temperature for at least 30 minutes, then repeat the test.&lt;/p>
+     * &lt;p>7:Test strip coding error.&lt;/p>
+     * &lt;p>8:Communication error, press"START" or rescan the code to repeat the test.&lt;/p>
+     * &lt;p>9:Strip removed in the middle of reading, repeat the test with a new strip.&lt;/p>
+     * &lt;p>10:Insert a new test strip and repeat the test.&lt;/p>
+     * &lt;p>11:Cannot write to SN or KEY.&lt;/p>
+     * &lt;p>12:Please set time.&lt;/p>
+     * &lt;p>13:0 test strips remaining.&lt;/p>
+     * &lt;p>14:Test strip expired.&lt;/p>
+     * &lt;p>15:Unplug the charging cable before testing.&lt;/p>
+     * &lt;p>18:Unplug the charging cable before read the history data&lt;/>
+     * &lt;p>19:Charging line is inserted&lt;/>
+     * &lt;p>20:Charging line pull out&lt;/>
+     * &lt;p>21:The bluetooth module failure&lt;/>
+     * &lt;p>100:The device is disconnected (Android doesn't support this code)&lt;/>
+     * &lt;p>112:Device don't support to query energy.&lt;/p>
+     * &lt;p>400:Parameters out of range.&lt;/p>
+     * &lt;p>402:The order of call is wrong.&lt;/p>
+     * &lt;p>403:Parameter type is not matched in function call.&lt;/p>
+     * &lt;p>404:Function(disConnect) is not supported in iOS platform.(Only available in iOS platform)&lt;/p>
+     * &lt;p>405:QRCode format error&lt;/p>
+     */
+    ERROR_NUM_BG: RCTModule.ERROR_NUM_BG,
+
+    /**
+     * The error discription.
+     */
+    ERROR_DESCRIPTION_BG: RCTModule.ERROR_DESCRIPTION_BG,
+
+    /**
+     * The battery value.
+     */
+    GET_BATTERY: RCTModule.GET_BATTERY,
+
+    /**
+     * The offline data count value.
+     */
+    GET_OFFLINEDATA_COUNT: RCTModule.GET_OFFLINEDATA_COUNT,
+
+    /**
+     * Get offline data value.
+     */
+    GET_OFFLINEDATA: RCTModule.GET_OFFLINEDATA,
+
+    /**
+     * Set bottle message result value.
+     */
+    SET_BOTTLEMESSAGE: RCTModule.SET_BOTTLEMESSAGE,
+
+    /**
+     * the start mode of Bg5 device.
+     * &lt;li>
+     * value=1, start by insert strip, no need to call &lt;BG5Module.startMeasure>
+     * &lt;/li>
+     * &lt;li>
+     * value=2, start by tap the button, need to call &lt;BG5Module.startMeasure>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    START_MODE: RCTModule.START_MODE,
+
+    /**
+     * The strip expire time of Bg5 device.
+     */
+    GET_EXPIRECTIME: RCTModule.GET_EXPIRECTIME,
+
+    /**
+     * The strip used num, from offline data by Bg5 device.
+     */
+    GET_USENUM: RCTModule.GET_USENUM,
+
+
+    /**
+     * The bottleId of Bg5 device.
+     */
+    GET_BOTTLEID: RCTModule.GET_BOTTLEID,
+
+    /**
+     * The bg value measured by device
+     */
+    ONLINE_RESULT_BG: RCTModule.ONLINE_RESULT_BG,
+
+    /**
+     * The dataID measured by device
+     */
+    DATA_ID: RCTModule.DATA_ID,
+
+    /**
+     * Callback indicating the code analysis result.
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BGProfileModule.ACTION_CODE_ANALYSIS BGProfileModule.ACTION_CODE_ANALYSIS("action_code_analysis")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.STRIP_NUM_BG BGProfileModule.STRIP_NUM_BG("strip_num")}&lt;/td>&lt;td>The strip number of the QRCode&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.STRIP_EXPIRETIME_BG BGProfileModule.STRIP_EXPIRETIME_BG("expire_time")}&lt;/td>&lt;td>The expire time of the QRCode&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BGProfileModule.BOTTLEID_BG BGProfileModule.BOTTLEID_BG("bottle_id")}&lt;/td>&lt;td>The bottle id of the QRCode&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {"bottle_id":"926305","expire_time":"2017-03-01","strip_num":"25","action":"action_code_analysis"}
+	 * &lt;br/>
+     */
+    ACTION_CODE_ANALYSIS:RCTModule.ACTION_CODE_ANALYSIS,
+
+    /**
+     * the strip number
+     */
+    STRIP_NUM_BG:RCTModule.STRIP_NUM_BG,
+
+    /**
+     * the expire time
+     */
+    STRIP_EXPIRETIME_BG:RCTModule.STRIP_EXPIRETIME_BG,
+
+    /**
+     * the bottle id
+     */
+    BOTTLEID_BG:RCTModule.BOTTLEID_BG,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

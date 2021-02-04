@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: HS4SModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: HS4SModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".Event_Notify"><span class="type-signature">(static) </span>Event_Notify<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Notify event type for HS4S
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS4SModule.js.html">HS4SModule.js</a>, <a href="HS4SModule.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".disconnect"><span class="type-signature">(static) </span>disconnect<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Disconnect the HS4S
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The mac address for blood pressure monitor</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS4SModule.js.html">HS4SModule.js</a>, <a href="HS4SModule.js.html#line135">line 135</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getAllConnectedDevices"><span class="type-signature">(static) </span>getAllConnectedDevices<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get all connected HS4S device
+
+e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS4SModule.js.html">HS4SModule.js</a>, <a href="HS4SModule.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getOfflineData"><span class="type-signature">(static) </span>getOfflineData<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the value of historical data in the HS4S.
+<ul>
+<li>This is an asynchronous call, it will return immediately.</li>
+<li>If get successfully, following event will be emit:<br/>
+<a href="module-HS4SModule.html#.Event_Notify">HS4SModule.Event_Notify("event_notify_hs4s")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_HISTORICAL_DATA_HS">HSProfileModule.ACTION_HISTORICAL_DATA_HS("historicaldata_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.HISTORDATA__HS">HSProfileModule.HISTORDATA__HS("historyData")</a></td><td>
+<a href="module-HSProfileModule.html#.DATAID">HSProfileModule.DATAID("dataID")</a> The data id. Example: 67FFC7A454148723718144A604D4152B<br/>
+<a href="module-HSProfileModule.html#.MEASUREMENT_DATE_HS">HSProfileModule.MEASUREMENT_DATE_HS("date")</a> The measure date. Value format: yyyy-MM-dd HH:mm:ss<br/>
+<a href="module-HSProfileModule.html#.WEIGHT_HS">HSProfileModule.WEIGHT_HS("value")</a> The key of the weight result. The value's unit is kg. Value range: 0.0-150.0<br/>
+<a href="module-HSProfileModule.html#.FAT_HS">HSProfileModule.FAT_HS("fat")</a> The body fat rate. Value range: 0.0-100.0<br/>
+<a href="module-HSProfileModule.html#.WATER_HS">HSProfileModule.WATER_HS("water")</a> The body water rate. Value range: 0.0-100.0<br/>
+<a href="module-HSProfileModule.html#.MUSCLE_HS">HSProfileModule.MUSCLE_HS("muscle")</a> The body muscle rate. Value range: 0.0-100.0<br/>
+<a href="module-HSProfileModule.html#.SKELETON_HS">HSProfileModule.SKELETON_HS("skeleton")</a> The bone mass. Value range: 0.0-25.5(0xFF/10.0)<br/>
+<a href="module-HSProfileModule.html#.FATELEVEL_HS">HSProfileModule.FATELEVEL_HS("fatelevel")</a> The fat level. Value range: 0-255(0xFF)<br/>
+<a href="module-HSProfileModule.html#.DCI_HS">HSProfileModule.DCI_HS("DCI")</a> he DCI data. Value range: 0-65535(0xFFFF)
+</td></tr>
+</tbody>
+</table>
+</li>
+<li>If error happens, following event will be emit:<br/>
+HSProfileModule.Event_Notify("event_notify_hs4s")<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_ERROR_HS">HSProfileModule.ACTION_ERROR_HS("error_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_NUM_HS">HSProfileModule.ERROR_NUM_HS("error")</a></td><td>
+<a href="module-HSProfileModule.html#.ERROR_ID_ILLEGAL_ARGUMENT">HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT</a> indicates parameter error("400")<br/>
+<a href="module-HSProfileModule.html#.ERROR_ID_WIFI_DISABLED">HSProfileModule.ERROR_ID_WIFI_DISABLED</a> indicates wifi is disabled("500")
+</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_DESCRIPTION_HS">HSProfileModule.ERROR_DESCRIPTION_HS("description")</a></td><td>The error description data.<br/>Example: getOfflineData() parameter userPstCode should be in the range [0, 19].</td></tr>
+</tbody>
+</table>
+</li>
+<li>
+Attention, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+DeviceEventEmitter.addListener(HSProfileModule.Event_Notify, function (e: Event){});
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS4SModule.js.html">HS4SModule.js</a>, <a href="HS4SModule.js.html#line128">line 128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".measureOnline"><span class="type-signature">(static) </span>measureOnline<span class="signature">(mac, unit, userId)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Start real-time measurement.
+<ul>
+<li>This is an asynchronous call, it will return immediately.</li>
+<li>If the measurement start, following event will be emit:<br/>
+<a href="module-HS4SModule.html#.Event_Notify">HS4SModule.Event_Notify("event_notify_hs4s")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_LIVEDATA_HS">HSProfileModule.ACTION_LIVEDATA_HS("liveData_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.LIVEDATA_HS">HSProfileModule.LIVEDATA_HS("value")</a></td><td>The key of live data weight, e.g. 62.79999923706055</td></tr>
+</tbody>
+</table>
+</li>
+<li>If the measurement end, following event will be emit:<br/>
+<a href="module-HS4SModule.html#.Event_Notify">HS4SModule.Event_Notify("event_notify_hs4s")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_ONLINE_RESULT_HS">HSProfileModule.ACTION_ONLINE_RESULT_HS("online_result_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.DATAID">HSProfileModule.DATAID("dataID")</a></td><td>The data id.<br/>Example: 67FFC7A454148723718144A604D4152B</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.WEIGHT_HS">HSProfileModule.WEIGHT_HS("value")</a></td><td>The weight result.<br/>Value range: 0.0-150.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.FAT_HS">HSProfileModule.FAT_HS("fat")</a></td><td>The body fat rate.<br/>Value range: 0.0-100.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.WATER_HS">HSProfileModule.WATER_HS("water")</a></td><td>The body water rate.<br/>Value range: 0.0-100.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.MUSCLE_HS">HSProfileModule.MUSCLE_HS("muscle")</a></td><td>The body muscle rate.<br/>Value range: 0.0-100.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.SKELETON_HS">HSProfileModule.SKELETON_HS("skeleton")</a></td><td>The bone mass.<br/>Value range: 0.0-25.5(0xFF/10.0)</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.FATELEVEL_HS">HSProfileModule.FATELEVEL_HS("fatelevel")</a></td><td>The fat level.<br/>Value range: 0-255(0xFF)</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.DCI_HS">HSProfileModule.DCI_HS("DCI")</a></td><td>The DCI data.<br/>Value range: 0-65535(0xFFFF)</td></tr>
+</tbody>
+</table>
+</li>
+<li>If error happens, following event will be emit:<br/>
+HSProfileModule.Event_Notify("event_notify_hs4s")<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_ERROR_HS">HSProfileModule.ACTION_ERROR_HS("error_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_NUM_HS">HSProfileModule.ERROR_NUM_HS("error")</a></td><td>
+<a href="module-HSProfileModule.html#.ERROR_ID_ILLEGAL_ARGUMENT">HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT</a> indicates parameter error("400")<br/>
+<a href="module-HSProfileModule.html#.ERROR_ID_WIFI_DISABLED">HSProfileModule.ERROR_ID_WIFI_DISABLED</a> indicates wifi is disabled("500")
+</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_DESCRIPTION_HS">HSProfileModule.ERROR_DESCRIPTION_HS("description")</a></td><td>The error description data.<br/>Example: getOfflineData() parameter userPstCode should be in the range [0, 19].</td></tr>
+</tbody>
+</table>
+</li>
+<li>
+Attention, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+DeviceEventEmitter.addListener(HSProfileModule.Event_Notify, function (e: Event){});
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's unit</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">user id</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS4SModule.js.html">HS4SModule.js</a>, <a href="HS4SModule.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: POProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: POProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by lixuesong on 15/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.POProfileModule
+
+/**
+ * @module POProfileModule
+ */
+module.exports = {
+    // Actions
+    /**
+     * The action value of event indicating the battery of PO3 device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_BATTERY_PO POProfileModule.ACTION_BATTERY_PO("battery_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.BATTERY_PO POProfileModule.BATTERY_PO("battery")}&lt;/td>&lt;td>Battery percentage.&lt;br/>Value range:0-100(0xff)&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "battery": 90&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_BATTERY_PO: RCTModule.ACTION_BATTERY_PO,
+    /**
+     * The action value of event indicating the start measure of PO3 device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_LIVEDA_PO POProfileModule.ACTION_LIVEDA_PO("liveData_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_WAVE_PO POProfileModule.PULSE_WAVE_PO("pulseWave")}&lt;/td>&lt;td>The pulse wave data.&lt;br/>Example: [2415,2371,2279]&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PI_PO POProfileModule.PI_PO("pi")}&lt;/td>&lt;td>The perfusion index data.&lt;br/>Example: 0.03999999910593033&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_STRENGTH_PO POProfileModule.PULSE_STRENGTH_PO("pulsestrength")}&lt;/td>&lt;td>The pulse strength data.&lt;br/>Example: 6&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.BLOOD_OXYGEN_PO POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")}&lt;/td>&lt;td>The blood oxygen data.&lt;br/>Example: 70&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_RATE_PO POProfileModule.PULSE_RATE_PO("heartrate")}&lt;/td>&lt;td>The heart rate data.&lt;br/>Example: 30&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "pulseWave": [2415,2371,2279],&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "pi": 0.03999999910593033,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "pulsestrength": 6,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "bloodoxygen": 70,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "heartrate": 30&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_LIVEDA_PO: RCTModule.ACTION_LIVEDA_PO,
+    /**
+     * The action value of event indicating the stop measure of PO3 device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_RESULTDATA_PO POProfileModule.ACTION_RESULTDATA_PO("resultData_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_WAVE_PO POProfileModule.PULSE_WAVE_PO("pulseWave")}&lt;/td>&lt;td>The pulse wave data.&lt;br/>Example: [0,0,0]&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.DATAID POProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The data id.&lt;br/>Example: 67FFC7A454148723718144A604D4152B&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PI_PO POProfileModule.PI_PO("pi")}&lt;/td>&lt;td>The perfusion index data.&lt;br/>Example: 0.0430000014603138&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_STRENGTH_PO POProfileModule.PULSE_STRENGTH_PO("pulsestrength")}&lt;/td>&lt;td>The pulse strength data.&lt;br/>Example: 0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.BLOOD_OXYGEN_PO POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")}&lt;/td>&lt;td>The blood oxygen data.&lt;br/>Example: 99&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_RATE_PO POProfileModule.PULSE_RATE_PO("heartrate")}&lt;/td>&lt;td>The heart rate data.&lt;br/>Example: 65&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "pulseWave": [0,0,0],&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "dataID": 67FFC7A454148723718144A604D4152B,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "pi": 0.0430000014603138,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "pulsestrength": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "bloodoxygen": 99,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "heartrate": 65&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_RESULTDATA_PO: RCTModule.ACTION_RESULTDATA_PO,
+    /**
+     * The action value of event indicating the history data of PO3 device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_OFFLINEDATA_PO POProfileModule.ACTION_OFFLINEDATA_PO("offlineData_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.OFFLINEDATA_PO POProfileModule.OFFLINEDATA_PO("offlineData")}&lt;/td>&lt;td>
+     * {@link module:POProfileModule.DATAID POProfileModule.DATAID("dataID")} The data id. Example: 67FFC7A454148723718144A604D4152B&lt;br/>
+     * {@link module:POProfileModule.MEASURE_DATE_PO POProfileModule.MEASURE_DATE_PO("measureDate")} The measure data.&lt;br/>
+     * {@link module:POProfileModule.BLOOD_OXYGEN_PO POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")} The blood oxygen data. Example: 99&lt;br/>
+     * {@link module:POProfileModule.PULSE_RATE_PO POProfileModule.PULSE_RATE_PO("heartrate")} The heart rate data. Example: 65&lt;br/>
+     * {@link module:POProfileModule.PULSE_WAVE_PO POProfileModule.PULSE_WAVE_PO("pulseWave")} The pulse wave data. Example: [0,0,0]
+     * &lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_OFFLINEDATA_PO: RCTModule.ACTION_OFFLINEDATA_PO,
+    /**
+     * The action value of event indicating the no history data of PO3 device.&lt;br/>
+     * Callback indicating no historical data for Po device.&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_NO_OFFLINEDATA_PO POProfileModule.ACTION_NO_OFFLINEDATA_PO("noOfflineData_po")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_NO_OFFLINEDATA_PO: RCTModule.ACTION_NO_OFFLINEDATA_PO,
+    /**
+     * Callback indicating no the error for Po device.&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_ERROR_PO POProfileModule.ACTION_ERROR_PO("error_po")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_ERROR_PO: RCTModule.ACTION_ERROR_PO,
+
+    //Keys
+    /**
+     * The key of the power of battery for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BATTERY_PO ----> "battery".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-100(0xff)
+     */
+    BATTERY_PO: RCTModule.BATTERY_PO,
+    /**
+     * The key of the pulse wave for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * PULSE_WAVE_PO ----> "pulseWave".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * [2415,2371,2279]
+     */
+    PULSE_WAVE_PO: RCTModule.PULSE_WAVE_PO,
+    /**
+     * The key of the PI data for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * PI_PO ----> "pi".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * 0.03999999910593033
+     */
+    PI_PO: RCTModule.PI_PO,
+    /**
+     * The key of the pulse strength data for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * PULSE_STRENGTH_PO ----> "pulsestrength".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xff)
+     */
+    PULSE_STRENGTH_PO: RCTModule.PULSE_STRENGTH_PO,
+    /**
+     * The key of the blood oxygen data for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BLOOD_OXYGEN_PO ----> "bloodoxygen".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    BLOOD_OXYGEN_PO: RCTModule.BLOOD_OXYGEN_PO,
+    /**
+     * The key of the pulse rate data for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * PULSE_RATE_PO ----> "heartrate".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    PULSE_RATE_PO: RCTModule.PULSE_RATE_PO,
+    /**
+     * The key of the data id for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * DATAID ----> "dataID".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * 67FFC7A454148723718144A604D4152B
+     */
+    DATAID: RCTModule.DATAID,
+    /**
+     * The key of the historical data for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:
+     * &lt;ul>
+     * &lt;li>
+     * OFFLINEDATA_PO ----> "offlineData".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    OFFLINEDATA_PO: RCTModule.OFFLINEDATA_PO,
+    /**
+     * The key of the measure date for Po device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * MEASURE_DATE_PO ----> "measureDate".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    MEASURE_DATE_PO: RCTModule.MEASURE_DATE_PO,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

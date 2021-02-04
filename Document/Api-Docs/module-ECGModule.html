@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: ECGModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: ECGModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".Event_Notify"><span class="type-signature">(static) </span>Event_Notify<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Notify event type for ECG
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGModule.js.html">ECGModule.js</a>, <a href="ECGModule.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getAllConnectedDevices"><span class="type-signature">(static) </span>getAllConnectedDevices<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get all connected ECG device
+
+e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGModule.js.html">ECGModule.js</a>, <a href="ECGModule.js.html#line134">line 134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getBattery"><span class="type-signature">(static) </span>getBattery<span class="signature">(serialNumber)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    getBattery
+<ul>
+<li>This is an asynchronous call, it will return immediately.</li>
+<li>If get successfully, following event will be emit:<br/>
+<a href="module-ECGModule.html#.Event_Notify">ECGModule.Event_Notify("event_notify_ecg")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_BATTERY_ECG">ECGProfileModule.ACTION_BATTERY_ECG("ACTION_BATTERY_ECG")</a></td></tr>
+<tr><td><a href="module-ECGProfileModule.html#.BATTERY_ECG">ECGProfileModule.BATTERY_ECG("BATTERY_ECG")</a></td><td></td></tr>
+</tbody>
+</table>
+<li>
+Attention, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+DeviceEventEmitter.addListener(ECGProfileModule.Event_Notify, function (e: Event){});
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>serialNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the mac address of scale</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGModule.js.html">ECGModule.js</a>, <a href="ECGModule.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".startMeasure"><span class="type-signature">(static) </span>startMeasure<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    startMeasure
+<ul>
+<li>This is an asynchronous call, it will return immediately.</li>
+<li>If get successfully, following event will be emit:<br/>
+<a href="module-ECGModule.html#.Event_Notify">ECGModule.Event_Notify("event_notify_ecg")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>HS6ProfileModule.ACTION_MEASURE_ECG("ACTION_MEASURE_ECG")</td></tr>
+<tr><td><a href="module-ECGProfileModule.html#.ACTION_MEASURE_ECG">ECGProfileModule.ACTION_MEASURE_ECG("ACTION_MEASURE_ECG")</a></td><td>
+<a href="module-ECGProfileModule.html#.ACTION_MEASURE_WAVEData">HS6ProfileModule.ACTION_MEASURE_WAVEData("ACTION_MEASURE_WAVEData")</a> <br/>
+<a href="module-ECGProfileModule.html#.ACTION_MEASURE_ECGPulse">ECGProfileModule.ACTION_MEASURE_ECGPulse("ACTION_MEASURE_ECGPulse")</a> <br/>
+</td></tr>
+</tbody>
+</table>
+</li>
+<li>If error happens, following event will be emit:<br/>
+ECGProfileModule.Event_Notify("event_notify_ecg")<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_ERROR_ECG">ECGProfileModule.ACTION_ERROR_ECG("ACTION_ERROR_ECG")</a></td></tr>
+<tr><td><a href="module-ECGProfileModule.html#.ERROR_NUM_ECG">ECGProfileModule.ERROR_NUM_ECG("ERROR_NUM_ECG")</a></td><td>The error code: 1 user information upload error; 2 bind error.</td></tr>
+</tbody>
+</table>
+</li>
+<li>
+Attention, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+DeviceEventEmitter.addListener(ECGProfileModule.Event_Notify, function (e: Event){});
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGModule.js.html">ECGModule.js</a>, <a href="ECGModule.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".stopMeasure"><span class="type-signature">(static) </span>stopMeasure<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    stopMeasure
+<ul>
+<li>This is an asynchronous call, it will return immediately.</li>
+<li>If get successfully, following event will be emit:<br/>
+<a href="module-ECGModule.html#.Event_Notify">ECGModule.Event_Notify("event_notify_ecg")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_STOPMEASURE_ECG">ECGProfileModule.ACTION_STOPMEASURE_ECG("ACTION_STOPMEASURE_ECG")</a></td></tr></td></tr>
+</tbody>
+</table>
+<li>
+Attention, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+DeviceEventEmitter.addListener(ECGProfileModule.Event_Notify, function (e: Event){});
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGModule.js.html">ECGModule.js</a>, <a href="ECGModule.js.html#line125">line 125</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".sysTime"><span class="type-signature">(static) </span>sysTime<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    SyncTime.
+<ul>
+<li>This is an asynchronous call, it will return immediately.</li>
+<li>If get successfully, following event will be emit:<br/>
+<a href="module-ECGModule.html#.Event_Notify">ECGModule.Event_Notify("event_notify_ecg")</a><br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-ECGProfileModule.html#.ACTION_SYSTIME">ECGProfileModule.ACTION_SYSTIME("ACTION_SYSTIME")</a></td></tr>
+<tr><td><a href="module-ECGProfileModule.html#.ACTION_SYSTIME">ECGProfileModule.ACTION_SYSTIME("ACTION_SYSTIME")</a></td><td>
+</table>
+<li>
+Attention, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+DeviceEventEmitter.addListener(ECGProfileModule.Event_Notify, function (e: Event){});
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ECGModule.js.html">ECGModule.js</a>, <a href="ECGModule.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: HS4SModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: HS4SModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by lixuesong on 11/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.HS4SModule
+
+/**
+ * @module HS4SModule
+ */
+module.exports = {
+    /**
+     * Notify event type for HS4S
+     */
+    Event_Notify: RCTModule.Event_Notify,
+
+    /**
+     * Start real-time measurement.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If the measurement start, following event will be emit:&lt;br/>
+     * {@link module:HS4SModule.Event_Notify HS4SModule.Event_Notify("event_notify_hs4s")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_LIVEDATA_HS HSProfileModule.ACTION_LIVEDATA_HS("liveData_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.LIVEDATA_HS HSProfileModule.LIVEDATA_HS("value")}&lt;/td>&lt;td>The key of live data weight, e.g. 62.79999923706055&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If the measurement end, following event will be emit:&lt;br/>
+     * {@link module:HS4SModule.Event_Notify HS4SModule.Event_Notify("event_notify_hs4s")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_ONLINE_RESULT_HS HSProfileModule.ACTION_ONLINE_RESULT_HS("online_result_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.DATAID HSProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The data id.&lt;br/>Example: 67FFC7A454148723718144A604D4152B&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.WEIGHT_HS HSProfileModule.WEIGHT_HS("value")}&lt;/td>&lt;td>The weight result.&lt;br/>Value range: 0.0-150.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.FAT_HS HSProfileModule.FAT_HS("fat")}&lt;/td>&lt;td>The body fat rate.&lt;br/>Value range: 0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.WATER_HS HSProfileModule.WATER_HS("water")}&lt;/td>&lt;td>The body water rate.&lt;br/>Value range: 0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.MUSCLE_HS HSProfileModule.MUSCLE_HS("muscle")}&lt;/td>&lt;td>The body muscle rate.&lt;br/>Value range: 0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.SKELETON_HS HSProfileModule.SKELETON_HS("skeleton")}&lt;/td>&lt;td>The bone mass.&lt;br/>Value range: 0.0-25.5(0xFF/10.0)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.FATELEVEL_HS HSProfileModule.FATELEVEL_HS("fatelevel")}&lt;/td>&lt;td>The fat level.&lt;br/>Value range: 0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.DCI_HS HSProfileModule.DCI_HS("DCI")}&lt;/td>&lt;td>The DCI data.&lt;br/>Value range: 0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If error happens, following event will be emit:&lt;br/>
+     * {@link module:HSProfileModule.Event_Notify HSProfileModule.Event_Notify("event_notify_hs4s")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_ERROR_HS HSProfileModule.ACTION_ERROR_HS("error_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_NUM_HS HSProfileModule.ERROR_NUM_HS("error")}&lt;/td>&lt;td>
+     * {@link module:HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT} indicates parameter error("400")&lt;br/>
+     * {@link module:HSProfileModule.ERROR_ID_WIFI_DISABLED HSProfileModule.ERROR_ID_WIFI_DISABLED} indicates wifi is disabled("500")
+     * &lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_DESCRIPTION_HS HSProfileModule.ERROR_DESCRIPTION_HS("description")}&lt;/td>&lt;td>The error description data.&lt;br/>Example: getOfflineData() parameter userPstCode should be in the range [0, 19].&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(HSProfileModule.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     * @param {string} unit Device's unit
+     * @param {string} userId user id
+     */
+    measureOnline: function (mac, unit, userId) {
+        RCTModule.measureOnline(mac, unit, userId)
+    },
+
+    /**
+     * Get the value of historical data in the HS4S.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If get successfully, following event will be emit:&lt;br/>
+     * {@link module:HS4SModule.Event_Notify HS4SModule.Event_Notify("event_notify_hs4s")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_HISTORICAL_DATA_HS HSProfileModule.ACTION_HISTORICAL_DATA_HS("historicaldata_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.HISTORDATA__HS HSProfileModule.HISTORDATA__HS("historyData")}&lt;/td>&lt;td>
+     * {@link module:HSProfileModule.DATAID HSProfileModule.DATAID("dataID")} The data id. Example: 67FFC7A454148723718144A604D4152B&lt;br/>
+     * {@link module:HSProfileModule.MEASUREMENT_DATE_HS HSProfileModule.MEASUREMENT_DATE_HS("date")} The measure date. Value format: yyyy-MM-dd HH:mm:ss&lt;br/>
+     * {@link module:HSProfileModule.WEIGHT_HS HSProfileModule.WEIGHT_HS("value")} The key of the weight result. The value's unit is kg. Value range: 0.0-150.0&lt;br/>
+     * {@link module:HSProfileModule.FAT_HS HSProfileModule.FAT_HS("fat")} The body fat rate. Value range: 0.0-100.0&lt;br/>
+     * {@link module:HSProfileModule.WATER_HS HSProfileModule.WATER_HS("water")} The body water rate. Value range: 0.0-100.0&lt;br/>
+     * {@link module:HSProfileModule.MUSCLE_HS HSProfileModule.MUSCLE_HS("muscle")} The body muscle rate. Value range: 0.0-100.0&lt;br/>
+     * {@link module:HSProfileModule.SKELETON_HS HSProfileModule.SKELETON_HS("skeleton")} The bone mass. Value range: 0.0-25.5(0xFF/10.0)&lt;br/>
+     * {@link module:HSProfileModule.FATELEVEL_HS HSProfileModule.FATELEVEL_HS("fatelevel")} The fat level. Value range: 0-255(0xFF)&lt;br/>
+     * {@link module:HSProfileModule.DCI_HS HSProfileModule.DCI_HS("DCI")} he DCI data. Value range: 0-65535(0xFFFF)
+     * &lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If error happens, following event will be emit:&lt;br/>
+     * {@link module:HSProfileModule.Event_Notify HSProfileModule.Event_Notify("event_notify_hs4s")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_ERROR_HS HSProfileModule.ACTION_ERROR_HS("error_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_NUM_HS HSProfileModule.ERROR_NUM_HS("error")}&lt;/td>&lt;td>
+     * {@link module:HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT} indicates parameter error("400")&lt;br/>
+     * {@link module:HSProfileModule.ERROR_ID_WIFI_DISABLED HSProfileModule.ERROR_ID_WIFI_DISABLED} indicates wifi is disabled("500")
+     * &lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_DESCRIPTION_HS HSProfileModule.ERROR_DESCRIPTION_HS("description")}&lt;/td>&lt;td>The error description data.&lt;br/>Example: getOfflineData() parameter userPstCode should be in the range [0, 19].&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(HSProfileModule.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     */
+    getOfflineData: function (mac) {
+        RCTModule.getOfflineData(mac)
+    },
+    /**
+     * Disconnect the HS4S
+     * @param mac The mac address for blood pressure monitor
+     */
+    disconnect: function (mac) {
+        RCTModule.disconnect(mac)
+    },
+
+    /**
+     * Get all connected HS4S device
+     *
+     * e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
+     */
+    getAllConnectedDevices: function () {
+        RCTModule.getAllConnectedDevices()
+    },
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

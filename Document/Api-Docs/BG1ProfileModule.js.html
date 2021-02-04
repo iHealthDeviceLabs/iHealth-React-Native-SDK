@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: BG1ProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: BG1ProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+
+var { NativeModules } = require('react-native');
+
+var RCTModule = NativeModules.BG1ProfileModule
+
+/**
+ * @module BG1ProfileModule
+ */
+module.exports = {
+    /**
+     * Callback indicating the send code result of bg1 device.
+     * &lt;ul>
+     * KeyList:
+     * &lt;ul>
+     * &lt;li>
+     * {@link #BG1_SENDCODE_RESULT}
+     * &lt;/li>
+     */
+    ACTION_BG1_SENDCODE_RESULT:RCTModule.ACTION_BG1_SENDCODE_RESULT,
+
+    /**
+     * The send code result of bg1 device.
+     * &lt;p/>
+     * value : 0 success; other error
+     */
+    BG1_SENDCODE_RESULT:RCTModule.BG1_SENDCODE_RESULT,
+
+    /**
+     * Callback indicating the error of Bg1 device.
+     * &lt;ul>
+     * KeyList:
+     * &lt;ul>
+     * &lt;li>
+     * {@link #BG1_MEASURE_ERROR}
+     * &lt;/li>
+     * &lt;/ul>
+     * eg. {"error_num_for_bg1":0}
+     * &lt;/ul>
+     */
+    ACTION_BG1_MEASURE_ERROR:RCTModule.ACTION_BG1_MEASURE_ERROR,
+
+    /**
+     * Flag Error number of Bg1 device.
+     * &lt;p>Error code and Description&lt;/p>
+     * &lt;p>0:Battery is low.&lt;/p>
+     * &lt;p>1:Glucose test result is out of the measurement range.&lt;/p>
+     * &lt;p>2:Unknown interference detected, please repeat the test.&lt;/p>
+     * &lt;p>3:Strip is used or unknown moisture detected, discard the test strip and repeat the test with a new strip..&lt;/p>
+     * &lt;p>4:Communication error,resend the code to repeat the test. {@link Bg1Control#sendCode(String)}&lt;/p>
+     * &lt;p>5:The environmental temperature is beyond normal range, place the meter at room temperature for at least 30 minutes, then repeat the test.&lt;/p>
+     * &lt;p>6:The environmental temperature is beyond normal range, place the meter at room temperature for at least 30 minutes, then repeat the test.&lt;/p>
+     * &lt;p>7:Test strip coding error.&lt;/p>
+     * &lt;p>8:Communication error,rescan the code to repeat the test.&lt;/p>
+     * &lt;p>9:Communication error,Repeat the test with a new test strip. If the problem persists, contact iHealth customer service for assistance.&lt;/p>
+     * &lt;p>10:Communication error,Repeat the test with a new test strip. If the problem persists, contact iHealth customer service for assistance.&lt;/p>
+     * &lt;p>11:Communication error,Repeat the test with a new test strip. If the problem persists, contact iHealth customer service for assistance.&lt;/p>
+     * &lt;p>12:Glucose test result is low.&lt;/p>
+     * &lt;p>13:Glucose test result is high.&lt;/p>
+     * &lt;p>101:BG meter is in sleeping mode, needs repair.&lt;/p>
+     * &lt;p>102:BG meter handshake failed.&lt;/p>
+     * &lt;p>400:Parameters out of range.&lt;/p>
+     * &lt;p>401:Dolby is on ,please turn it off.&lt;/p>
+     */
+    BG1_MEASURE_ERROR:RCTModule.BG1_MEASURE_ERROR,
+
+    /**
+     * Callback indicating the strip in action.
+     */
+    ACTION_BG1_MEASURE_STRIP_IN:RCTModule.ACTION_BG1_MEASURE_STRIP_IN,
+
+    /**
+     * Callback indicating the get blood action.
+     */
+    ACTION_BG1_MEASURE_GET_BLOOD:RCTModule.ACTION_BG1_MEASURE_GET_BLOOD,
+
+    /**
+     * Callback indicating the measure result.
+     * &lt;ul>
+     * KeyList:
+     * &lt;ul>
+     * &lt;li>
+     * {@link #BG1_MEASURE_RESULT}
+     * &lt;/li>
+     */
+    ACTION_BG1_MEASURE_RESULT:RCTModule.ACTION_BG1_MEASURE_RESULT,
+
+    /**
+     * The measure result
+     * &lt;p/>
+     * Range : 20-600 mg/dL
+     */
+    BG1_MEASURE_RESULT:RCTModule.BG1_MEASURE_RESULT,
+
+    /**
+     * Callback indicating the strip out action.
+     */
+    ACTION_BG1_MEASURE_STRIP_OUT:RCTModule.ACTION_BG1_MEASURE_STRIP_OUT,
+
+    /**
+     * Callback indicating the Bg1 device get in standby mode.
+     */
+    ACTION_BG1_MEASURE_STANDBY:RCTModule.ACTION_BG1_MEASURE_STANDBY,
+
+    /**
+     * the data id
+     */
+    DATA_ID:RCTModule.DATA_ID,
+    
+
+    /**
+     * Callback indicating the code analysis result.
+     */
+    ACTION_CODE_ANALYSIS:RCTModule.ACTION_CODE_ANALYSIS,
+
+
+    /**
+     * the strip number
+     */
+    STRIP_NUM_BG:RCTModule.STRIP_NUM_BG,
+
+    /**
+     * the expire time
+     */
+    STRIP_EXPIRETIME_BG:RCTModule.STRIP_EXPIRETIME_BG,
+
+    /**
+     * the bottle id
+     */
+    BOTTLEID_BG:RCTModule.BOTTLEID_BG
+
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

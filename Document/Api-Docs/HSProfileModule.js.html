@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: HSProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: HSProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by lixuesong on 15/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.HSProfileModule
+
+/**
+ * @module HSProfileModule
+ */
+module.exports = {
+    // Actions
+    /**
+     * The action value of event indicating the start measure of HS device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_LIVEDATA_HS HSProfileModule.ACTION_LIVEDATA_HS("liveData_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.LIVEDATA_HS HSProfileModule.LIVEDATA_HS("value")}&lt;/td>&lt;td>The key of live data weight&lt;br/>Value range: 0.0-150.0&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; "value": 62.79999923706055&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_LIVEDATA_HS: RCTModule.ACTION_LIVEDATA_HS,
+    /**
+     * The action value of event indicating the stop measure of HS device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_ONLINE_RESULT_HS HSProfileModule.ACTION_ONLINE_RESULT_HS("online_result_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.DATAID HSProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The data id.&lt;br/>Example: 67FFC7A454148723718144A604D4152B&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.WEIGHT_HS HSProfileModule.WEIGHT_HS("value")}&lt;/td>&lt;td>The weight result.&lt;br/>Value range: 0.0-150.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.FAT_HS HSProfileModule.FAT_HS("fat")}&lt;/td>&lt;td>The body fat rate.&lt;br/>Value range: 0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.WATER_HS HSProfileModule.WATER_HS("water")}&lt;/td>&lt;td>The body water rate.&lt;br/>Value range: 0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.MUSCLE_HS HSProfileModule.MUSCLE_HS("muscle")}&lt;/td>&lt;td>The body muscle rate.&lt;br/>Value range: 0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.SKELETON_HS HSProfileModule.SKELETON_HS("skeleton")}&lt;/td>&lt;td>The bone mass.&lt;br/>Value range: 0.0-25.5(0xFF/10.0)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.FATELEVEL_HS HSProfileModule.FATELEVEL_HS("fatelevel")}&lt;/td>&lt;td>The fate level.&lt;br/>Value range: 0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.DCI_HS HSProfileModule.DCI_HS("DCI")}&lt;/td>&lt;td>The DCI data.&lt;br/>Value range: 0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "dataID": "D433708291F0427F8D412268B91C44F3",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "value": 84.19999694824219,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "fat": 47.70000076293945,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "water": 45.29999923706055,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "muscle": 41.29999923706055,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "skeleton": 2.200000047683716,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "fatelevel": 8,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "DCI": 2502&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_ONLINE_RESULT_HS: RCTModule.ACTION_ONLINE_RESULT_HS,
+    /**
+     * The action value of event indicating the history data of HS device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_HISTORICAL_DATA_HS HSProfileModule.ACTION_HISTORICAL_DATA_HS("historicaldata_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.HISTORDATA__HS HSProfileModule.HISTORDATA__HS("historyData")}&lt;/td>&lt;td>
+     * {@link module:HSProfileModule.DATAID HSProfileModule.DATAID("dataID")} The data id. Example: 67FFC7A454148723718144A604D4152B&lt;br/>
+     * {@link module:HSProfileModule.MEASUREMENT_DATE_HS HSProfileModule.MEASUREMENT_DATE_HS("date")} The measure date. Value format: yyyy-MM-dd HH:mm:ss&lt;br/>
+     * {@link module:HSProfileModule.WEIGHT_HS HSProfileModule.WEIGHT_HS("value")} The key of the weight result. The value's unit is kg. Value range: 0.0-150.0&lt;br/>
+     * {@link module:HSProfileModule.FAT_HS HSProfileModule.FAT_HS("fat")} The body fat rate. Value range: 0.0-100.0&lt;br/>
+     * {@link module:HSProfileModule.WATER_HS HSProfileModule.WATER_HS("water")} The body water rate. Value range: 0.0-100.0&lt;br/>
+     * {@link module:HSProfileModule.MUSCLE_HS HSProfileModule.MUSCLE_HS("muscle")} The body muscle rate. Value range: 0.0-100.0&lt;br/>
+     * {@link module:HSProfileModule.SKELETON_HS HSProfileModule.SKELETON_HS("skeleton")} The bone mass. Value range: 0.0-25.5(0xFF/10.0)&lt;br/>
+     * {@link module:HSProfileModule.FATELEVEL_HS HSProfileModule.FATELEVEL_HS("fatelevel")} The fate level. Value range: 0-255(0xFF)&lt;br/>
+     * {@link module:HSProfileModule.DCI_HS HSProfileModule.DCI_HS("DCI")} he DCI data. Value range: 0-65535(0xFFFF)
+     * &lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HISTORICAL_DATA_HS: RCTModule.ACTION_HISTORICAL_DATA_HS,
+
+    /**
+     * Callback indicating historical data transferred complete for Hs device.
+     */
+    ACTION_HISTORICAL_DATA_COMPLETE_HS: RCTModule.ACTION_HISTORICAL_DATA_COMPLETE_HS,
+    /**
+     * The action value of event indicating the no history data of HS device.&lt;br/>
+     * Callback indicating no historical data for HS device.&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_NO_HISTORICALDATA HSProfileModule.ACTION_NO_HISTORICALDATA("noHistoryData")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_NO_HISTORICALDATA: RCTModule.ACTION_NO_HISTORICALDATA,
+
+    /**
+     * The action type of callback indicating the error of HS device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HSProfileModule.ACTION_ERROR_HS HSProfileModule.ACTION_ERROR_HS("error_hs")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_NUM_HS HSProfileModule.ERROR_NUM_HS("error")}&lt;/td>&lt;td>
+     * {@link module:HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT} indicates parameter error("400")&lt;br/>
+     * {@link module:HSProfileModule.ERROR_ID_WIFI_DISABLED HSProfileModule.ERROR_ID_WIFI_DISABLED} indicates wifi is disabled("500")
+     * &lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_DESCRIPTION_HS HSProfileModule.ERROR_DESCRIPTION_HS("description")}&lt;/td>&lt;td>The error description data.&lt;br/>Example: getOfflineData() parameter userPstCode should be in the range [0, 19].&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example message:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "error": 400,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "description": "getOfflineData() parameter userPstCode should be in the range [0, 19]."&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_ERROR_HS: RCTModule.ACTION_ERROR_HS,
+
+    //Keys
+    /**
+     * The key of live data weight&lt;br/>
+     * The value is float type, it's unit is kg.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * LIVEDATA_HS ----> "value".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-150.0
+     */
+    LIVEDATA_HS: RCTModule.LIVEDATA_HS,
+    /**
+     * The key of the data id for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * DATAID ----> "dataID".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * 67FFC7A454148723718144A604D4152B
+     */
+    DATAID: RCTModule.DATAID,
+    /**
+     * The key of the weight result for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * WEIGHT_HS ----> "value".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range: &lt;/b>&lt;br/>
+     * 0.0-150.0
+     */
+    WEIGHT_HS: RCTModule.WEIGHT_HS,
+    /**
+     * The key of the body fat rate for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * FAT_HS ----> "fat".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-100.0
+     */
+    FAT_HS: RCTModule.FAT_HS,
+    /**
+     * The key of the body water rate for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * WATER_HS ----> "water".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-100.0
+     */
+    WATER_HS: RCTModule.WATER_HS,
+    /**
+     * The key of the body muscle rate for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * MUSCLE_HS ----> "muscle".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-100.0
+     */
+    MUSCLE_HS: RCTModule.MUSCLE_HS,
+    /**
+     * The key of the bone mass for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * SKELETON_HS ----> "skeleton".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-25.5(0xFF/10.0)
+     */
+    SKELETON_HS: RCTModule.SKELETON_HS,
+    /**
+     * The key of the fat level for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * FATELEVEL_HS ----> "fatelevel".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    FATELEVEL_HS: RCTModule.FATELEVEL_HS,
+    /**
+     * The key of the DCI for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * DCI_HS ----> "DCI".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    DCI_HS: RCTModule.DCI_HS,
+    /**
+     * The key of the historical data for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:
+     * &lt;ul>
+     * &lt;li>
+     * HISTORDATA__HS ----> "historyData".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    HISTORDATA__HS: RCTModule.HISTORDATA__HS,
+    /**
+     * The key of the measure date for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * MEASUREMENT_DATE_HS ----> "date".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value format:&lt;/b>
+     * yyyy-MM-dd HH:mm:ss
+     */
+    MEASUREMENT_DATE_HS: RCTModule.MEASUREMENT_DATE_HS,
+    /**
+     * The key of error ID number of HS device.&lt;br/>
+     * The key and value will be as below:&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>1&lt;/td>&lt;td>Battery level is low.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>2&lt;/td>&lt;td>The Scale failed to initialize.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>3&lt;/td>&lt;td>Maximum weight has been exceeded.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>4&lt;/td>&lt;td>The Scale can't capture a steady reading.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>5&lt;/td>&lt;td>Bluetooth connection error.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>6&lt;/td>&lt;td>Movement while measuring.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>7&lt;/td>&lt;td>Invalidate.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>8&lt;/td>&lt;td>Scale memory access error.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>9&lt;/td>&lt;td>No memory.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>10&lt;/td>&lt;td>Device disconnect.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>11&lt;/td>&lt;td>Communication error.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>12&lt;/td>&lt;td>HS4DeviceRecWeightError.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>13&lt;/td>&lt;td>Failed to create measurement connections.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>14&lt;/td>&lt;td>Instruction timeout.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT 400}&lt;/td>&lt;td>indicates parameter error("400")&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HSProfileModule.ERROR_ID_WIFI_DISABLED 500}&lt;/td>&lt;td>indicates wifi is disabled("500")&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * ERROR_NUM_HS ----> "error".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    ERROR_NUM_HS: RCTModule.ERROR_NUM_HS,
+    /**
+     * The error ID indicates parameter error.&lt;br/>
+     * &lt;b>Value&lt;/b>
+     * 400
+     */
+    ERROR_ID_ILLEGAL_ARGUMENT: RCTModule.ERROR_ID_ILLEGAL_ARGUMENT,
+    /**
+     * The error ID indicates wifi is disabled.&lt;br/>
+     * &lt;b>Value&lt;/b>
+     * 500
+     */
+    ERROR_ID_WIFI_DISABLED: RCTModule.ERROR_ID_WIFI_DISABLED,
+    /**
+     * The key of the data id for HS device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * ERROR_DESCRIPTION_HS ----> "description".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; "description": "getOfflineData() parameter userPstCode should be in the range [0, 19]."&lt;br/>
+     * }&lt;br/>
+     */
+    ERROR_DESCRIPTION_HS: RCTModule.ERROR_DESCRIPTION_HS,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

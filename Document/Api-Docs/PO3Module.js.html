@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: PO3Module.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: PO3Module.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by lixuesong on 11/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.PO3Module
+
+/**
+ * @module PO3Module
+ */
+module.exports = {
+    /**
+     * Notify event type for PO3
+     */
+    Event_Notify: RCTModule.Event_Notify,
+
+    /**
+     * Get the PO3 battery status.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If get successfully, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_BATTERY_PO POProfileModule.ACTION_BATTERY_PO("battery_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>POProfileModule.BATTERY_PO&lt;/td>&lt;td>Battery Status, e.g. 90&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If error happens, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_ERROR_PO POProfileModule.ACTION_ERROR_PO("error_po")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(PO3Module.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     */
+    getBattery: function (mac) {
+        RCTModule.getBattery(mac)
+    },
+
+    /**
+     * Start real-time measurement.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If the measurement start, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_LIVEDA_PO POProfileModule.ACTION_LIVEDA_PO("liveData_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_WAVE_PO POProfileModule.ACTION_LIVEDA_PO("pulseWave")}&lt;/td>&lt;td>Pulse Wave, e.g. [2415,2371,2279]&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PI_PO POProfileModule.ACTION_LIVEDA_PO("pi")}&lt;/td>&lt;td>PI, e.g. 0.03999999910593033&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_STRENGTH_PO POProfileModule.ACTION_LIVEDA_PO("pulsestrength")}&lt;/td>&lt;td>Pulse Strength, e.g. 6&lt;/td>&lt;&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.BLOOD_OXYGEN_PO POProfileModule.ACTION_LIVEDA_PO("bloodoxygen")}&lt;/td>&lt;td>Blood Oxygen, e.g. 70&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_RATE_PO POProfileModule.ACTION_LIVEDA_PO("heartrate")}&lt;/td>&lt;td>Heart Rate, e.g. 30&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If the measurement end, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_RESULTDATA_PO POProfileModule.ACTION_RESULTDATA_PO("resultData_po")(iOS doesn't support this key)}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_WAVE_PO POProfileModule.ACTION_LIVEDA_PO("pulseWave")}&lt;/td>&lt;td>Pulse Wave, e.g. [0,0,0]&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.DATAID POProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The data id, e.g. 67FFC7A454148723718144A604D4152B&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PI_PO POProfileModule.ACTION_LIVEDA_PO("pi")}&lt;/td>&lt;td>PI, e.g. 0.0430000014603138&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_STRENGTH_PO POProfileModule.ACTION_LIVEDA_PO("pulsestrength")}&lt;/td>&lt;td>Pulse Strength, e.g. 0&lt;/td>&lt;&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.BLOOD_OXYGEN_PO POProfileModule.ACTION_LIVEDA_PO("bloodoxygen")}&lt;/td>&lt;td>Blood Oxygen, e.g. 98&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_RATE_PO POProfileModule.ACTION_LIVEDA_PO("heartrate")}&lt;/td>&lt;td>Heart Rate, e.g. 65&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If error happens, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_ERROR_PO PO3Module.ACTION_ERROR_PO("error_po")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(PO3Module.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     */
+    startMeasure: function (mac) {
+        RCTModule.startMeasure(mac)
+    },
+
+    /**
+     * Get the value of historical data in the PO3.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If get successfully, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_OFFLINEDATA_PO POProfileModule.ACTION_OFFLINEDATA_PO("offlineData_po")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.OFFLINEDATA_PO POProfileModule.OFFLINEDATA_PO("offlineData")}&lt;/td>&lt;td>Offline Data Array.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.DATAID POProfileModule.DATAID("dataID")}&lt;/td>&lt;td>Data Id for each element in the array, e.g. 67FFC7A454148723718144A604D4152B&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.MEASURE_DATE_PO POProfileModule.MEASURE_DATE_PO("measureDate")}&lt;/td>&lt;td>The measure data.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.BLOOD_OXYGEN_PO POProfileModule.BLOOD_OXYGEN_PO("bloodoxygen")}&lt;/td>&lt;td>Blood Oxygen for each element in the array, e.g. 98&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_RATE_PO POProfileModule.PULSE_RATE_PO("heartrate")}&lt;/td>&lt;td>Heart Rate for each element in the array, e.g. 65&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:POProfileModule.PULSE_WAVE_PO POProfileModule.PULSE_WAVE_PO("pulseWave")}&lt;/td>&lt;td>Pulse Wave for each element in the array, e.g. [0,0,0]&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>If error happens, following event will be emit:&lt;br/>
+     * {@link module:PO3Module.Event_Notify PO3Module.Event_Notify("event_notify_po3")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:POProfileModule.ACTION_ERROR_PO POProfileModule.ACTION_ERROR_PO("error_po")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/li>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(PO3Module.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+     * @param {string} mac Device's mac address
+     */
+    getHistoryData: function (mac) {
+        RCTModule.getHistoryData(mac)
+    },
+    /**
+     * Disconnect the PO3
+     * @param mac The mac address for blood pressure monitor
+     */
+    disconnect: function (mac) {
+        RCTModule.disconnect(mac)
+    },
+
+    /**
+     * Get all connected PO3 device
+     *
+     * e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
+     */
+    getAllConnectedDevices: function () {
+        RCTModule.getAllConnectedDevices()
+    },
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

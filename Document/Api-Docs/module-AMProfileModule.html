@@ -1,0 +1,8695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: AMProfileModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: AMProfileModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ACTION_DELETE_ALARM_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_DELETE_ALARM_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating delete alarm successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_DELETE_ALARM_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "delete_alarm_success_am",<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line250">line 250</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_ERROR_AM"><span class="type-signature">(static) </span>ACTION_ERROR_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the error of AM device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_ERROR_AM</td></tr>
+<tr><td>AMProfileModule.ERROR_NUM_AM</td><td>AMProfileModule.ERROR_ID_ILLEGAL_ARGUMENT(400) indicates parameter error.<br/>AMProfileModule.ERROR_ID_VERSION_NOT_SUPPORT(402) indicates version not support error.</td></tr>
+<tr><td>AMProfileModule.ERROR_DESCRIPTION_AM</td><td>Detailed description of the error</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "error_am",<br/>
+&nbsp; &nbsp; "error": 400,<br/>
+&nbsp; &nbsp; "description": "setAlarmClock() parameter min should be in the range [0, 59]."<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ACTIVITY_REMIND_AM"><span class="type-signature">(static) </span>ACTION_GET_ACTIVITY_REMIND_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get activity remind information successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_ACTIVITY_REMIND_AM">AMProfileModule.ACTION_GET_ACTIVITY_REMIND_AM("get_activity_remind_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ACTIVITY_REMIND_TIME_AM">AMProfileModule.GET_ACTIVITY_REMIND_TIME_AM("time")</a></td><td>The time of activity reminder<br/><b>Value format:</b><br/>HH:mm</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ACTIVITY_REMIND_ISON_AM">AMProfileModule.GET_ACTIVITY_REMIND_ISON_AM("switch")</a></td><td>Whether activity reminder open or not.</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_activity_remind_am",<br/>
+&nbsp; &nbsp; "time": "01:20",<br/>
+&nbsp; &nbsp; "switch": true<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line269">line 269</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALARMINFO_AM"><span class="type-signature">(static) </span>ACTION_GET_ALARMINFO_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get alarm information successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_ALARMINFO_AM">AMProfileModule.ACTION_GET_ALARMINFO_AM("get_alarminfo_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARM_CLOCK_DETAIL">AMProfileModule.GET_ALARM_CLOCK_DETAIL("alarmclockdetail")</a></td><td>Alarm imformation array.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARM_ID_AM">AMProfileModule.GET_ALARM_ID_AM("alarmid")</a></td><td>Alarm clock id for each elemet in the array.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARM_TIME_AM">AMProfileModule.GET_ALARM_TIME_AM("time")</a></td><td>Alarm clock time for each elemet in the array.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARM_ISREPEAT_AM">AMProfileModule.GET_ALARM_ISREPEAT_AM("repeat")</a></td><td>true if the alarm will repeat as the week repeat information shows below.<br/>false will not repeat.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_AM">AMProfileModule.GET_ALARM_WEEK_AM("get_alarm_week")</a></td><td>Week repeat information, true if the alarm will repeat on specified day.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARM_ISON_AM">AMProfileModule.GET_ALARM_ISON_AM("switch")</a></td><td>true indicates the alarm is enabled.<br/>false indicates the alarm is disabled.</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_alarminfo_am",<br/>
+&nbsp; &nbsp; "alarmclockdetail": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "alarmid": 1,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "16:46",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "repeat": false,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "get_alarm_week": {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sun": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "mon": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "tue": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "wed": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "thu": false,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "fri": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sat": true<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "switch": false<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "alarmid": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "16:50",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "repeat": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "get_alarm_week": {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sun": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "mon": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "tue": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "wed": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "thu": false,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "fri": true,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sat": true<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "switch": true<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; ]<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALARMNUM_AM"><span class="type-signature">(static) </span>ACTION_GET_ALARMNUM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get alarm number successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_ALARMNUM_AM">AMProfileModule.ACTION_GET_ALARMNUM_AM("get_alarmnum_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARMNUM_AM">AMProfileModule.GET_ALARMNUM_AM("alarmclocknumber")</a></td><td>Alarm clock count</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_ALARMNUM_ID_AM">AMProfileModule.GET_ALARMNUM_ID_AM("alarmclocknumberid")</a></td><td>Alarm clock id array, e.g. [1, 2, 3]</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_alarmnum_am",<br/>
+&nbsp; &nbsp; "alarmclocknumber": 2,<br/>
+&nbsp; &nbsp; "alarmclocknumberid": [1, 2]<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line167">line 167</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALL_CONNECTED_DEVICES"><span class="type-signature">(static) </span>ACTION_GET_ALL_CONNECTED_DEVICES<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates get all connected devices.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1385">line 1385</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_HOUR_MODE_AM"><span class="type-signature">(static) </span>ACTION_GET_HOUR_MODE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get hour mode successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_HOUR_MODE_AM">AMProfileModule.ACTION_GET_HOUR_MODE_AM("get_hour_mode_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_HOUR_MODE_AM">AMProfileModule.GET_HOUR_MODE_AM("hourtype")</a></td><td>The time mode.<br/><b>Value:</b><br/><ul><li><a href="module-AMProfileModule.html#.AM_SET_12_HOUR_MODE">AMProfileModule.AM_SET_12_HOUR_MODE(0)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_24_HOUR_MODE">AMProfileModule.AM_SET_24_HOUR_MODE(1)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE">AMProfileModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE(2)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_EUROPE_12_HOUR_MODE">AMProfileModule.AM_SET_EUROPE_12_HOUR_MODE(3)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE">AMProfileModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE(4)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_EUROPE_24_HOUR_MODE">AMProfileModule.AM_SET_EUROPE_24_HOUR_MODE(5)</a></li></ul></td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_hour_mode_am",<br/>
+&nbsp; &nbsp; "hourtype": 1<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line689">line 689</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_PICTURE_AM"><span class="type-signature">(static) </span>ACTION_GET_PICTURE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get picture successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_PICTURE_AM">AMProfileModule.ACTION_GET_PICTURE_AM("get_picture_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_PICTURE_AM">AMProfileModule.GET_PICTURE_AM("get_picture_am)</a></td><td>The picture index.<br/><b>Value:</b><br/><ul><li>0 indicates the frog picture.</li><li>1 indicates the default picture.</li></ul></td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_picture_am",<br/>
+&nbsp; &nbsp; "get_picture_am": 0<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line743">line 743</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_RANDOM_AM"><span class="type-signature">(static) </span>ACTION_GET_RANDOM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating send random number to AM device successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_RANDOM_AM">AMProfileModule.ACTION_GET_RANDOM_AM("get_random_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_RANDOM_AM">AMProfileModule.GET_RANDOM_AM("random")</a></td><td>The random number sent to device.<br/>The value will be a 6-long number decimal string.<br/><b>Value range:</b><br/>"000000"-"999999"</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_random_am",<br/>
+&nbsp; &nbsp; "random": "150305"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line657">line 657</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_SWIMINFO_AM"><span class="type-signature">(static) </span>ACTION_GET_SWIMINFO_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get swim parameters successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_SWIMINFO_AM">AMProfileModule.ACTION_GET_SWIMINFO_AM("get_swiminfo_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_SWIM_SWITCH_AM">AMProfileModule.GET_SWIM_SWITCH_AM("get_swim_switch_am")</a></td><td>Whether the swim function is open or not.<br/><b>Value:</b><br/><ul><li>0 indicates swim function closed</li><li>1/2 indicates swim function open</li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_SWIMLANE_LENGTH_AM">AMProfileModule.GET_SWIMLANE_LENGTH_AM("get_swimlane_length")</a></td><td>Swimming lane length.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_SWIM_CUTOUT_HOUR_AM">AMProfileModule.GET_SWIM_CUTOUT_HOUR_AM("get_swim_cutout_hour_am")</a></td><td>The hour part of cut out swim function.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_SWIM_CUTOUT_MINUTE_AM">AMProfileModule.GET_SWIM_CUTOUT_MINUTE_AM("get_swim_cutout_min_am")</a></td><td>The minute part of cut out swim function.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_SWIM_UNIT_AM">AMProfileModule.GET_SWIM_UNIT_AM("get_swim_unit_am")</a></td><td>The swim unit type.<br/><b>Value:</b><br/><ul><li><a href="module-AMProfileModule.html#.AM_SET_UNIT_METRIC">AMProfileModule.AM_SET_UNIT_METRIC(1)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_UNIT_IMPERIAL_STANDARD">AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)</a></li></ul></td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_swiminfo_am",<br/>
+&nbsp; &nbsp; "get_swim_switch_am": 1,<br/>
+&nbsp; &nbsp; "get_swimlane_length": 50,<br/>
+&nbsp; &nbsp; "get_swim_cutout_hour_am": 0,<br/>
+&nbsp; &nbsp; "get_swim_cutout_min_am": 30,<br/>
+&nbsp; &nbsp; "get_swim_unit_am": 0<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line625">line 625</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_USERINFO_AM"><span class="type-signature">(static) </span>ACTION_GET_USERINFO_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get user's information successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_GET_USERINFO_AM">AMProfileModule.ACTION_GET_USERINFO_AM("get_userinfo_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_AGE_AM">AMProfileModule.GET_USER_AGE_AM("age")</a></td><td>User's age.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_STEP_AM">AMProfileModule.GET_USER_STEP_AM("step")</a></td><td>User's step length.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_HEIGHT_AM">AMProfileModule.GET_USER_HEIGHT_AM("height")</a></td><td>User's height.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_SEX_AM">AMProfileModule.GET_USER_SEX_AM("gender")</a></td><td>User's gender.<br/><b>Value:</b><br/><ul><li><a href="module-AMProfileModule.html#.AM_SET_FEMALE">AMProfileModule.AM_SET_FEMALE(0)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_MALE">AMProfileModule.AM_SET_MALE(1)</a></li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_WEIGHT_AM">AMProfileModule.GET_USER_WEIGHT_AM("weight")</a></td><td>User's weight.<br/>The value is double type<br/><b>Value range:</b><br/>0.0-255.255(0xFF.0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_UNIT_AM">AMProfileModule.GET_USER_UNIT_AM("unit")</a></td><td>The unit type.<br/><b>Value:</b><br/><ul><li><a href="module-AMProfileModule.html#.AM_SET_UNIT_METRIC">AMProfileModule.AM_SET_UNIT_METRIC(1)</a></li><li><a href="module-AMProfileModule.html#.AM_SET_UNIT_IMPERIAL_STANDARD">AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)</a></li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_TARGET1_AM">AMProfileModule.GET_USER_TARGET1_AM("target1")</a></td><td>The the goal of max step number.<br/><b>Value range:</b><br/>0-4294967295(0xFFFFFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_TARGET2_AM">AMProfileModule.GET_USER_TARGET2_AM("target2")</a></td><td>The goal of middle step number.<br/><b>Value range:</b><br/>0-4294967295(0xFFFFFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_TARGET3_AM">AMProfileModule.GET_USER_TARGET3_AM("target3")</a></td><td>The goal of min step number.<br/><b>Value range:</b><br/>0-4294967295(0xFFFFFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.GET_USER_SWIMTARGET_AM">AMProfileModule.GET_USER_SWIMTARGET_AM("swim_target")</a></td><td>The goal of swim time(in minutes).<br/><b>Value range:</b><br/>0-15360(0xFF*60 + 60)</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "get_userinfo_am",<br/>
+&nbsp; &nbsp; "age": 29,<br/>
+&nbsp; &nbsp; "step": 80,<br/>
+&nbsp; &nbsp; "height": 177,<br/>
+&nbsp; &nbsp; "gender": 1,<br/>
+&nbsp; &nbsp; "weight": 65,<br/>
+&nbsp; &nbsp; "unit": 1,<br/>
+&nbsp; &nbsp; "target1": 2500,<br/>
+&nbsp; &nbsp; "target2": 1250,<br/>
+&nbsp; &nbsp; "target3": 625,<br/>
+&nbsp; &nbsp; "swim_target": 59<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line148">line 148</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_QUERY_STATE_AM"><span class="type-signature">(static) </span>ACTION_QUERY_STATE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get AM device state successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_QUERY_STATE_AM">AMProfileModule.ACTION_QUERY_STATE_AM("query_state_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.QUERY_STATE_AM">AMProfileModule.QUERY_STATE_AM("query_state")</a></td><td>The value of state information.<br/><b>Value:</b><br/><ul><li>0 indicates waist</li><li>1 indicates wrist</li><li>2 indicates sleep</li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.QUERY_BATTERY_AM">AMProfileModule.QUERY_BATTERY_AM("battery")</a></td><td>The value of battery level.<br/><b>Value range:</b><br/>0-10(10 indicates full)</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "query_state_am",<br/>
+&nbsp; &nbsp; "query_state": 1,<br/>
+&nbsp; &nbsp; "battery": 6<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line564">line 564</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_RESET_AM"><span class="type-signature">(static) </span>ACTION_RESET_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating reset AM device finish.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_RESET_AM</td></tr>
+<tr><td>AMProfileModule.RESET_AM</td><td>0 indicates reset failed.<br/>1 indicates reset successfully.</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "reset_am",<br/>
+&nbsp; &nbsp; "reset": 1<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_ACTIVITYREMIND_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_ACTIVITYREMIND_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set/unset activity remind successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_ACTIVITYREMIND_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_activityremind_success_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line284">line 284</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_ALARMINFO_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_ALARMINFO_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set/unset alarm successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_ALARMINFO_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_alarminfo_success_am",<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line235">line 235</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_BMR_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_BMR_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set user's basal metabolic rate successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_BMR_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_bmr_success_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line600">line 600</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_DEVICE_MODE_AM"><span class="type-signature">(static) </span>ACTION_SET_DEVICE_MODE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set device mode successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_DEVICE_MODE_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_device_mode_am",<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line704">line 704</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_HOUR_MODE_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_HOUR_MODE_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set hour mode successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_HOUR_MODE_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_hour_mode_success_am",<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line672">line 672</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_PICTURE_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_PICTURE_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set picture successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_SET_PICTURE_SUCCESS_AM">AMProfileModule.ACTION_SET_USERINFO_SUCCESS_AM("set_userinfo_success_am")</a></td></tr>
+</tbody>
+</table>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_picture_success_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line726">line 726</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_SWIMINFO_AM"><span class="type-signature">(static) </span>ACTION_SET_SWIMINFO_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set swim information successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_SWIMINFO_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_swiminfo_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line640">line 640</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_USERID_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_USERID_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set user's ID successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_USERID_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_userid_success_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SET_USERINFO_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SET_USERINFO_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating set user's information successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SET_USERINFO_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_userinfo_success_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNC_ACTIVITY_DATA_AM"><span class="type-signature">(static) </span>ACTION_SYNC_ACTIVITY_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get activity data successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_SYNC_ACTIVITY_DATA_AM">AMProfileModule.ACTION_SYNC_ACTIVITY_DATA_AM("sync_activity_data_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_ACTIVITY_DATA_AM">AMProfileModule.SYNC_ACTIVITY_DATA_AM("activity")</a></td><td>The whole activity data</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_ACTIVITY_EACH_DATA_AM">AMProfileModule.SYNC_ACTIVITY_EACH_DATA_AM("activity_each_data")</a></td><td>The whole data for every 5 min activity data</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_ACTIVITY_DATA_TIME_AM">AMProfileModule.SYNC_ACTIVITY_DATA_TIME_AM("time")</a></td><td>The time for every 5 min activity data.<br/><b>Value format: </b><br/>yyyy-MM-dd HH:mm:ss<br/><b>Example: </b><br/>2016-07-18 09:00:00</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_ACTIVITY_DATA_STEP_AM">AMProfileModule.SYNC_ACTIVITY_DATA_STEP_AM("step")</a></td><td>The step number for every 5 min activity data.<br/><b>Value range:</b><br/>0-4294967295(0xFFFFFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_ACTIVITY_DATA_CALORIE_AM">AMProfileModule.SYNC_ACTIVITY_DATA_CALORIE_AM("calorie")</a></td><td>The calorie for every 5 min activity data.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_ACTIVITY_DATA_STEP_LENGTH_AM">AMProfileModule.SYNC_ACTIVITY_DATA_STEP_LENGTH_AM("stepsize")</a></td><td>The step length for every 5 min activity data.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.DATAID">AMProfileModule.DATAID("dataID")</a></td><td>The MD5 hash of the data.</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "sync_activity_data_am",<br/>
+&nbsp; &nbsp; "activity": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "activity_each_data": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-18 09:00:00",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stepsize": 77,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "step": 1428,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 60,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "C7AAB9E0561836DB2DF1F3B6DFFE89CF"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-18 09:05:00",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stepsize": 77,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "step": 1492,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 62,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "7CC5AFB17BB1AA967EF00D224F727C12"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ]<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "activity_each_data": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-18 11:40:00",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stepsize": 77,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "step": 1868,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 72,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "DDC376F96B1245E1B5AD91BB5C57BC21"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-18 11:45:00",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stepsize": 77,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "step": 1884,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 73,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "544D49E3C5CAFC5B2D2D4076635A0ABA"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ]<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; ]<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line344">line 344</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNC_REAL_DATA_AM"><span class="type-signature">(static) </span>ACTION_SYNC_REAL_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get real time data successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_SYNC_REAL_DATA_AM">AMProfileModule.ACTION_SYNC_REAL_DATA_AM("sync_real_data_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_REAL_STEP_AM">AMProfileModule.SYNC_REAL_STEP_AM("step")</a></td><td>The real step count.<br/><b>Value range:</b><br/>0-4294967295(0xFFFFFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_REAL_CALORIE_AM">AMProfileModule.SYNC_REAL_CALORIE_AM("calorie")</a></td><td>The real calorie(not including BMR).<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_REAL_TOTALCALORIE_AM">AMProfileModule.SYNC_REAL_TOTALCALORIE_AM("totalcalories")</a></td><td>The real summary calorie(including BMR).<br/><b>Value range:</b><br/>0-65535 + BMR(0xFFFF + BMR)</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "sync_real_data_am",<br/>
+&nbsp; &nbsp; "step": 2771,<br/>
+&nbsp; &nbsp; "calorie": 151,<br/>
+&nbsp; &nbsp; "totalcalories": 1206<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line585">line 585</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNC_SLEEP_DATA_AM"><span class="type-signature">(static) </span>ACTION_SYNC_SLEEP_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get sleep data successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_SYNC_SLEEP_DATA_AM">AMProfileModule.ACTION_SYNC_SLEEP_DATA_AM("sync_sleep_data_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_SLEEP_DATA_AM">AMProfileModule.SYNC_SLEEP_DATA_AM("sleep")</a></td><td>The whole sleep data</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_SLEEP_EACH_DATA_AM">AMProfileModule.SYNC_SLEEP_EACH_DATA_AM("sleep_each_data")</a></td><td>The data array of each 5 minute.<br/><b>Value example:</b><br/>[<br/>&nbsp; &nbsp; {<br/>&nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-29 00:05:01",<br/>&nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>&nbsp; &nbsp; &nbsp; &nbsp; "dataID": "60D6048F3BFBA17CD7FD137E68CE29DD"<br/>&nbsp; &nbsp; },<br/>&nbsp; &nbsp; {<br/>&nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-29 00:10:01",<br/>&nbsp; &nbsp; &nbsp; &nbsp; "level": "0",<br/>&nbsp; &nbsp; &nbsp; &nbsp; "dataID": "1C0E2BBDE85C0D4C4E8895F98C9F6AC4"<br/>&nbsp; &nbsp; }<br/>]<br/></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_SLEEP_DATA_TIME_AM">AMProfileModule.SYNC_SLEEP_DATA_TIME_AM("time")</a></td><td>The time of each 5 minute's sleep.<br/><b>Value format:</b><br/>yyyy-MM-dd HH:mm:ss</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_SLEEP_DATA_LEVEL_AM">AMProfileModule.SYNC_SLEEP_DATA_LEVEL_AM("level")</a></td><td>The sleep level of each 5 minute.<br/><b>Value:</b><br/><ul><li>0 indicates awake</li><li>1 indicates light sleep</li><li>2 indicates deep sleep</li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.DATAID">AMProfileModule.DATAID("dataID")</a></td><td>The MD5 hash of the data.</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "sync_sleep_data_am",<br/>
+&nbsp; &nbsp; "sleep": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sleep_each_data": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-28 23:39:40",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "B278297A6DE0B28D3B317B5DC23F830A"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-28 23:44:40",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "DE4E5FAAA6CC79B53EECC8F833BA433E"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-28 23:49:40",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "B1855AC96F036CE7AA3384D5B00834B5"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-28 23:54:40",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "3DC6AC62CDCAC8BAF1FCA7A2B4FDCA38"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-28 23:59:40",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "0",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "FD8507F4B25F15B33513315FFF1BFA15"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ]<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sleep_each_data": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-29 00:05:01",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "60D6048F3BFBA17CD7FD137E68CE29DD"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-29 00:10:01",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "level": "0",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "1C0E2BBDE85C0D4C4E8895F98C9F6AC4"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ]<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; ]<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line409">line 409</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNC_STAGE_DATA_AM"><span class="type-signature">(static) </span>ACTION_SYNC_STAGE_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get stage data successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-AMProfileModule.html#.ACTION_SYNC_STAGE_DATA_AM">AMProfileModule.ACTION_SYNC_STAGE_DATA_AM("sync_stage_data_am")</a></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_AM">AMProfileModule.SYNC_STAGE_DATA_AM("stage_data")</a></td><td>The data array of the stage data.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_AM("type")</a></td><td>The type of stage report.<br/><b>Value:</b><br/><ul><li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_SWIM_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_SWIM_AM("swim")</a></li><li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_WORKOUT_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM("stage_data_type_workout")</a></li><li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_SLEEP_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM("sleep")</a></li><li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY">AMProfileModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY("page_view_summary")</a></li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_STOP_TIME_AM">AMProfileModule.SYNC_STAGE_DATA_STOP_TIME_AM("stoptime")</a></td><td>The stop time of stage report.<br/><b>Value format:</b><br/>yyyy-MM-dd HH:mm:ss</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_USED_TIME_AM">AMProfileModule.SYNC_STAGE_DATA_USED_TIME_AM("usedtime")</a></td><td>The time stage report used(in minutes)<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM">AMProfileModule.SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM("sleepefficiency")</a></td><td>The efficiency of sleep.<br/><b>Value range:</b><br/>0.0-100.0</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SLEEP_IS50MIN_AM">AMProfileModule.SYNC_STAGE_DATA_SLEEP_IS50MIN_AM("is50min")</a></td><td>Whether need to extend sleep 50 minutes or not.<br/><b>Value:</b><br/><ul><li>0 indicates not need to extend.</li><li>1 indicates need to extend.</li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM">AMProfileModule.SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM("number of strokes")</a></td><td>The arm pulling time of swim.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_CALORIE_AM">AMProfileModule.SYNC_STAGE_DATA_CALORIE_AM("calorie")</a></td><td>The calorie of the stage report.<br/><b>Value range:</b><br/>0-65535(0xFFFF).</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIM_STROKE_AM">AMProfileModule.SYNC_STAGE_DATA_SWIM_STROKE_AM("swimming stroke")</a></td><td>Swim stroke.<br/><b>Value:</b><br/><ul><li>0 indicates freestyle.</li><li>1 indicates breaststroke.</li><li>2 indicates backstroke.</li><li>5 indicates unknown.</li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIM_TURNS_AM">AMProfileModule.SYNC_STAGE_DATA_SWIM_TURNS_AM("number of turns")</a></td><td>The round number of swim.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM">AMProfileModule.SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM("stage_data_swimpool_length")</a></td><td>The length of the swimming pool.<br/><b>Value range:</b><br/>0-255(0xFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIM_CUTINDIF_AM">AMProfileModule.SYNC_STAGE_DATA_SWIM_CUTINDIF_AM("stage_data_cutindif")</a></td><td>The time of cut in swim and begin swim.(in minutes)<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM">AMProfileModule.SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM("stage_data_cutoutdif")</a></td><td>The time of cut out swim and end swim.(in minutes)<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM">AMProfileModule.SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM("stage_data_processflag")</a></td><td>The process flag of the swim.<br/><b>Value:</b><br/><ul><li>0 indicates swim in process.</li><li>1 indicates start of swimming.</li><li>2 indicates end of swimming.</li><li>3 indicates the swim is only a single round.</li></ul></td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_WORKOUT_STEP_AM">AMProfileModule.SYNC_STAGE_DATA_WORKOUT_STEP_AM("stage_data_workout_step")</a></td><td>The step number of work out.<br/><b>Value range:</b><br/>0-4294967295(0xFFFFFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_DISTANCE_AM">AMProfileModule.SYNC_STAGE_DATA_DISTANCE_AM("stage_data_distance")</a></td><td>The distance.<br/>It's string type<br/><b>Value format&range:</b><br/>"123.456"("0.0"-"255.255"(0xFF.0xFF))</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM("stage_data_view_summary_date")</a></td><td>The date of page view summary<br/><b>Value format:</b><br/>yyyy-MM-dd</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM("stage_data_view_summary_step")</a></td><td>The count that user view the step page.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM("stage_data_view_summary_distance")</a></td><td>The MD5 hash of the data.</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM("stage_data_view_summary_distance")</a></td><td>The count that user view the distance page.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM("stage_data_view_summary_calorie")</a></td><td>The count that user view the calorie page.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM("stage_data_view_summary_target")</a></td><td>The count that user view the activity target page.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM">AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM("stage_data_view_summary_swim")</a></td><td>The count that user view the swim summary page.<br/><b>Value range:</b><br/>0-65535(0xFFFF)</td></tr>
+<tr><td><a href="module-AMProfileModule.html#.DATAID">AMProfileModule.DATAID("dataID")</a></td><td>The MD5 hash of the data.</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "sync_stage_data_am",<br/>
+&nbsp; &nbsp; "stage_data": [<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "page_view_summary",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_view_summary_date": "2016-08-02",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_view_summary_step": 38,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_view_summary_distance": 13,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_view_summary_calorie": 5,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_view_summary_target": 1,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_view_summary_swim": 0<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "stage_data_type_workout",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-30 17:54:00",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 34,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_workout_step": 2257,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_distance": "1.73",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 63,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "5BC76712509E372168FCF2C4B30BAACB"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "sleep",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-30 23:54:00",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 95,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "sleepefficiency": 947,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "is50min": 1<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "swim",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-31 09:37:55",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 37,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of strokes": 12,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 1,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "swimming stroke": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of turns": 1,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_swimpool_length": 50,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutindif": 14,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutoutdif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_processflag": 1,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "F0323A2534E7506E6C063BD1DA42A882"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "swim",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-31 09:39:05",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 23,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of strokes": 19,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "swimming stroke": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of turns": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_swimpool_length": 50,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutindif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutoutdif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_processflag": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "6D309E2FBB447B50D332F6F5E55AC8DA"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "swim",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-31 09:40:43",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 23,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of strokes": 30,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 3,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "swimming stroke": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of turns": 3,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_swimpool_length": 50,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutindif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutoutdif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_processflag": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "C68D26A036D2BCBAD9AA62E3B956B0E7"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "swim",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-31 09:42:14",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 23,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of strokes": 38,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 4,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "swimming stroke": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of turns": 4,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_swimpool_length": 50,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutindif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutoutdif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_processflag": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "E823F5EBC035B20A90B2C999E5148806"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "type": "swim",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stoptime": "2016-07-31 09:44:55",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "usedtime": 23,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of strokes": 47,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "calorie": 5,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "swimming stroke": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "number of turns": 5,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_swimpool_length": 50,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutindif": 0,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_cutoutdif": 714,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "stage_data_processflag": 2,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "dataID": "002AA68A5DCD05F6595F769D9245E4F2"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; ]<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line545">line 545</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_SYNC_TIME_SUCCESS_AM"><span class="type-signature">(static) </span>ACTION_SYNC_TIME_SUCCESS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating send system time to AM device successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_SYNC_TIME_SUCCESS_AM</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "set_sync_time_success_am"<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line98">line 98</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_USERID_AM"><span class="type-signature">(static) </span>ACTION_USERID_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating get user's ID successfully.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td>AMProfileModule.ACTION_USERID_AM</td></tr>
+<tr><td>AMProfileModule.USERID_AM</td><td>User's ID</td></tr>
+</tbody>
+</table>
+<b>Example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "action": "userid_am",<br/>
+&nbsp; &nbsp; "userid": 123456<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_DEVICE_MODE_ACTIVITY"><span class="type-signature">(static) </span>AM_DEVICE_MODE_ACTIVITY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates device is activity mode.(1)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1358">line 1358</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_DEVICE_MODE_DRIVING"><span class="type-signature">(static) </span>AM_DEVICE_MODE_DRIVING<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates device is driving mode.(3)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1366">line 1366</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_DEVICE_MODE_FLIGHT"><span class="type-signature">(static) </span>AM_DEVICE_MODE_FLIGHT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates device is flight mode.(2)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1362">line 1362</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_DEVICE_MODE_SLEEP"><span class="type-signature">(static) </span>AM_DEVICE_MODE_SLEEP<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates device is sleep mode.(0)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1354">line 1354</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_12_HOUR_MODE"><span class="type-signature">(static) </span>AM_SET_12_HOUR_MODE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates whole world 12 hour mode(0)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1317">line 1317</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_24_HOUR_MODE"><span class="type-signature">(static) </span>AM_SET_24_HOUR_MODE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates whole world 24 hour mode(1)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1321">line 1321</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_EUROPE_12_HOUR_MODE"><span class="type-signature">(static) </span>AM_SET_EUROPE_12_HOUR_MODE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates Europe world 12 hour mode(3)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1325">line 1325</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_EUROPE_24_HOUR_MODE"><span class="type-signature">(static) </span>AM_SET_EUROPE_24_HOUR_MODE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates Europe world 24 hour mode(5)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1329">line 1329</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_EXCEPT_EUROPE_12_HOUR_MODE"><span class="type-signature">(static) </span>AM_SET_EXCEPT_EUROPE_12_HOUR_MODE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates except Europe world 12 hour mode(2)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1333">line 1333</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_EXCEPT_EUROPE_24_HOUR_MODE"><span class="type-signature">(static) </span>AM_SET_EXCEPT_EUROPE_24_HOUR_MODE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates except Europe world 24 hour mode(4)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1337">line 1337</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_FEMALE"><span class="type-signature">(static) </span>AM_SET_FEMALE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates female.(0)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1305">line 1305</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_MALE"><span class="type-signature">(static) </span>AM_SET_MALE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates male.(1)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1301">line 1301</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_UNIT_IMPERIAL_STANDARD"><span class="type-signature">(static) </span>AM_SET_UNIT_IMPERIAL_STANDARD<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates imperial standard unit type(miles/yard).(0)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1313">line 1313</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".AM_SET_UNIT_METRIC"><span class="type-signature">(static) </span>AM_SET_UNIT_METRIC<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The value indicates metric unit type(kilometre/metre).(1)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1309">line 1309</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATAID"><span class="type-signature">(static) </span>DATAID<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the MD5 hash of the data.("dataID")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1371">line 1371</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_DESCRIPTION_AM"><span class="type-signature">(static) </span>ERROR_DESCRIPTION_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of error description.("description")<br/>
+The value string will show the detail description of the error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line767">line 767</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_ID_ILLEGAL_ARGUMENT"><span class="type-signature">(static) </span>ERROR_ID_ILLEGAL_ARGUMENT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The error ID indicates parameter error(400).
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line758">line 758</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_ID_VERSION_NOT_SUPPORT"><span class="type-signature">(static) </span>ERROR_ID_VERSION_NOT_SUPPORT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The error ID indicates version not support error(402).
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line762">line 762</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_NUM_AM"><span class="type-signature">(static) </span>ERROR_NUM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of error ID number of AM device.<br/>
+<b>Value:</b>
+<ul>
+<li><a href="module-AMProfileModule.html#.ERROR_ID_ILLEGAL_ARGUMENT">AMProfileModule.ERROR_ID_ILLEGAL_ARGUMENT(400)</a> indicates parameter error.</li>
+<li><a href="module-AMProfileModule.html#.ERROR_ID_VERSION_NOT_SUPPORT">AMProfileModule.ERROR_ID_VERSION_NOT_SUPPORT(402)</a> indicates version not support error.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line754">line 754</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ACTIVITY_REMIND_ISON_AM"><span class="type-signature">(static) </span>GET_ACTIVITY_REMIND_ISON_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether activity reminder open or not.("switch")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>true indicates open</li>
+<li>false indicates not open</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line980">line 980</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ACTIVITY_REMIND_TIME_AM"><span class="type-signature">(static) </span>GET_ACTIVITY_REMIND_TIME_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of time of activity reminder.("time")<br/>
+<b>Value format:</b><br/>
+HH:mm
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line971">line 971</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_CLOCK_DETAIL"><span class="type-signature">(static) </span>GET_ALARM_CLOCK_DETAIL<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the whole alarm information.("alarmclockdetail")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line865">line 865</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_ID_AM"><span class="type-signature">(static) </span>GET_ALARM_ID_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the alarm id.("alarmid")<br/>
+Value should be 1, 2, 3.<br/>
+<b>Note:</b> If specified alarm not set yet, the result will not include the id.<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line871">line 871</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_ISON_AM"><span class="type-signature">(static) </span>GET_ALARM_ISON_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm is set/unset.("switch")
+<ul>
+<li>If the value is true, it indicates that it is set.</li>
+<li>If the value is false, it indicates that it is unset.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line965">line 965</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_ISREPEAT_AM"><span class="type-signature">(static) </span>GET_ALARM_ISREPEAT_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm repeat or not.("repeat")<br/>
+<ul>
+<li>If value is true, it indicates that alarm will repeat as following key's value:<br/>
+AMProfileModule.GET_ALARM_WEEK_AM
+</li>
+<li>If the value is false, it indicates that alarm will only play one time.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line887">line 887</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_TIME_AM"><span class="type-signature">(static) </span>GET_ALARM_TIME_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the alarm time.("time")<br/>
+<b>Value format:</b><br/>
+HH:mm
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line877">line 877</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of week repeat record.("get_alarm_week")<br/>
+It will contains 7 JSON key-values:
+<ul>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_SUNDAY_AM">AMProfileModule.GET_ALARM_WEEK_SUNDAY_AM("sun")</a></li>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_MONDAY_AM">AMProfileModule.GET_ALARM_WEEK_MONDAY_AM("mon")</a></li>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_TUESDAY_AM">AMProfileModule.GET_ALARM_WEEK_TUESDAY_AM("tue")</a></li>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_WEDNESDAY_AM">AMProfileModule.GET_ALARM_WEEK_WEDNESDAY_AM("wed")</a></li>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_THURSDAY_AM">AMProfileModule.GET_ALARM_WEEK_THURSDAY_AM("thu")</a></li>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_FRIDAY_AM">AMProfileModule.GET_ALARM_WEEK_FRIDAY_AM("fri")</a></li>
+<li><a href="module-AMProfileModule.html#.GET_ALARM_WEEK_SATURDAY_AM">AMProfileModule.GET_ALARM_WEEK_SATURDAY_AM("sat")</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line901">line 901</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_FRIDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_FRIDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Friday.("fri")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line949">line 949</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_MONDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_MONDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Monday.("mon")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line917">line 917</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_SATURDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_SATURDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Saturday.("sat")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line957">line 957</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_SUNDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_SUNDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Sunday.("sun")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line909">line 909</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_THURSDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_THURSDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Thursday.("thu")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line941">line 941</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_TUESDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_TUESDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Tuesday.("tue")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line925">line 925</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARM_WEEK_WEDNESDAY_AM"><span class="type-signature">(static) </span>GET_ALARM_WEEK_WEDNESDAY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether alarm should play on Wednesday.("wed")
+<ul>
+<li>If the value is true, it indicates that it should play.</li>
+<li>If the value is false, it indicates that it should NOT play.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line933">line 933</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARMNUM_AM"><span class="type-signature">(static) </span>GET_ALARMNUM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the alarms' count.("alarmclocknumber")<br/>
+<b>Value range:</b><br/>
+0-3(currently only support 3 alarms)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line855">line 855</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_ALARMNUM_ID_AM"><span class="type-signature">(static) </span>GET_ALARMNUM_ID_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the alarms's id array.("alarmclocknumberid")<br/>
+<b>Value:</b><br/>
+Integer array contains set alarms.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line861">line 861</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_HOUR_MODE_AM"><span class="type-signature">(static) </span>GET_HOUR_MODE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the time mdoe.<br/>
+<b>Value:</b><br/>
+<ul>
+<li><a href="module-AMProfileModule.html#.AM_SET_12_HOUR_MODE">AMProfileModule.AM_SET_12_HOUR_MODE(0)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_24_HOUR_MODE">AMProfileModule.AM_SET_24_HOUR_MODE(1)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE">AMProfileModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE(2)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_EUROPE_12_HOUR_MODE">AMProfileModule.AM_SET_EUROPE_12_HOUR_MODE(3)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE">AMProfileModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE(4)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_EUROPE_24_HOUR_MODE">AMProfileModule.AM_SET_EUROPE_24_HOUR_MODE(5)</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1350">line 1350</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_PICTURE_AM"><span class="type-signature">(static) </span>GET_PICTURE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the picture index.("get_picture_am")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates the frog picture.</li>
+<li>1 indicates the default picture.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1380">line 1380</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_RANDOM_AM"><span class="type-signature">(static) </span>GET_RANDOM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the random number sent to device.("random")<br/>
+The value will be a 6-long number decimal string.<br/>
+<b>Value range:</b><br/>
+"000000"-"999999"
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1293">line 1293</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_SWIM_CUTOUT_HOUR_AM"><span class="type-signature">(static) </span>GET_SWIM_CUTOUT_HOUR_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the hour part of cut out swim function.("get_swim_cutout_hour_am")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1271">line 1271</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_SWIM_CUTOUT_MINUTE_AM"><span class="type-signature">(static) </span>GET_SWIM_CUTOUT_MINUTE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the minute part of cut out swim function.("get_swim_cutout_min_am")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1277">line 1277</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_SWIM_SWITCH_AM"><span class="type-signature">(static) </span>GET_SWIM_SWITCH_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether the swim function is open or not.("get_swim_switch_am")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates swim function closed</li>
+<li>1/2 indicates swim function open</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1265">line 1265</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_SWIM_UNIT_AM"><span class="type-signature">(static) </span>GET_SWIM_UNIT_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of swim unit type.("get_swim_unit_am")<br/>
+<b>Value:</b><br/>
+<ul>
+<li><a href="module-AMProfileModule.html#.AM_SET_UNIT_METRIC">AMProfileModule.AM_SET_UNIT_METRIC(1)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_UNIT_IMPERIAL_STANDARD">AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1286">line 1286</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_SWIMLANE_LENGTH_AM"><span class="type-signature">(static) </span>GET_SWIMLANE_LENGTH_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of swimming lane length.("get_swimlane_length")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1256">line 1256</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_AGE_AM"><span class="type-signature">(static) </span>GET_USER_AGE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user's age.("age")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line788">line 788</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_HEIGHT_AM"><span class="type-signature">(static) </span>GET_USER_HEIGHT_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user's height.("height")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line800">line 800</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_SEX_AM"><span class="type-signature">(static) </span>GET_USER_SEX_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user's gender.("gender")<br/>
+<b>Value:</b><br/>
+<ul>
+<li><a href="module-AMProfileModule.html#.AM_SET_FEMALE">AMProfileModule.AM_SET_FEMALE(0)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_MALE">AMProfileModule.AM_SET_MALE(1)</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line809">line 809</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_STEP_AM"><span class="type-signature">(static) </span>GET_USER_STEP_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user's step length.("step")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line794">line 794</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_SWIMTARGET_AM"><span class="type-signature">(static) </span>GET_USER_SWIMTARGET_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the goal of swim time(in minutes).("swim_target")<br/>
+<b>Value range:</b><br/>
+0-15360(0xFF*60 + 60)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line849">line 849</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_TARGET1_AM"><span class="type-signature">(static) </span>GET_USER_TARGET1_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the goal of max step number.("target1")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line831">line 831</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_TARGET2_AM"><span class="type-signature">(static) </span>GET_USER_TARGET2_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the goal of middle step number.("target2")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line837">line 837</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_TARGET3_AM"><span class="type-signature">(static) </span>GET_USER_TARGET3_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the goal of min step number.("target3")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line843">line 843</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_UNIT_AM"><span class="type-signature">(static) </span>GET_USER_UNIT_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the unit type.<br/>
+<b>Value:</b><br/>
+<ul>
+<li><a href="module-AMProfileModule.html#.AM_SET_UNIT_METRIC">AMProfileModule.AM_SET_UNIT_METRIC(1)</a></li>
+<li><a href="module-AMProfileModule.html#.AM_SET_UNIT_IMPERIAL_STANDARD">AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line825">line 825</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_USER_WEIGHT_AM"><span class="type-signature">(static) </span>GET_USER_WEIGHT_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user's weight.("weight")<br/>
+The value is double type<br/>
+<b>Value range:</b><br/>
+0.0-255.255(0xFF.0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line816">line 816</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".QUERY_BATTERY_AM"><span class="type-signature">(static) </span>QUERY_BATTERY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of battery level.("battery")<br/>
+<b>Value range:</b><br/>
+0-10(10 indicates full)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1232">line 1232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".QUERY_STATE_AM"><span class="type-signature">(static) </span>QUERY_STATE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of state information.("query_state")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates waist</li>
+<li>1 indicates wrist</li>
+<li>2 indicates sleep</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1226">line 1226</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".RESET_AM"><span class="type-signature">(static) </span>RESET_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the reset result.("reset_am")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates reset failed.</li>
+<li>1 indicates reset successfully.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line776">line 776</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_ACTIVITY_DATA_AM"><span class="type-signature">(static) </span>SYNC_ACTIVITY_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the whole activity data.("activity")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line984">line 984</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_ACTIVITY_DATA_CALORIE_AM"><span class="type-signature">(static) </span>SYNC_ACTIVITY_DATA_CALORIE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the calorie for every 5 min activity data.("calorie")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1010">line 1010</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_ACTIVITY_DATA_STEP_AM"><span class="type-signature">(static) </span>SYNC_ACTIVITY_DATA_STEP_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the step number for every 5 min activity data.("step")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line998">line 998</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_ACTIVITY_DATA_STEP_LENGTH_AM"><span class="type-signature">(static) </span>SYNC_ACTIVITY_DATA_STEP_LENGTH_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the step length for every 5 min activity data.("stepsize")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1004">line 1004</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_ACTIVITY_DATA_TIME_AM"><span class="type-signature">(static) </span>SYNC_ACTIVITY_DATA_TIME_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the time for every 5 min activity data.("time")<br/>
+<b>Value format: </b><br/>
+yyyy-MM-dd HH:mm:ss<br/>
+<b>Example: </b><br/>
+2016-07-18 09:00:00
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line992">line 992</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_ACTIVITY_EACH_DATA_AM"><span class="type-signature">(static) </span>SYNC_ACTIVITY_EACH_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the whole data for every 5 min activity data.("activity_each_data")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1014">line 1014</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_REAL_CALORIE_AM"><span class="type-signature">(static) </span>SYNC_REAL_CALORIE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the real calorie(not including BMR).("calorie")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1244">line 1244</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_REAL_STEP_AM"><span class="type-signature">(static) </span>SYNC_REAL_STEP_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the real step count.("step")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1238">line 1238</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_REAL_TOTALCALORIE_AM"><span class="type-signature">(static) </span>SYNC_REAL_TOTALCALORIE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the real summary calorie(including BMR).("totalcalories")<br/>
+<b>Value range:</b><br/>
+0-65535 + BMR(0xFFFF + BMR)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1250">line 1250</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_SLEEP_DATA_AM"><span class="type-signature">(static) </span>SYNC_SLEEP_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the whole sleep data.("sleep")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1018">line 1018</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_SLEEP_DATA_LEVEL_AM"><span class="type-signature">(static) </span>SYNC_SLEEP_DATA_LEVEL_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the each 5 minute's sleep level.("level")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates awake</li>
+<li>1 indicates light sleep</li>
+<li>2 indicates deep sleep</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1034">line 1034</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_SLEEP_DATA_TIME_AM"><span class="type-signature">(static) </span>SYNC_SLEEP_DATA_TIME_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the each 5 minute's sleep time.("time")<br/>
+<b>Value format:</b><br/>
+yyyy-MM-dd HH:mm:ss
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1024">line 1024</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_SLEEP_EACH_DATA_AM"><span class="type-signature">(static) </span>SYNC_SLEEP_EACH_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the each 5 minute data array.("sleep_each_data")<br/>
+<b>Value example:</b><br/>
+[<br/>
+&nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-29 00:05:01",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; "level": "1",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; "dataID": "60D6048F3BFBA17CD7FD137E68CE29DD"<br/>
+&nbsp; &nbsp; },<br/>
+&nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; "time": "2016-07-29 00:10:01",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; "level": "0",<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; "dataID": "1C0E2BBDE85C0D4C4E8895F98C9F6AC4"<br/>
+&nbsp; &nbsp; }<br/>
+]<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1051">line 1051</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of data array of the stage data.("stage_data")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1055">line 1055</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_CALORIE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_CALORIE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the calorie.("calorie")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1113">line 1113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_DISTANCE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_DISTANCE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the distance.("stage_data_distance")<br/>
+It's string type<br/>
+<b>Value format&range:</b><br/>
+"123.456"("0.0"-"255.255"(0xFF.0xFF))
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1107">line 1107</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of sleep efficiency.("sleepefficiency")<br/>
+<b>Value range:</b><br/>
+0.0-100.0
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1119">line 1119</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SLEEP_IS50MIN_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SLEEP_IS50MIN_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of whether need to extend sleep 50 minutes or not.("is50min")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates not need to extend.</li>
+<li>1 indicates need to extend.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1128">line 1128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_STOP_TIME_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_STOP_TIME_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of stage report stop time.("stoptime")<br/>
+<b>Value format:</b><br/>
+yyyy-MM-dd HH:mm:ss
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1088">line 1088</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIM_CUTINDIF_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIM_CUTINDIF_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the time of cut in swim and begin swim(in minutes).("stage_data_cutindif")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1163">line 1163</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the time of cut out swim and end swim(in minutes).("stage_data_cutoutdif")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1169">line 1169</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the swim process flag.("stage_data_processflag")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates swim in process.</li>
+<li>1 indicates start of swimming.</li>
+<li>2 indicates end of swimming.</li>
+<li>3 indicates the swim is only a single round.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1180">line 1180</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of swim arm pulling time.("number of strokes")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1145">line 1145</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIM_STROKE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIM_STROKE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of swim stroke.("swimming stroke")<br/>
+<b>Value:</b><br/>
+<ul>
+<li>0 indicates freestyle.</li>
+<li>1 indicates breaststroke.</li>
+<li>2 indicates backstroke.</li>
+<li>5 indicates unknown.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1139">line 1139</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIM_TURNS_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIM_TURNS_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of swim round number.("number of turns")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1151">line 1151</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the swimming pool length.("stage_data_swimpool_length")<br/>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1157">line 1157</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_TYPE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_TYPE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the type of stage report.("type")<br/>
+<b>Value:</b><br/>
+<ul>
+<li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_SWIM_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_SWIM_AM("swim")</a></li>
+<li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_WORKOUT_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM("stage_data_type_workout")</a></li>
+<li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_SLEEP_AM">AMProfileModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM("sleep")</a></li>
+<li><a href="module-AMProfileModule.html#.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY">AMProfileModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY("page_view_summary")</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1066">line 1066</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Type of page view summary.("page_view_summary")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1082">line 1082</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_TYPE_SLEEP_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_TYPE_SLEEP_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Type of sleep.("sleep")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1074">line 1074</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_TYPE_SWIM_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_TYPE_SWIM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Type of swim.("swim")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1078">line 1078</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_TYPE_WORKOUT_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_TYPE_WORKOUT_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Type of work out.("stage_data_type_workout")
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1070">line 1070</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_USED_TIME_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_USED_TIME_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of stage report used time(in minutes).("usedtime")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1094">line 1094</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the count that user view the calorie page.("stage_data_view_summary_calorie")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1204">line 1204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the date of page view summary.("stage_data_view_summary_date")<br/>
+<b>Value format:</b><br/>
+yyyy-MM-dd
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1186">line 1186</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the count that user view the distance page.("stage_data_view_summary_distance")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1198">line 1198</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the count that user view the step page.("stage_data_view_summary_step")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1192">line 1192</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the count that user view the swim summary page.("stage_data_view_summary_swim")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1216">line 1216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the count that user view the activity target page.("stage_data_view_summary_target")<br/>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1210">line 1210</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SYNC_STAGE_DATA_WORKOUT_STEP_AM"><span class="type-signature">(static) </span>SYNC_STAGE_DATA_WORKOUT_STEP_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the step number of work out.("stage_data_workout_step")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line1100">line 1100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".USERID_AM"><span class="type-signature">(static) </span>USERID_AM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user's ID.("userid")<br/>
+<b>Value range:</b><br/>
+0-4294967295(0xFFFFFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AMProfileModule.js.html">AMProfileModule.js</a>, <a href="AMProfileModule.js.html#line782">line 782</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

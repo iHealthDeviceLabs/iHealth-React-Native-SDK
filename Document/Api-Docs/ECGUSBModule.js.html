@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ECGUSBModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ECGUSBModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.ECGUSBModule
+
+/**
+ * @module ECGUSBModule
+ */
+module.exports = {
+    /**
+     * Notify event type for ECG
+     */
+    Event_Notify: RCTModule.Event_Notify,
+
+
+    /**
+     * SyncTime.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If get successfully, following event will be emit:&lt;br/>
+     * {@link module:ECGUSBModule.Event_Notify ECGUSBModule.Event_Notify("event_notify_ecgusb")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:ECGProfileModule.ACTION_SYNCDATA_ECGUSB ECGProfileModule.ACTION_SYNCDATA_ECGUSB("ACTION_SYNCDATA_ECGUSB")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.ACTION_STARTSYNCDATA_ECGUSB ECGProfileModule.ACTION_STARTSYNCDATA_ECGUSB("ACTION_STARTSYNCDATA_ECGUSB")}&lt;/td>&lt;td>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.ACTION_SYNCDATAINFO_ECGUSB ECGProfileModule.ACTION_SYNCDATAINFO_ECGUSB("ACTION_SYNCDATAINFO_ECGUSB")}&lt;/td>&lt;td>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.DATAINFO ECGProfileModule.DATAINFO("DATAINFO")}&lt;/td>&lt;td>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.ACTION_FINISHSYNCDATA_ECGUSB ECGProfileModule.ACTION_FINISHSYNCDATA_ECGUSB("ACTION_FINISHSYNCDATA_ECGUSB")}&lt;/td>&lt;td>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.ACTION_SYNCDATAPROGRESS_ECGUSB ECGProfileModule.ACTION_SYNCDATAPROGRESS_ECGUSB("ACTION_SYNCDATAPROGRESS_ECGUSB")}&lt;/td>&lt;td>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.PROGRESS ECGProfileModule.PROGRESS("PROGRESS")}&lt;/td>&lt;td>
+     * &lt;/table>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(ECGProfileModule.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+
+     */
+    syncData: function () {
+        RCTModule.syncData()
+    },
+
+    /**
+     * deleteData.
+     * &lt;ul>
+     * &lt;li>This is an asynchronous call, it will return immediately.&lt;/li>
+     * &lt;li>If get successfully, following event will be emit:&lt;br/>
+     * {@link module:ECGUSBModule.Event_Notify ECGUSBModule.Event_Notify("event_notify_ecgusb")}&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:ECGProfileModule.ACTION_DELETEDATA_ECGUSB ECGProfileModule.ACTION_DELETEDATA_ECGUSB("ACTION_DELETEDATA_ECGUSB")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:ECGProfileModule.ACTION_DELETEDATA_ECGUSB ECGProfileModule.ACTION_DELETEDATA_ECGUSB("ACTION_DELETEDATA_ECGUSB")}&lt;/td>&lt;td>
+     * &lt;/table>
+     * &lt;li>
+     * Attention, if you want to be notified, it is mandatory to call following method before you call this method:&lt;br/>
+     * DeviceEventEmitter.addListener(ECGProfileModule.Event_Notify, function (e: Event){});
+     * &lt;/li>
+     * &lt;/ul>
+
+     */
+    deleteData: function () {
+        RCTModule.deleteData()
+    },
+     /**
+     * Get all connected ECG device
+     *
+     * e.g. {"devices":"A4D5783FB00C"}
+     */
+    getAllConnectedDevices: function () {
+        RCTModule.getAllConnectedDevices()
+    },
+    /**
+    * Get device idps info (only for android)
+    *
+    * e.g. {"firmwareversion":"1.2.6","serialnumber":"F26265594E00","modenumber":"ECG3 11070","hardwareversion":"3.1.0","manufacture":"iHealth","accessoryname":"ECG recorder","protocolstring":"com.jiuan.ECGV10"}
+    */
+   getIdps: function () {
+       RCTModule.getIdps()
+   },
+
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

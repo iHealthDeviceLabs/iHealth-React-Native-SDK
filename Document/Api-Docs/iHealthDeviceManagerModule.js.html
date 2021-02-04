@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: iHealthDeviceManagerModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: iHealthDeviceManagerModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.iHealthDeviceManagerModule
+
+/**
+ * @module iHealthDeviceManagerModule
+ */
+module.exports = {
+    //Device Type
+    /**
+     * Device type number for AM3S(2) 1 &lt;&lt; 1
+     */
+    AM3S: RCTModule.AM3S,
+    /**
+     * Device type number for AM4(4) 1 &lt;&lt; 2
+     */
+    AM4: RCTModule.AM4,
+    /**
+     * Device type number for PO3(8) 1 &lt;&lt; 3
+     */
+    PO3: RCTModule.PO3,
+    /**
+     * Device type number for BP5(33554432) 1 &lt;&lt; 25
+     */
+    BP5: RCTModule.BP5,
+    /**
+     * Device type number for BP3L(32) 1 &lt;&lt; 5
+     */
+    BP3L: RCTModule.BP3L,
+    /**
+     * Device type number for BP7S(16777216) 1 &lt;&lt; 24
+     */
+    BP7S: RCTModule.BP7S,
+    /**
+     * Device type number for Bp550BT(128) 1 &lt;&lt; 7
+     */
+    KN550: RCTModule.KN550,
+    /**
+     * Device type number for HS4S(268435456) 1 &lt;&lt; 28
+     */
+    HS4S: RCTModule.HS4S,
+    HS6: 10086,
+    /**
+     * Device type number for BG1(110)
+     */
+    BG1: RCTModule.BG1,
+    /**
+     * Device type number for BG5(4294967296) 1 &lt;&lt; 32
+     */
+    BG5: RCTModule.BG5,
+
+    ECG3: RCTModule.ECG3,
+
+    ECG3USB: RCTModule.ECG3USB,
+
+    BTM: RCTModule.BTM,
+
+    /**
+     * Notify event type for scan device result.("event_scan_device")
+     */
+    Event_Scan_Device: RCTModule.Event_Scan_Device,
+    /**
+     * Notify event type for scan action finish.("event_scan_finish")
+     */
+    Event_Scan_Finish: RCTModule.Event_Scan_Finish,
+    /**
+     * Notify event type for connect device successfully.("event_device_connected")
+     */
+    Event_Device_Connected: RCTModule.Event_Device_Connected,
+    /**
+     * Notify event type for connect device failed.("event_device_connect_failed")
+     */
+    Event_Device_Connect_Failed: RCTModule.Event_Device_Connect_Failed,
+    /**
+     * Notify event type for device disconnect.("event_device_disconnect")
+     */
+    Event_Device_Disconnect: RCTModule.Event_Device_Disconnect,
+    /**
+     * Notify event type for authenticate result.("event_authenticate_result")
+     */
+    Event_Authenticate_Result: RCTModule.Event_Authenticate_Result,
+
+
+    /**
+     * Authentication the configure information.
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Authenticate_Result) before call the api.
+     * @param {string} userName User's user name you use when you sign up
+     * @param {string} clientID User's client id.
+     * @param {string} clientSecret User's client secret.
+     * @return {callback} Callback with a json object. Eg.{"authen":2}
+     * &lt;p/>&lt;li/>The measurement via SDK will be operated in the case of 1-3, and there is 10-day tryout if SDK Verification failed in case of SDK cannot connect Internet or Userid/clientID/clientSecret verification failed or SDK has not been authorized or User has not been authorized.
+     * SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.The interface needs to be re-called after analyzing the return parameters. SDK application requires Internet connection.
+     * If you encounter user status 4 with full internet access, please send Userid/clientID/clientSecret to this email sdk@ihealthlabs.com.cn to get help.
+     * &lt;p/>
+     * The result value and description will be as below:
+     * &lt;table style="width:200px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Value&lt;/td>&lt;td>Description&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>1&lt;/td>&lt;td>New-user registration succeeded.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>2&lt;/td>&lt;td>User login succeeded.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>3&lt;/td>&lt;td>The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>4&lt;/td>&lt;td>Testing without Internet connection succeeded.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>5&lt;/td>&lt;td>Userid/clientID/clientSecret verification failed.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>6&lt;/td>&lt;td>SDK has not been authorized.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>7&lt;/td>&lt;td>User has not been authorized.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>8&lt;/td>&lt;td>Internet error, verification failed.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    authenConfigureInfo: function (userName, clientID, clientSecret) {
+        RCTModule.authenConfigureInfo(userName, clientID, clientSecret)
+    },
+    /**
+     * Authencation the appSecret
+     * @param {string} appSecret
+     * @return {callback} Callback with a boolen object. true:authencation success   false:authencation failed .&lt;br/>
+     */
+
+    authenAppSecret: function (appSecret, callback) {
+        RCTModule.authenAppSecret(appSecret, callback)
+    },
+
+    /**
+     * Start discovery iHealth device with type
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Scan_Device) before call the api.
+     *
+     * @param {number} type The type to be discovered.&lt;br/>
+     * e.g. startDiscovery(iHealthDeviceManagerModule.AM4) will discover AM4 devices.&lt;br/>
+     */
+    startDiscovery: function (type) {
+        RCTModule.startDiscovery(type)
+    },
+
+
+    /**
+     * Stop discovery iHealth device
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Scan_Finish) before call the api.
+     */
+    stopDiscovery: function () {
+        RCTModule.stopDiscovery()
+    },
+
+    /**
+     * Connect iHealth device
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Device_Connected or iHealthDeviceManagerModel.Event_Device_Connect_Failed) before call the api.
+     * @param {string} mac The mac address of device to be connected.&lt;br/>
+     * e.g. "004D3208D5D4"
+     * @param {string} type Device type string.
+     * @return {callback}  Callback with events {@link module:iHealthDeviceManagerModule.Event_Device_Connected Event_Device_Connected}
+     * or {@link module:iHealthDeviceManagerModule.Event_Device_Connect_Failed Event_Device_Connect_Failed}.
+     * And the mesage is format as {"errorid":0,"type":"BP5","mac":"8CDE52B62521"}
+     * &lt;p/>The key and value in the message will be as below:
+     * &lt;table style="width:200px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>errorid&lt;/td>&lt;td>This value is to reflect the state of the system when the connection fails. Normally, it's 0.
+     Please note, this field is different from the ErrorId of the DeviceProfileModule.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>type&lt;/td>&lt;td>The device type. Eg.BP5&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>mac&lt;/td>&lt;td>The mac address.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    connectDevice: function (mac, type) {
+        RCTModule.connectDevice(mac, type)
+    },
+
+    /**
+     * Connect BTM device
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Device_Connected or iHealthDeviceManagerModel.Event_Device_Connect_Failed) before call the api.
+     * @param {string} mac The mac address of device to be connected.&lt;br/>
+     * e.g. "004D3208D5D4"
+     * @param {string} type Device type string.
+     * @return {callback}  Callback with events {@link module:iHealthDeviceManagerModule.Event_Device_Connected Event_Device_Connected}
+     * or {@link module:iHealthDeviceManagerModule.Event_Device_Connect_Failed Event_Device_Connect_Failed}.
+     * And the mesage is format as {"errorid":0,"type":"BP5","mac":"8CDE52B62521"}
+     * &lt;p/>The key and value in the message will be as below:
+     * &lt;table style="width:200px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>errorid&lt;/td>&lt;td>This value is to reflect the state of the system when the connection fails. Normally, it's 0.
+     Please note, this field is different from the ErrorId of the DeviceProfileModule.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>username&lt;/td>&lt;td>the identification of the user, could be the form of email address or mobile phone&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>mac&lt;/td>&lt;td>a valid FDIR-V3 mac.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>type&lt;/td>&lt;td>TYPE_FDIR_V3&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>unit&lt;/td>&lt;td>Temperature unit.1: c 2: f&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>measureTarget&lt;/td>&lt;td>Measuring target.1: body 2: object&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>functionTarget&lt;/td>&lt;td>Offline target.1: offline 2: online&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>hour&lt;/td>&lt;td>Standby time hours. eg. 24&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>minute&lt;/td>&lt;td>Standby time minutes. eg.60&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>second&lt;/td>&lt;td>Standby time seconds. eg.60&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    connectTherm: function (username, mac, type, unit, measureTarget, functionTarget, hour, minute, second) {
+        RCTModule.connectTherm(username, mac, type, unit, measureTarget, functionTarget, hour, minute, second)
+    },
+
+
+    /**
+     * Get information for iHealth device
+     *
+     * @param {string} mac The mac address of device.&lt;br/>
+     * e.g. "004D3208D5D4"
+     * @return {callback} Callback with a map object.&lt;br/>
+     * e.g. {"protocolstring":"com.jiuan.AMV12","accessoryname":"AM4","firmwareversion":"138","hardwareversion":"100","manufacture":"iHealth","serialnumber":"004D32079148","modenumber":"AM4 11070"}
+     */
+    getDevicesIDPS: function (mac, callback) {
+        RCTModule.getDevicesIDPS(mac, callback)
+    },
+
+    /**
+     * [Only for android] Disconnect an iHealth device that has been connected or in connecting status.
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Device_Disconnect or iHealthDeviceManagerModel.Event_Device_Connect_Failed) before call the api.
+     * @param {string} mac The mac address of device to be connected or in connecting.&lt;br/>
+     * e.g. "004D3208D5D4"
+     * @param {string} type Device type string.
+     * @return {callback}  Callback with events {@link module:iHealthDeviceManagerModule.Event_Device_Disconnect Event_Device_Disconnect}
+     * or {@link module:iHealthDeviceManagerModule.Event_Device_Connect_Failed Event_Device_Connect_Failed}.
+     * And the mesage is format as {"errorid":0,"type":"BP5","mac":"8CDE52B62521"}
+     * &lt;p/>The key and value in the message will be as below:
+     * &lt;table style="width:200px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>errorid&lt;/td>&lt;td>This value is to reflect the state of the system when the connection fails. Normally, it's 0.
+     Please note, this field is different from the ErrorId of the DeviceProfileModule.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>type&lt;/td>&lt;td>The device type. Eg.BP5&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>mac&lt;/td>&lt;td>The mac address.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    disconnectDevice: function (mac, type) {
+        RCTModule.disconnectDevice(mac, type)
+    },
+
+    /**
+     * If you want to use the iHealth Device, you must first call authentication method before connect a device.
+     * To get a license, please refer to [iHealth Developer](https://dev.ihealthlabs.com).
+     * Attentation: Please register to receive event(iHealthDeviceManagerModel.Event_Authenticate_Result) before call the api.
+     * @param license The license file name is like 'com_example_android.pem'. Download the license file from the website, integrate to your native project.
+     * For android: should save the license file to the /assets/ folder.
+     * @return {callback} Callback with a json object. e.g. {"access": true}
+     */
+    sdkAuthWithLicense: function (license) {
+        RCTModule.sdkAuthWithLicense(license)
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

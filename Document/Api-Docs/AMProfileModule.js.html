@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: AMProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: AMProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by Jeepend on 15/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.AMProfileModule
+
+/**
+ * @module AMProfileModule
+ */
+module.exports = {
+    // Actions
+    /**
+     * The action value of event indicating the error of AM device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_ERROR_AM&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>AMProfileModule.ERROR_NUM_AM&lt;/td>&lt;td>AMProfileModule.ERROR_ID_ILLEGAL_ARGUMENT(400) indicates parameter error.&lt;br/>AMProfileModule.ERROR_ID_VERSION_NOT_SUPPORT(402) indicates version not support error.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>AMProfileModule.ERROR_DESCRIPTION_AM&lt;/td>&lt;td>Detailed description of the error&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "error_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "error": 400,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "description": "setAlarmClock() parameter min should be in the range [0, 59]."&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_ERROR_AM: RCTModule.ACTION_ERROR_AM,
+    /**
+     * The action value of event indicating reset AM device finish.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_RESET_AM&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>AMProfileModule.RESET_AM&lt;/td>&lt;td>0 indicates reset failed.&lt;br/>1 indicates reset successfully.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "reset_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "reset": 1&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_RESET_AM: RCTModule.ACTION_RESET_AM,
+    /**
+     * The action value of event indicating get user's ID successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_USERID_AM&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>AMProfileModule.USERID_AM&lt;/td>&lt;td>User's ID&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "userid_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "userid": 123456&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_USERID_AM: RCTModule.ACTION_USERID_AM,
+    /**
+     * The action value of event indicating set user's ID successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_USERID_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_userid_success_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_USERID_SUCCESS_AM: RCTModule.ACTION_SET_USERID_SUCCESS_AM,
+    /**
+     * The action value of event indicating send system time to AM device successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SYNC_TIME_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_sync_time_success_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SYNC_TIME_SUCCESS_AM: RCTModule.ACTION_SYNC_TIME_SUCCESS_AM,
+    /**
+     * The action value of event indicating set user's information successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_USERINFO_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_userinfo_success_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_USERINFO_SUCCESS_AM: RCTModule.ACTION_SET_USERINFO_SUCCESS_AM,
+    /**
+     * The action value of event indicating get user's information successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_USERINFO_AM AMProfileModule.ACTION_GET_USERINFO_AM("get_userinfo_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_AGE_AM AMProfileModule.GET_USER_AGE_AM("age")}&lt;/td>&lt;td>User's age.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_STEP_AM AMProfileModule.GET_USER_STEP_AM("step")}&lt;/td>&lt;td>User's step length.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_HEIGHT_AM AMProfileModule.GET_USER_HEIGHT_AM("height")}&lt;/td>&lt;td>User's height.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_SEX_AM AMProfileModule.GET_USER_SEX_AM("gender")}&lt;/td>&lt;td>User's gender.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>{@link module:AMProfileModule.AM_SET_FEMALE AMProfileModule.AM_SET_FEMALE(0)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_MALE AMProfileModule.AM_SET_MALE(1)}&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_WEIGHT_AM AMProfileModule.GET_USER_WEIGHT_AM("weight")}&lt;/td>&lt;td>User's weight.&lt;br/>The value is double type&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0.0-255.255(0xFF.0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_UNIT_AM AMProfileModule.GET_USER_UNIT_AM("unit")}&lt;/td>&lt;td>The unit type.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>{@link module:AMProfileModule.AM_SET_UNIT_METRIC AMProfileModule.AM_SET_UNIT_METRIC(1)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)}&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_TARGET1_AM AMProfileModule.GET_USER_TARGET1_AM("target1")}&lt;/td>&lt;td>The the goal of max step number.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-4294967295(0xFFFFFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_TARGET2_AM AMProfileModule.GET_USER_TARGET2_AM("target2")}&lt;/td>&lt;td>The goal of middle step number.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-4294967295(0xFFFFFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_TARGET3_AM AMProfileModule.GET_USER_TARGET3_AM("target3")}&lt;/td>&lt;td>The goal of min step number.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-4294967295(0xFFFFFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_USER_SWIMTARGET_AM AMProfileModule.GET_USER_SWIMTARGET_AM("swim_target")}&lt;/td>&lt;td>The goal of swim time(in minutes).&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-15360(0xFF*60 + 60)&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_userinfo_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "age": 29,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "step": 80,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "height": 177,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "gender": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "weight": 65,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "unit": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "target1": 2500,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "target2": 1250,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "target3": 625,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "swim_target": 59&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_USERINFO_AM: RCTModule.ACTION_GET_USERINFO_AM,
+    /**
+     * The action value of event indicating get alarm number successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_ALARMNUM_AM AMProfileModule.ACTION_GET_ALARMNUM_AM("get_alarmnum_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARMNUM_AM AMProfileModule.GET_ALARMNUM_AM("alarmclocknumber")}&lt;/td>&lt;td>Alarm clock count&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARMNUM_ID_AM AMProfileModule.GET_ALARMNUM_ID_AM("alarmclocknumberid")}&lt;/td>&lt;td>Alarm clock id array, e.g. [1, 2, 3]&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_alarmnum_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "alarmclocknumber": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "alarmclocknumberid": [1, 2]&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_ALARMNUM_AM: RCTModule.ACTION_GET_ALARMNUM_AM,
+    /**
+     * The action value of event indicating get alarm information successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_ALARMINFO_AM AMProfileModule.ACTION_GET_ALARMINFO_AM("get_alarminfo_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARM_CLOCK_DETAIL AMProfileModule.GET_ALARM_CLOCK_DETAIL("alarmclockdetail")}&lt;/td>&lt;td>Alarm imformation array.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARM_ID_AM AMProfileModule.GET_ALARM_ID_AM("alarmid")}&lt;/td>&lt;td>Alarm clock id for each elemet in the array.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARM_TIME_AM AMProfileModule.GET_ALARM_TIME_AM("time")}&lt;/td>&lt;td>Alarm clock time for each elemet in the array.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARM_ISREPEAT_AM AMProfileModule.GET_ALARM_ISREPEAT_AM("repeat")}&lt;/td>&lt;td>true if the alarm will repeat as the week repeat information shows below.&lt;br/>false will not repeat.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARM_WEEK_AM AMProfileModule.GET_ALARM_WEEK_AM("get_alarm_week")}&lt;/td>&lt;td>Week repeat information, true if the alarm will repeat on specified day.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ALARM_ISON_AM AMProfileModule.GET_ALARM_ISON_AM("switch")}&lt;/td>&lt;td>true indicates the alarm is enabled.&lt;br/>false indicates the alarm is disabled.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_alarminfo_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "alarmclockdetail": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "alarmid": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "16:46",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "repeat": false,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "get_alarm_week": {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sun": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "mon": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "tue": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "wed": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "thu": false,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "fri": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sat": true&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "switch": false&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "alarmid": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "16:50",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "repeat": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "get_alarm_week": {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sun": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "mon": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "tue": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "wed": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "thu": false,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "fri": true,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sat": true&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "switch": true&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_ALARMINFO_AM: RCTModule.ACTION_GET_ALARMINFO_AM,
+    /**
+     * The action value of event indicating set/unset alarm successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_ALARMINFO_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_alarminfo_success_am",&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_ALARMINFO_SUCCESS_AM: RCTModule.ACTION_SET_ALARMINFO_SUCCESS_AM,
+    /**
+     * The action value of event indicating delete alarm successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_DELETE_ALARM_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "delete_alarm_success_am",&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_DELETE_ALARM_SUCCESS_AM: RCTModule.ACTION_DELETE_ALARM_SUCCESS_AM,
+    /**
+     * The action value of event indicating get activity remind information successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_ACTIVITY_REMIND_AM AMProfileModule.ACTION_GET_ACTIVITY_REMIND_AM("get_activity_remind_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ACTIVITY_REMIND_TIME_AM AMProfileModule.GET_ACTIVITY_REMIND_TIME_AM("time")}&lt;/td>&lt;td>The time of activity reminder&lt;br/>&lt;b>Value format:&lt;/b>&lt;br/>HH:mm&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_ACTIVITY_REMIND_ISON_AM AMProfileModule.GET_ACTIVITY_REMIND_ISON_AM("switch")}&lt;/td>&lt;td>Whether activity reminder open or not.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_activity_remind_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "time": "01:20",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "switch": true&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_ACTIVITY_REMIND_AM: RCTModule.ACTION_GET_ACTIVITY_REMIND_AM,
+    /**
+     * The action value of event indicating set/unset activity remind successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_ACTIVITYREMIND_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_activityremind_success_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_ACTIVITYREMIND_SUCCESS_AM: RCTModule.ACTION_SET_ACTIVITYREMIND_SUCCESS_AM,
+    /**
+     * The action value of event indicating get activity data successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_SYNC_ACTIVITY_DATA_AM AMProfileModule.ACTION_SYNC_ACTIVITY_DATA_AM("sync_activity_data_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_ACTIVITY_DATA_AM AMProfileModule.SYNC_ACTIVITY_DATA_AM("activity")}&lt;/td>&lt;td>The whole activity data&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_ACTIVITY_EACH_DATA_AM AMProfileModule.SYNC_ACTIVITY_EACH_DATA_AM("activity_each_data")}&lt;/td>&lt;td>The whole data for every 5 min activity data&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_ACTIVITY_DATA_TIME_AM AMProfileModule.SYNC_ACTIVITY_DATA_TIME_AM("time")}&lt;/td>&lt;td>The time for every 5 min activity data.&lt;br/>&lt;b>Value format: &lt;/b>&lt;br/>yyyy-MM-dd HH:mm:ss&lt;br/>&lt;b>Example: &lt;/b>&lt;br/>2016-07-18 09:00:00&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_ACTIVITY_DATA_STEP_AM AMProfileModule.SYNC_ACTIVITY_DATA_STEP_AM("step")}&lt;/td>&lt;td>The step number for every 5 min activity data.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-4294967295(0xFFFFFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_ACTIVITY_DATA_CALORIE_AM AMProfileModule.SYNC_ACTIVITY_DATA_CALORIE_AM("calorie")}&lt;/td>&lt;td>The calorie for every 5 min activity data.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_ACTIVITY_DATA_STEP_LENGTH_AM AMProfileModule.SYNC_ACTIVITY_DATA_STEP_LENGTH_AM("stepsize")}&lt;/td>&lt;td>The step length for every 5 min activity data.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.DATAID AMProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The MD5 hash of the data.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "sync_activity_data_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "activity": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "activity_each_data": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-18 09:00:00",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stepsize": 77,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "step": 1428,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 60,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "C7AAB9E0561836DB2DF1F3B6DFFE89CF"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-18 09:05:00",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stepsize": 77,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "step": 1492,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 62,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "7CC5AFB17BB1AA967EF00D224F727C12"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "activity_each_data": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-18 11:40:00",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stepsize": 77,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "step": 1868,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 72,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "DDC376F96B1245E1B5AD91BB5C57BC21"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-18 11:45:00",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stepsize": 77,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "step": 1884,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 73,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "544D49E3C5CAFC5B2D2D4076635A0ABA"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SYNC_ACTIVITY_DATA_AM: RCTModule.ACTION_SYNC_ACTIVITY_DATA_AM,
+    /**
+     * The action value of event indicating get sleep data successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_SYNC_SLEEP_DATA_AM AMProfileModule.ACTION_SYNC_SLEEP_DATA_AM("sync_sleep_data_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_SLEEP_DATA_AM AMProfileModule.SYNC_SLEEP_DATA_AM("sleep")}&lt;/td>&lt;td>The whole sleep data&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_SLEEP_EACH_DATA_AM AMProfileModule.SYNC_SLEEP_EACH_DATA_AM("sleep_each_data")}&lt;/td>&lt;td>The data array of each 5 minute.&lt;br/>&lt;b>Value example:&lt;/b>&lt;br/>[&lt;br/>&amp;nbsp; &amp;nbsp; {&lt;br/>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-29 00:05:01",&lt;br/>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "60D6048F3BFBA17CD7FD137E68CE29DD"&lt;br/>&amp;nbsp; &amp;nbsp; },&lt;br/>&amp;nbsp; &amp;nbsp; {&lt;br/>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-29 00:10:01",&lt;br/>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "0",&lt;br/>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "1C0E2BBDE85C0D4C4E8895F98C9F6AC4"&lt;br/>&amp;nbsp; &amp;nbsp; }&lt;br/>]&lt;br/>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_SLEEP_DATA_TIME_AM AMProfileModule.SYNC_SLEEP_DATA_TIME_AM("time")}&lt;/td>&lt;td>The time of each 5 minute's sleep.&lt;br/>&lt;b>Value format:&lt;/b>&lt;br/>yyyy-MM-dd HH:mm:ss&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_SLEEP_DATA_LEVEL_AM AMProfileModule.SYNC_SLEEP_DATA_LEVEL_AM("level")}&lt;/td>&lt;td>The sleep level of each 5 minute.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates awake&lt;/li>&lt;li>1 indicates light sleep&lt;/li>&lt;li>2 indicates deep sleep&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.DATAID AMProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The MD5 hash of the data.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "sync_sleep_data_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "sleep": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sleep_each_data": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-28 23:39:40",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "B278297A6DE0B28D3B317B5DC23F830A"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-28 23:44:40",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "DE4E5FAAA6CC79B53EECC8F833BA433E"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-28 23:49:40",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "B1855AC96F036CE7AA3384D5B00834B5"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-28 23:54:40",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "3DC6AC62CDCAC8BAF1FCA7A2B4FDCA38"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-28 23:59:40",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "0",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "FD8507F4B25F15B33513315FFF1BFA15"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sleep_each_data": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-29 00:05:01",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "60D6048F3BFBA17CD7FD137E68CE29DD"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-29 00:10:01",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "0",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "1C0E2BBDE85C0D4C4E8895F98C9F6AC4"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SYNC_SLEEP_DATA_AM: RCTModule.ACTION_SYNC_SLEEP_DATA_AM,
+    /**
+     * The action value of event indicating get stage data successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_SYNC_STAGE_DATA_AM AMProfileModule.ACTION_SYNC_STAGE_DATA_AM("sync_stage_data_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_AM AMProfileModule.SYNC_STAGE_DATA_AM("stage_data")}&lt;/td>&lt;td>The data array of the stage data.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_AM("type")}&lt;/td>&lt;td>The type of stage report.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_SWIM_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_SWIM_AM("swim")}&lt;/li>&lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM("stage_data_type_workout")}&lt;/li>&lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM("sleep")}&lt;/li>&lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY AMProfileModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY("page_view_summary")}&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_STOP_TIME_AM AMProfileModule.SYNC_STAGE_DATA_STOP_TIME_AM("stoptime")}&lt;/td>&lt;td>The stop time of stage report.&lt;br/>&lt;b>Value format:&lt;/b>&lt;br/>yyyy-MM-dd HH:mm:ss&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_USED_TIME_AM AMProfileModule.SYNC_STAGE_DATA_USED_TIME_AM("usedtime")}&lt;/td>&lt;td>The time stage report used(in minutes)&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM AMProfileModule.SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM("sleepefficiency")}&lt;/td>&lt;td>The efficiency of sleep.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0.0-100.0&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SLEEP_IS50MIN_AM AMProfileModule.SYNC_STAGE_DATA_SLEEP_IS50MIN_AM("is50min")}&lt;/td>&lt;td>Whether need to extend sleep 50 minutes or not.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates not need to extend.&lt;/li>&lt;li>1 indicates need to extend.&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM AMProfileModule.SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM("number of strokes")}&lt;/td>&lt;td>The arm pulling time of swim.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_CALORIE_AM AMProfileModule.SYNC_STAGE_DATA_CALORIE_AM("calorie")}&lt;/td>&lt;td>The calorie of the stage report.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF).&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIM_STROKE_AM AMProfileModule.SYNC_STAGE_DATA_SWIM_STROKE_AM("swimming stroke")}&lt;/td>&lt;td>Swim stroke.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates freestyle.&lt;/li>&lt;li>1 indicates breaststroke.&lt;/li>&lt;li>2 indicates backstroke.&lt;/li>&lt;li>5 indicates unknown.&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIM_TURNS_AM AMProfileModule.SYNC_STAGE_DATA_SWIM_TURNS_AM("number of turns")}&lt;/td>&lt;td>The round number of swim.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM AMProfileModule.SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM("stage_data_swimpool_length")}&lt;/td>&lt;td>The length of the swimming pool.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIM_CUTINDIF_AM AMProfileModule.SYNC_STAGE_DATA_SWIM_CUTINDIF_AM("stage_data_cutindif")}&lt;/td>&lt;td>The time of cut in swim and begin swim.(in minutes)&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM AMProfileModule.SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM("stage_data_cutoutdif")}&lt;/td>&lt;td>The time of cut out swim and end swim.(in minutes)&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM AMProfileModule.SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM("stage_data_processflag")}&lt;/td>&lt;td>The process flag of the swim.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates swim in process.&lt;/li>&lt;li>1 indicates start of swimming.&lt;/li>&lt;li>2 indicates end of swimming.&lt;/li>&lt;li>3 indicates the swim is only a single round.&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_WORKOUT_STEP_AM AMProfileModule.SYNC_STAGE_DATA_WORKOUT_STEP_AM("stage_data_workout_step")}&lt;/td>&lt;td>The step number of work out.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-4294967295(0xFFFFFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_DISTANCE_AM AMProfileModule.SYNC_STAGE_DATA_DISTANCE_AM("stage_data_distance")}&lt;/td>&lt;td>The distance.&lt;br/>It's string type&lt;br/>&lt;b>Value format&amp;range:&lt;/b>&lt;br/>"123.456"("0.0"-"255.255"(0xFF.0xFF))&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM("stage_data_view_summary_date")}&lt;/td>&lt;td>The date of page view summary&lt;br/>&lt;b>Value format:&lt;/b>&lt;br/>yyyy-MM-dd&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM("stage_data_view_summary_step")}&lt;/td>&lt;td>The count that user view the step page.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM("stage_data_view_summary_distance")}&lt;/td>&lt;td>The MD5 hash of the data.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM("stage_data_view_summary_distance")}&lt;/td>&lt;td>The count that user view the distance page.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM("stage_data_view_summary_calorie")}&lt;/td>&lt;td>The count that user view the calorie page.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM("stage_data_view_summary_target")}&lt;/td>&lt;td>The count that user view the activity target page.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM AMProfileModule.SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM("stage_data_view_summary_swim")}&lt;/td>&lt;td>The count that user view the swim summary page.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.DATAID AMProfileModule.DATAID("dataID")}&lt;/td>&lt;td>The MD5 hash of the data.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "sync_stage_data_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "stage_data": [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "page_view_summary",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_view_summary_date": "2016-08-02",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_view_summary_step": 38,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_view_summary_distance": 13,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_view_summary_calorie": 5,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_view_summary_target": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_view_summary_swim": 0&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "stage_data_type_workout",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-30 17:54:00",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 34,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_workout_step": 2257,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_distance": "1.73",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 63,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "5BC76712509E372168FCF2C4B30BAACB"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "sleep",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-30 23:54:00",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 95,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sleepefficiency": 947,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "is50min": 1&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "swim",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-31 09:37:55",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 37,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of strokes": 12,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "swimming stroke": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of turns": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_swimpool_length": 50,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutindif": 14,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutoutdif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_processflag": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "F0323A2534E7506E6C063BD1DA42A882"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "swim",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-31 09:39:05",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 23,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of strokes": 19,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "swimming stroke": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of turns": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_swimpool_length": 50,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutindif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutoutdif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_processflag": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "6D309E2FBB447B50D332F6F5E55AC8DA"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "swim",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-31 09:40:43",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 23,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of strokes": 30,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 3,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "swimming stroke": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of turns": 3,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_swimpool_length": 50,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutindif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutoutdif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_processflag": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "C68D26A036D2BCBAD9AA62E3B956B0E7"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "swim",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-31 09:42:14",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 23,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of strokes": 38,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 4,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "swimming stroke": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of turns": 4,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_swimpool_length": 50,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutindif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutoutdif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_processflag": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "E823F5EBC035B20A90B2C999E5148806"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "type": "swim",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stoptime": "2016-07-31 09:44:55",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "usedtime": 23,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of strokes": 47,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "calorie": 5,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "swimming stroke": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "number of turns": 5,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_swimpool_length": 50,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutindif": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_cutoutdif": 714,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "stage_data_processflag": 2,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "002AA68A5DCD05F6595F769D9245E4F2"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SYNC_STAGE_DATA_AM: RCTModule.ACTION_SYNC_STAGE_DATA_AM,
+    /**
+     * The action value of event indicating get AM device state successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_QUERY_STATE_AM AMProfileModule.ACTION_QUERY_STATE_AM("query_state_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.QUERY_STATE_AM AMProfileModule.QUERY_STATE_AM("query_state")}&lt;/td>&lt;td>The value of state information.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates waist&lt;/li>&lt;li>1 indicates wrist&lt;/li>&lt;li>2 indicates sleep&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.QUERY_BATTERY_AM AMProfileModule.QUERY_BATTERY_AM("battery")}&lt;/td>&lt;td>The value of battery level.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-10(10 indicates full)&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "query_state_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "query_state": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "battery": 6&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_QUERY_STATE_AM: RCTModule.ACTION_QUERY_STATE_AM,
+    /**
+     * The action value of event indicating get real time data successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_SYNC_REAL_DATA_AM AMProfileModule.ACTION_SYNC_REAL_DATA_AM("sync_real_data_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_REAL_STEP_AM AMProfileModule.SYNC_REAL_STEP_AM("step")}&lt;/td>&lt;td>The real step count.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-4294967295(0xFFFFFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_REAL_CALORIE_AM AMProfileModule.SYNC_REAL_CALORIE_AM("calorie")}&lt;/td>&lt;td>The real calorie(not including BMR).&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535(0xFFFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.SYNC_REAL_TOTALCALORIE_AM AMProfileModule.SYNC_REAL_TOTALCALORIE_AM("totalcalories")}&lt;/td>&lt;td>The real summary calorie(including BMR).&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-65535 + BMR(0xFFFF + BMR)&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "sync_real_data_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "step": 2771,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "calorie": 151,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "totalcalories": 1206&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SYNC_REAL_DATA_AM: RCTModule.ACTION_SYNC_REAL_DATA_AM,
+    /**
+     * The action value of event indicating set user's basal metabolic rate successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_BMR_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_bmr_success_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_BMR_SUCCESS_AM: RCTModule.ACTION_SET_BMR_SUCCESS_AM,
+    /**
+     * The action value of event indicating get swim parameters successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_SWIMINFO_AM AMProfileModule.ACTION_GET_SWIMINFO_AM("get_swiminfo_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_SWIM_SWITCH_AM AMProfileModule.GET_SWIM_SWITCH_AM("get_swim_switch_am")}&lt;/td>&lt;td>Whether the swim function is open or not.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates swim function closed&lt;/li>&lt;li>1/2 indicates swim function open&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_SWIMLANE_LENGTH_AM AMProfileModule.GET_SWIMLANE_LENGTH_AM("get_swimlane_length")}&lt;/td>&lt;td>Swimming lane length.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_SWIM_CUTOUT_HOUR_AM AMProfileModule.GET_SWIM_CUTOUT_HOUR_AM("get_swim_cutout_hour_am")}&lt;/td>&lt;td>The hour part of cut out swim function.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_SWIM_CUTOUT_MINUTE_AM AMProfileModule.GET_SWIM_CUTOUT_MINUTE_AM("get_swim_cutout_min_am")}&lt;/td>&lt;td>The minute part of cut out swim function.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>0-255(0xFF)&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_SWIM_UNIT_AM AMProfileModule.GET_SWIM_UNIT_AM("get_swim_unit_am")}&lt;/td>&lt;td>The swim unit type.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>{@link module:AMProfileModule.AM_SET_UNIT_METRIC AMProfileModule.AM_SET_UNIT_METRIC(1)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)}&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_swiminfo_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "get_swim_switch_am": 1,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "get_swimlane_length": 50,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "get_swim_cutout_hour_am": 0,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "get_swim_cutout_min_am": 30,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "get_swim_unit_am": 0&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_SWIMINFO_AM: RCTModule.ACTION_GET_SWIMINFO_AM,
+    /**
+     * The action value of event indicating set swim information successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_SWIMINFO_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_swiminfo_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_SWIMINFO_AM: RCTModule.ACTION_SET_SWIMINFO_AM,
+    /**
+     * The action value of event indicating send random number to AM device successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_RANDOM_AM AMProfileModule.ACTION_GET_RANDOM_AM("get_random_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_RANDOM_AM AMProfileModule.GET_RANDOM_AM("random")}&lt;/td>&lt;td>The random number sent to device.&lt;br/>The value will be a 6-long number decimal string.&lt;br/>&lt;b>Value range:&lt;/b>&lt;br/>"000000"-"999999"&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_random_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "random": "150305"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_RANDOM_AM: RCTModule.ACTION_GET_RANDOM_AM,
+    /**
+     * The action value of event indicating set hour mode successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_HOUR_MODE_SUCCESS_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_hour_mode_success_am",&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_HOUR_MODE_SUCCESS_AM: RCTModule.ACTION_SET_HOUR_MODE_SUCCESS_AM,
+    /**
+     * The action value of event indicating get hour mode successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_HOUR_MODE_AM AMProfileModule.ACTION_GET_HOUR_MODE_AM("get_hour_mode_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_HOUR_MODE_AM AMProfileModule.GET_HOUR_MODE_AM("hourtype")}&lt;/td>&lt;td>The time mode.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>{@link module:AMProfileModule.AM_SET_12_HOUR_MODE AMProfileModule.AM_SET_12_HOUR_MODE(0)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_24_HOUR_MODE AMProfileModule.AM_SET_24_HOUR_MODE(1)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE AMProfileModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE(2)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_EUROPE_12_HOUR_MODE AMProfileModule.AM_SET_EUROPE_12_HOUR_MODE(3)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE AMProfileModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE(4)}&lt;/li>&lt;li>{@link module:AMProfileModule.AM_SET_EUROPE_24_HOUR_MODE AMProfileModule.AM_SET_EUROPE_24_HOUR_MODE(5)}&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_hour_mode_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "hourtype": 1&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_HOUR_MODE_AM: RCTModule.ACTION_GET_HOUR_MODE_AM,
+    /**
+     * The action value of event indicating set device mode successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>AMProfileModule.ACTION_SET_DEVICE_MODE_AM&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_device_mode_am",&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_DEVICE_MODE_AM: RCTModule.ACTION_SET_DEVICE_MODE_AM,
+    ACTION_CLOUD_BINDING_AM_SUCCESS: RCTModule.ACTION_CLOUD_BINDING_AM_SUCCESS,
+    ACTION_CLOUD_BINDING_AM_FAIL: RCTModule.ACTION_CLOUD_BINDING_AM_FAIL,
+    ACTION_CLOUD_UNBINDING_AM_SUCCESS: RCTModule.ACTION_CLOUD_UNBINDING_AM_SUCCESS,
+    ACTION_CLOUD_UNBINDING_AM_FAIL: RCTModule.ACTION_CLOUD_UNBINDING_AM_FAIL,
+    ACTION_CLOUD_SEARCH_AM: RCTModule.ACTION_CLOUD_SEARCH_AM,
+    ACTION_CLOUD_SEARCH_FAIL_AM: RCTModule.ACTION_CLOUD_SEARCH_FAIL_AM,
+    /**
+     * The action value of event indicating set picture successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_SET_PICTURE_SUCCESS_AM AMProfileModule.ACTION_SET_USERINFO_SUCCESS_AM("set_userinfo_success_am")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "set_picture_success_am"&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_SET_PICTURE_SUCCESS_AM: RCTModule.ACTION_SET_PICTURE_SUCCESS_AM,
+    /**
+     * The action value of event indicating get picture successfully.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:AMProfileModule.ACTION_GET_PICTURE_AM AMProfileModule.ACTION_GET_PICTURE_AM("get_picture_am")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:AMProfileModule.GET_PICTURE_AM AMProfileModule.GET_PICTURE_AM("get_picture_am)}&lt;/td>&lt;td>The picture index.&lt;br/>&lt;b>Value:&lt;/b>&lt;br/>&lt;ul>&lt;li>0 indicates the frog picture.&lt;/li>&lt;li>1 indicates the default picture.&lt;/li>&lt;/ul>&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>Example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "action": "get_picture_am",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "get_picture_am": 0&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_GET_PICTURE_AM: RCTModule.ACTION_GET_PICTURE_AM,
+
+    // Keys:
+    /**
+     * The key of error ID number of AM device.&lt;br/>
+     * &lt;b>Value:&lt;/b>
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.ERROR_ID_ILLEGAL_ARGUMENT AMProfileModule.ERROR_ID_ILLEGAL_ARGUMENT(400)} indicates parameter error.&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.ERROR_ID_VERSION_NOT_SUPPORT AMProfileModule.ERROR_ID_VERSION_NOT_SUPPORT(402)} indicates version not support error.&lt;/li>
+     * &lt;/ul>
+     */
+    ERROR_NUM_AM: RCTModule.ERROR_NUM_AM,
+    /**
+     * The error ID indicates parameter error(400).
+     */
+    ERROR_ID_ILLEGAL_ARGUMENT: RCTModule.ERROR_ID_ILLEGAL_ARGUMENT,
+    /**
+     * The error ID indicates version not support error(402).
+     */
+    ERROR_ID_VERSION_NOT_SUPPORT: RCTModule.ERROR_ID_VERSION_NOT_SUPPORT,
+    /**
+     * The key of error description.("description")&lt;br/>
+     * The value string will show the detail description of the error.
+     */
+    ERROR_DESCRIPTION_AM: RCTModule.ERROR_DESCRIPTION_AM,
+    /**
+     * The key of the reset result.("reset_am")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates reset failed.&lt;/li>
+     * &lt;li>1 indicates reset successfully.&lt;/li>
+     * &lt;/ul>
+     */
+    RESET_AM: RCTModule.RESET_AM,
+    /**
+     * The key of the user's ID.("userid")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    USERID_AM: RCTModule.USERID_AM,
+    /**
+     * The key of the user's age.("age")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    GET_USER_AGE_AM: RCTModule.GET_USER_AGE_AM,
+    /**
+     * The key of the user's step length.("step")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    GET_USER_STEP_AM: RCTModule.GET_USER_STEP_AM,
+    /**
+     * The key of the user's height.("height")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    GET_USER_HEIGHT_AM: RCTModule.GET_USER_HEIGHT_AM,
+    /**
+     * The key of the user's gender.("gender")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_FEMALE AMProfileModule.AM_SET_FEMALE(0)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_MALE AMProfileModule.AM_SET_MALE(1)}&lt;/li>
+     * &lt;/ul>
+     */
+    GET_USER_SEX_AM: RCTModule.GET_USER_SEX_AM,
+    /**
+     * The key of the user's weight.("weight")&lt;br/>
+     * The value is double type&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-255.255(0xFF.0xFF)
+     */
+    GET_USER_WEIGHT_AM: RCTModule.GET_USER_WEIGHT_AM,
+    /**
+     * The key of the unit type.&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_UNIT_METRIC AMProfileModule.AM_SET_UNIT_METRIC(1)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)}&lt;/li>
+     * &lt;/ul>
+     */
+    GET_USER_UNIT_AM: RCTModule.GET_USER_UNIT_AM,
+    /**
+     * The key of the goal of max step number.("target1")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    GET_USER_TARGET1_AM: RCTModule.GET_USER_TARGET1_AM,
+    /**
+     * The key of the goal of middle step number.("target2")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    GET_USER_TARGET2_AM: RCTModule.GET_USER_TARGET2_AM,
+    /**
+     * The key of the goal of min step number.("target3")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    GET_USER_TARGET3_AM: RCTModule.GET_USER_TARGET3_AM,
+    /**
+     * The key of the goal of swim time(in minutes).("swim_target")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-15360(0xFF*60 + 60)
+     */
+    GET_USER_SWIMTARGET_AM: RCTModule.GET_USER_SWIMTARGET_AM,
+    /**
+     * The key of the alarms' count.("alarmclocknumber")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-3(currently only support 3 alarms)
+     */
+    GET_ALARMNUM_AM: RCTModule.GET_ALARMNUM_AM,
+    /**
+     * The key of the alarms's id array.("alarmclocknumberid")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * Integer array contains set alarms.
+     */
+    GET_ALARMNUM_ID_AM: RCTModule.GET_ALARMNUM_ID_AM,
+    /**
+     * The key of the whole alarm information.("alarmclockdetail")
+     */
+    GET_ALARM_CLOCK_DETAIL: RCTModule.GET_ALARM_CLOCK_DETAIL,
+    /**
+     * The key of the alarm id.("alarmid")&lt;br/>
+     * Value should be 1, 2, 3.&lt;br/>
+     * &lt;b>Note:&lt;/b> If specified alarm not set yet, the result will not include the id.&lt;br/>
+     */
+    GET_ALARM_ID_AM: RCTModule.GET_ALARM_ID_AM,
+    /**
+     * The key of the alarm time.("time")&lt;br/>
+     * &lt;b>Value format:&lt;/b>&lt;br/>
+     * HH:mm
+     */
+    GET_ALARM_TIME_AM: RCTModule.GET_ALARM_TIME_AM,
+    /**
+     * The key of whether alarm repeat or not.("repeat")&lt;br/>
+     * &lt;ul>
+     * &lt;li>If value is true, it indicates that alarm will repeat as following key's value:&lt;br/>
+     * AMProfileModule.GET_ALARM_WEEK_AM
+     * &lt;/li>
+     * &lt;li>If the value is false, it indicates that alarm will only play one time.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_ISREPEAT_AM: RCTModule.GET_ALARM_ISREPEAT_AM,
+    /**
+     * The key of week repeat record.("get_alarm_week")&lt;br/>
+     * It will contains 7 JSON key-values:
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_SUNDAY_AM AMProfileModule.GET_ALARM_WEEK_SUNDAY_AM("sun")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_MONDAY_AM AMProfileModule.GET_ALARM_WEEK_MONDAY_AM("mon")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_TUESDAY_AM AMProfileModule.GET_ALARM_WEEK_TUESDAY_AM("tue")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_WEDNESDAY_AM AMProfileModule.GET_ALARM_WEEK_WEDNESDAY_AM("wed")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_THURSDAY_AM AMProfileModule.GET_ALARM_WEEK_THURSDAY_AM("thu")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_FRIDAY_AM AMProfileModule.GET_ALARM_WEEK_FRIDAY_AM("fri")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.GET_ALARM_WEEK_SATURDAY_AM AMProfileModule.GET_ALARM_WEEK_SATURDAY_AM("sat")}&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_AM: RCTModule.GET_ALARM_WEEK_AM,
+    /**
+     * The key of whether alarm should play on Sunday.("sun")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_SUNDAY_AM: RCTModule.GET_ALARM_WEEK_SUNDAY_AM,
+    /**
+     * The key of whether alarm should play on Monday.("mon")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_MONDAY_AM: RCTModule.GET_ALARM_WEEK_MONDAY_AM,
+    /**
+     * The key of whether alarm should play on Tuesday.("tue")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_TUESDAY_AM: RCTModule.GET_ALARM_WEEK_TUESDAY_AM,
+    /**
+     * The key of whether alarm should play on Wednesday.("wed")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_WEDNESDAY_AM: RCTModule.GET_ALARM_WEEK_WEDNESDAY_AM,
+    /**
+     * The key of whether alarm should play on Thursday.("thu")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_THURSDAY_AM: RCTModule.GET_ALARM_WEEK_THURSDAY_AM,
+    /**
+     * The key of whether alarm should play on Friday.("fri")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_FRIDAY_AM: RCTModule.GET_ALARM_WEEK_FRIDAY_AM,
+    /**
+     * The key of whether alarm should play on Saturday.("sat")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it should play.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it should NOT play.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_WEEK_SATURDAY_AM: RCTModule.GET_ALARM_WEEK_SATURDAY_AM,
+    /**
+     * The key of whether alarm is set/unset.("switch")
+     * &lt;ul>
+     * &lt;li>If the value is true, it indicates that it is set.&lt;/li>
+     * &lt;li>If the value is false, it indicates that it is unset.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ALARM_ISON_AM: RCTModule.GET_ALARM_ISON_AM,
+    /**
+     * The key of time of activity reminder.("time")&lt;br/>
+     * &lt;b>Value format:&lt;/b>&lt;br/>
+     * HH:mm
+     */
+    GET_ACTIVITY_REMIND_TIME_AM: RCTModule.GET_ACTIVITY_REMIND_TIME_AM,
+    /**
+     * The key of whether activity reminder open or not.("switch")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>true indicates open&lt;/li>
+     * &lt;li>false indicates not open&lt;/li>
+     * &lt;/ul>
+     */
+    GET_ACTIVITY_REMIND_ISON_AM: RCTModule.GET_ACTIVITY_REMIND_ISON_AM,
+    /**
+     * The key of the whole activity data.("activity")
+     */
+    SYNC_ACTIVITY_DATA_AM: RCTModule.SYNC_ACTIVITY_DATA_AM,
+    /**
+     * The key of the time for every 5 min activity data.("time")&lt;br/>
+     * &lt;b>Value format: &lt;/b>&lt;br/>
+     * yyyy-MM-dd HH:mm:ss&lt;br/>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * 2016-07-18 09:00:00
+     */
+    SYNC_ACTIVITY_DATA_TIME_AM: RCTModule.SYNC_ACTIVITY_DATA_TIME_AM,
+    /**
+     * The key of the step number for every 5 min activity data.("step")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    SYNC_ACTIVITY_DATA_STEP_AM: RCTModule.SYNC_ACTIVITY_DATA_STEP_AM,
+    /**
+     * The key of the step length for every 5 min activity data.("stepsize")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    SYNC_ACTIVITY_DATA_STEP_LENGTH_AM: RCTModule.SYNC_ACTIVITY_DATA_STEP_LENGTH_AM,
+    /**
+     * The key of the calorie for every 5 min activity data.("calorie")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_ACTIVITY_DATA_CALORIE_AM: RCTModule.SYNC_ACTIVITY_DATA_CALORIE_AM,
+    /**
+     * The key of the whole data for every 5 min activity data.("activity_each_data")
+     */
+    SYNC_ACTIVITY_EACH_DATA_AM: RCTModule.SYNC_ACTIVITY_EACH_DATA_AM,
+    /**
+     * The key of the whole sleep data.("sleep")
+     */
+    SYNC_SLEEP_DATA_AM: RCTModule.SYNC_SLEEP_DATA_AM,
+    /**
+     * The key of the each 5 minute's sleep time.("time")&lt;br/>
+     * &lt;b>Value format:&lt;/b>&lt;br/>
+     * yyyy-MM-dd HH:mm:ss
+     */
+    SYNC_SLEEP_DATA_TIME_AM: RCTModule.SYNC_SLEEP_DATA_TIME_AM,
+    /**
+     * The key of the each 5 minute's sleep level.("level")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates awake&lt;/li>
+     * &lt;li>1 indicates light sleep&lt;/li>
+     * &lt;li>2 indicates deep sleep&lt;/li>
+     * &lt;/ul>
+     */
+    SYNC_SLEEP_DATA_LEVEL_AM: RCTModule.SYNC_SLEEP_DATA_LEVEL_AM,
+    /**
+     * The key of the each 5 minute data array.("sleep_each_data")&lt;br/>
+     * &lt;b>Value example:&lt;/b>&lt;br/>
+     * [&lt;br/>
+     * &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-29 00:05:01",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "1",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "60D6048F3BFBA17CD7FD137E68CE29DD"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; },&lt;br/>
+     * &amp;nbsp; &amp;nbsp; {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-29 00:10:01",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "level": "0",&lt;br/>
+     * &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID": "1C0E2BBDE85C0D4C4E8895F98C9F6AC4"&lt;br/>
+     * &amp;nbsp; &amp;nbsp; }&lt;br/>
+     * ]&lt;br/>
+     */
+    SYNC_SLEEP_EACH_DATA_AM: RCTModule.SYNC_SLEEP_EACH_DATA_AM,
+    /**
+     * The key of data array of the stage data.("stage_data")
+     */
+    SYNC_STAGE_DATA_AM: RCTModule.SYNC_STAGE_DATA_AM,
+    /**
+     * The key of the type of stage report.("type")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_SWIM_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_SWIM_AM("swim")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM("stage_data_type_workout")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM AMProfileModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM("sleep")}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY AMProfileModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY("page_view_summary")}&lt;/li>
+     * &lt;/ul>
+     */
+    SYNC_STAGE_DATA_TYPE_AM: RCTModule.SYNC_STAGE_DATA_TYPE_AM,
+    /**
+     * Type of work out.("stage_data_type_workout")
+     */
+    SYNC_STAGE_DATA_TYPE_WORKOUT_AM: RCTModule.SYNC_STAGE_DATA_TYPE_WORKOUT_AM,
+    /**
+     * Type of sleep.("sleep")
+     */
+    SYNC_STAGE_DATA_TYPE_SLEEP_AM: RCTModule.SYNC_STAGE_DATA_TYPE_SLEEP_AM,
+    /**
+     * Type of swim.("swim")
+     */
+    SYNC_STAGE_DATA_TYPE_SWIM_AM: RCTModule.SYNC_STAGE_DATA_TYPE_SWIM_AM,
+    /**
+     * Type of page view summary.("page_view_summary")
+     */
+    SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY: RCTModule.SYNC_STAGE_DATA_TYPE_PAGE_VIEW_SUMMARY,
+    /**
+     * The key of stage report stop time.("stoptime")&lt;br/>
+     * &lt;b>Value format:&lt;/b>&lt;br/>
+     * yyyy-MM-dd HH:mm:ss
+     */
+    SYNC_STAGE_DATA_STOP_TIME_AM: RCTModule.SYNC_STAGE_DATA_STOP_TIME_AM,
+    /**
+     * The key of stage report used time(in minutes).("usedtime")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_USED_TIME_AM: RCTModule.SYNC_STAGE_DATA_USED_TIME_AM,
+    /**
+     * The key of the step number of work out.("stage_data_workout_step")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    SYNC_STAGE_DATA_WORKOUT_STEP_AM: RCTModule.SYNC_STAGE_DATA_WORKOUT_STEP_AM,
+    /**
+     * The key of the distance.("stage_data_distance")&lt;br/>
+     * It's string type&lt;br/>
+     * &lt;b>Value format&amp;range:&lt;/b>&lt;br/>
+     * "123.456"("0.0"-"255.255"(0xFF.0xFF))
+     */
+    SYNC_STAGE_DATA_DISTANCE_AM: RCTModule.SYNC_STAGE_DATA_DISTANCE_AM,
+    /**
+     * The key of the calorie.("calorie")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_CALORIE_AM: RCTModule.SYNC_STAGE_DATA_CALORIE_AM,
+    /**
+     * The key of sleep efficiency.("sleepefficiency")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0.0-100.0
+     */
+    SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM: RCTModule.SYNC_STAGE_DATA_SLEEP_EFFICIENCY_AM,
+    /**
+     * The key of whether need to extend sleep 50 minutes or not.("is50min")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates not need to extend.&lt;/li>
+     * &lt;li>1 indicates need to extend.&lt;/li>
+     * &lt;/ul>
+     */
+    SYNC_STAGE_DATA_SLEEP_IS50MIN_AM: RCTModule.SYNC_STAGE_DATA_SLEEP_IS50MIN_AM,
+    /**
+     * The key of swim stroke.("swimming stroke")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates freestyle.&lt;/li>
+     * &lt;li>1 indicates breaststroke.&lt;/li>
+     * &lt;li>2 indicates backstroke.&lt;/li>
+     * &lt;li>5 indicates unknown.&lt;/li>
+     * &lt;/ul>
+     */
+    SYNC_STAGE_DATA_SWIM_STROKE_AM: RCTModule.SYNC_STAGE_DATA_SWIM_STROKE_AM,
+    /**
+     * The key of swim arm pulling time.("number of strokes")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM: RCTModule.SYNC_STAGE_DATA_SWIM_PULL_TIMES_AM,
+    /**
+     * The key of swim round number.("number of turns")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    SYNC_STAGE_DATA_SWIM_TURNS_AM: RCTModule.SYNC_STAGE_DATA_SWIM_TURNS_AM,
+    /**
+     * The key of the swimming pool length.("stage_data_swimpool_length")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM: RCTModule.SYNC_STAGE_DATA_SWIMPOOL_LENGTH_AM,
+    /**
+     * The key of the time of cut in swim and begin swim(in minutes).("stage_data_cutindif")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_SWIM_CUTINDIF_AM: RCTModule.SYNC_STAGE_DATA_SWIM_CUTINDIF_AM,
+    /**
+     * The key of the time of cut out swim and end swim(in minutes).("stage_data_cutoutdif")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM: RCTModule.SYNC_STAGE_DATA_SWIM_CUTOUTDIF_AM,
+    /**
+     * The key of the swim process flag.("stage_data_processflag")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates swim in process.&lt;/li>
+     * &lt;li>1 indicates start of swimming.&lt;/li>
+     * &lt;li>2 indicates end of swimming.&lt;/li>
+     * &lt;li>3 indicates the swim is only a single round.&lt;/li>
+     * &lt;/ul>
+     */
+    SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM: RCTModule.SYNC_STAGE_DATA_SWIM_PROCESSFLAG_AM,
+    /**
+     * The key of the date of page view summary.("stage_data_view_summary_date")&lt;br/>
+     * &lt;b>Value format:&lt;/b>&lt;br/>
+     * yyyy-MM-dd
+     */
+    SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM: RCTModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DATE_AM,
+    /**
+     * The key of the count that user view the step page.("stage_data_view_summary_step")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM: RCTModule.SYNC_STAGE_DATA_VIEW_SUMMARY_STEP_AM,
+    /**
+     * The key of the count that user view the distance page.("stage_data_view_summary_distance")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM: RCTModule.SYNC_STAGE_DATA_VIEW_SUMMARY_DISTANCE_AM,
+    /**
+     * The key of the count that user view the calorie page.("stage_data_view_summary_calorie")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM: RCTModule.SYNC_STAGE_DATA_VIEW_SUMMARY_CALORIE_AM,
+    /**
+     * The key of the count that user view the activity target page.("stage_data_view_summary_target")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM: RCTModule.SYNC_STAGE_DATA_VIEW_SUMMARY_TARGET_AM,
+    /**
+     * The key of the count that user view the swim summary page.("stage_data_view_summary_swim")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM: RCTModule.SYNC_STAGE_DATA_VIEW_SUMMARY_SWIM_AM,
+    /**
+     * The key of state information.("query_state")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates waist&lt;/li>
+     * &lt;li>1 indicates wrist&lt;/li>
+     * &lt;li>2 indicates sleep&lt;/li>
+     * &lt;/ul>
+     */
+    QUERY_STATE_AM: RCTModule.QUERY_STATE_AM,
+    /**
+     * The key of battery level.("battery")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-10(10 indicates full)
+     */
+    QUERY_BATTERY_AM: RCTModule.QUERY_BATTERY_AM,
+    /**
+     * The key of the real step count.("step")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-4294967295(0xFFFFFFFF)
+     */
+    SYNC_REAL_STEP_AM: RCTModule.SYNC_REAL_STEP_AM,
+    /**
+     * The key of the real calorie(not including BMR).("calorie")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535(0xFFFF)
+     */
+    SYNC_REAL_CALORIE_AM: RCTModule.SYNC_REAL_CALORIE_AM,
+    /**
+     * The key of the real summary calorie(including BMR).("totalcalories")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-65535 + BMR(0xFFFF + BMR)
+     */
+    SYNC_REAL_TOTALCALORIE_AM: RCTModule.SYNC_REAL_TOTALCALORIE_AM,
+    /**
+     * The key of swimming lane length.("get_swimlane_length")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    GET_SWIMLANE_LENGTH_AM: RCTModule.GET_SWIMLANE_LENGTH_AM,
+    /**
+     * The key of whether the swim function is open or not.("get_swim_switch_am")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates swim function closed&lt;/li>
+     * &lt;li>1/2 indicates swim function open&lt;/li>
+     * &lt;/ul>
+     */
+    GET_SWIM_SWITCH_AM: RCTModule.GET_SWIM_SWITCH_AM,
+    /**
+     * The key of the hour part of cut out swim function.("get_swim_cutout_hour_am")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    GET_SWIM_CUTOUT_HOUR_AM: RCTModule.GET_SWIM_CUTOUT_HOUR_AM,
+    /**
+     * The key of the minute part of cut out swim function.("get_swim_cutout_min_am")&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255(0xFF)
+     */
+    GET_SWIM_CUTOUT_MINUTE_AM: RCTModule.GET_SWIM_CUTOUT_MINUTE_AM,
+    /**
+     * The key of swim unit type.("get_swim_unit_am")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_UNIT_METRIC AMProfileModule.AM_SET_UNIT_METRIC(1)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD AMProfileModule.AM_SET_UNIT_IMPERIAL_STANDARD(0)}&lt;/li>
+     * &lt;/ul>
+     */
+    GET_SWIM_UNIT_AM: RCTModule.GET_SWIM_UNIT_AM,
+    /**
+     * The key of the random number sent to device.("random")&lt;br/>
+     * The value will be a 6-long number decimal string.&lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * "000000"-"999999"
+     */
+    GET_RANDOM_AM: RCTModule.GET_RANDOM_AM,
+    AM_SWITCH_OPEN: RCTModule.AM_SWITCH_OPEN,
+    AM_SWITCH_CLOSE: RCTModule.AM_SWITCH_CLOSE,
+    AM_SWITCH_REPEAT: RCTModule.AM_SWITCH_REPEAT,
+    AM_SEITCH_NOT_REPEAT: RCTModule.AM_SEITCH_NOT_REPEAT,
+    /**
+     * The value indicates male.(1)
+     */
+    AM_SET_MALE: RCTModule.AM_SET_MALE,
+    /**
+     * The value indicates female.(0)
+     */
+    AM_SET_FEMALE: RCTModule.AM_SET_FEMALE,
+    /**
+     * The value indicates metric unit type(kilometre/metre).(1)
+     */
+    AM_SET_UNIT_METRIC: RCTModule.AM_SET_UNIT_METRIC,
+    /**
+     * The value indicates imperial standard unit type(miles/yard).(0)
+     */
+    AM_SET_UNIT_IMPERIAL_STANDARD: RCTModule.AM_SET_UNIT_IMPERIAL_STANDARD,
+    /**
+     * The value indicates whole world 12 hour mode(0)
+     */
+    AM_SET_12_HOUR_MODE: RCTModule.AM_SET_12_HOUR_MODE,
+    /**
+     * The value indicates whole world 24 hour mode(1)
+     */
+    AM_SET_24_HOUR_MODE: RCTModule.AM_SET_24_HOUR_MODE,
+    /**
+     * The value indicates Europe world 12 hour mode(3)
+     */
+    AM_SET_EUROPE_12_HOUR_MODE: RCTModule.AM_SET_EUROPE_12_HOUR_MODE,
+    /**
+     * The value indicates Europe world 24 hour mode(5)
+     */
+    AM_SET_EUROPE_24_HOUR_MODE: RCTModule.AM_SET_EUROPE_24_HOUR_MODE,
+    /**
+     * The value indicates except Europe world 12 hour mode(2)
+     */
+    AM_SET_EXCEPT_EUROPE_12_HOUR_MODE: RCTModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE,
+    /**
+     * The value indicates except Europe world 24 hour mode(4)
+     */
+    AM_SET_EXCEPT_EUROPE_24_HOUR_MODE: RCTModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE,
+    /**
+     * The key of the time mdoe.&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_12_HOUR_MODE AMProfileModule.AM_SET_12_HOUR_MODE(0)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_24_HOUR_MODE AMProfileModule.AM_SET_24_HOUR_MODE(1)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE AMProfileModule.AM_SET_EXCEPT_EUROPE_12_HOUR_MODE(2)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_EUROPE_12_HOUR_MODE AMProfileModule.AM_SET_EUROPE_12_HOUR_MODE(3)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE AMProfileModule.AM_SET_EXCEPT_EUROPE_24_HOUR_MODE(4)}&lt;/li>
+     * &lt;li>{@link module:AMProfileModule.AM_SET_EUROPE_24_HOUR_MODE AMProfileModule.AM_SET_EUROPE_24_HOUR_MODE(5)}&lt;/li>
+     * &lt;/ul>
+     */
+    GET_HOUR_MODE_AM: RCTModule.GET_HOUR_MODE_AM,
+    /**
+     * Indicates device is sleep mode.(0)
+     */
+    AM_DEVICE_MODE_SLEEP: RCTModule.AM_DEVICE_MODE_SLEEP,
+    /**
+     * Indicates device is activity mode.(1)
+     */
+    AM_DEVICE_MODE_ACTIVITY: RCTModule.AM_DEVICE_MODE_ACTIVITY,
+    /**
+     * Indicates device is flight mode.(2)
+     */
+    AM_DEVICE_MODE_FLIGHT: RCTModule.AM_DEVICE_MODE_FLIGHT,
+    /**
+     * Indicates device is driving mode.(3)
+     */
+    AM_DEVICE_MODE_DRIVING: RCTModule.AM_DEVICE_MODE_DRIVING,
+    CLOUD_SEARCH_AM: RCTModule.CLOUD_SEARCH_AM,
+    /**
+     * The key of the MD5 hash of the data.("dataID")
+     */
+    DATAID: RCTModule.DATAID,
+    /**
+     * The key of the picture index.("get_picture_am")&lt;br/>
+     * &lt;b>Value:&lt;/b>&lt;br/>
+     * &lt;ul>
+     * &lt;li>0 indicates the frog picture.&lt;/li>
+     * &lt;li>1 indicates the default picture.&lt;/li>
+     * &lt;/ul>
+     */
+    GET_PICTURE_AM: RCTModule.GET_PICTURE_AM,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+
+
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

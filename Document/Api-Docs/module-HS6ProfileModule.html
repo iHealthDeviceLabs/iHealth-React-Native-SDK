@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: HS6ProfileModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: HS6ProfileModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_BIND"><span class="type-signature">(static) </span>ACTION_HS6_BIND<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the bind user to the scale.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.ACTION_HS6_BIND">HS6ProfileModule.ACTION_HS6_BIND("hs6_bind")</a></td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.HS6_BIND_EXTRA">HS6ProfileModule.HS6_BIND_EXTRA("bindData")</a></td><td>
+<a href="module-HS6ProfileModule.html#.BIND_HS6_RESULT">HS6ProfileModule.BIND_HS6_RESULT("bindResult")</a> The result of bind HS6 device. 1 bind success; 2 the scale has no empty position ;3 bind fail<br/>
+<a href="module-HS6ProfileModule.html#.HS6_MODEL">HS6ProfileModule.HS6_MODEL("model")</a> The model of HS6.<br/>
+<a href="module-HS6ProfileModule.html#.HS6_POSITION">HS6ProfileModule.HS6_POSITION("position")</a> The user position in the HS6 range from 1 to 10,  -1 if bind false.<br/>
+<a href="module-HS6ProfileModule.html#.HS6_SETTED_WIFI">HS6ProfileModule.HS6_SETTED_WIFI("settedWifi")</a> Whether has setted wifi.1 setted ;0 not
+</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_ERROR"><span class="type-signature">(static) </span>ACTION_HS6_ERROR<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Callback indicating no the error for HS6 device.<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.ACTION_HS6_ERROR">HS6ProfileModule.ACTION_HS6_ERROR("hs6_error")</a></td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.HS6_ERROR">HS6ProfileModule. HS6_ERROR("hs6_error")</a></td><td>The error code: 1 user information upload error; 2 bind error</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_GET_DATA"><span class="type-signature">(static) </span>ACTION_HS6_GET_DATA<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Callback indicating the getting data of HS6
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.DATA_RESULT">HS6ProfileModule.DATA_RESULT("data")</a></td><td>The result of get data, it's a JSONObject.</td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.DATA_DOWNLOAD_TS">HS6ProfileModule.DATA_DOWNLOAD_TS("downloadTS")</a></td><td>Current time offset after this download operation, if equals to input TS, indicating download finish.</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line223">line 223</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_GET_TOKEN"><span class="type-signature">(static) </span>ACTION_HS6_GET_TOKEN<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the getting token of HS6.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.ACTION_HS6_GET_TOKEN">HS6ProfileModule.ACTION_HS6_GET_TOKEN("hs6_get_token")</a></td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.GET_TOKEN_RESULT">HS6ProfileModule. GET_TOKEN_RESULT("getTokenResult")</a></td><td>The result of get token,it's a JSONObject</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_SET_UNIT"><span class="type-signature">(static) </span>ACTION_HS6_SET_UNIT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the set unit to the device.<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.ACTION_HS6_SET_UNIT">HS6ProfileModule.ACTION_HS6_SET_UNIT("hs6_set_unit")</a></td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.SET_UNIT_RESULT">HS6ProfileModule. SET_UNIT_RESULT("setUnitResult")</a></td><td>The result of set unit,it's boolean,true set success,otherwise false</td></tr>
+     </tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_SETWIFI"><span class="type-signature">(static) </span>ACTION_HS6_SETWIFI<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the setting wifi of HS6 device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.ACTION_HS6_SETWIFI">HS6ProfileModule.ACTION_HS6_SETWIFI("hs6_setwifi")</a></td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.SETWIFI_RESULT">HS6ProfileModule.SETWIFI_RESULT("setWifiResult")</a></td><td>The result of set wifi,it's a boolean,true set wifi success,otherwise false</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HS6_UNBIND"><span class="type-signature">(static) </span>ACTION_HS6_UNBIND<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the unbind of HS6.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HS6ProfileModule.html#.ACTION_HS6_UNBIND">HS6ProfileModule.ACTION_HS6_UNBIND("hs6_unbind")</a></td></tr>
+<tr><td><a href="module-HS6ProfileModule.html#.HS6_UNBIND_RESULT">HS6ProfileModule. HS6_UNBIND_RESULT("unBind")</a></td><td>the result of unBind,it's boolean,true set success,otherwise false</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BIND_HS6_RESULT"><span class="type-signature">(static) </span>BIND_HS6_RESULT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the result of bind HS6 device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BIND_HS6_RESULT ----> "bindResult".<br/>
+</li>
+</ul>
+<b>1 bind success; 2 the scale has no empty position ;3 bind fail</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line134">line 134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATA_DOWNLOAD_TS"><span class="type-signature">(static) </span>DATA_DOWNLOAD_TS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Current time offset after this download operation.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATA_LEFTNUMBER"><span class="type-signature">(static) </span>DATA_LEFTNUMBER<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The left number of data that meets the query conditions
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line237">line 237</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATA_RESULT"><span class="type-signature">(static) </span>DATA_RESULT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The result of get data, it's a JSONObject
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line227">line 227</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".GET_TOKEN_RESULT"><span class="type-signature">(static) </span>GET_TOKEN_RESULT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the result of get token,it's a JSONObject.<br/>
+Returns the message Key corresponding relation:
+<ul>
+<li>
+GET_TOKEN_RESULT ----> "getTokenResult".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line187">line 187</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HS6_BIND_EXTRA"><span class="type-signature">(static) </span>HS6_BIND_EXTRA<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the return data of bind user.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+HS6_BIND_EXTRA ----> "bindData".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line123">line 123</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HS6_ERROR"><span class="type-signature">(static) </span>HS6_ERROR<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the error code.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+HS6_ERROR ----> "hs6_error".<br/>
+</li>
+</ul>
+<b>1 user information upload error; 2 bind error</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line209">line 209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HS6_MODEL"><span class="type-signature">(static) </span>HS6_MODEL<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the model of HS6.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+HS6_MODEL ----> "model".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HS6_POSITION"><span class="type-signature">(static) </span>HS6_POSITION<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the user position in the HS6.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+HS6_POSITION ----> "position".<br/>
+</li>
+</ul>
+<b>range from 1 to 10,  -1 if bind false</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HS6_SETTED_WIFI"><span class="type-signature">(static) </span>HS6_SETTED_WIFI<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the Whether has setted wifi.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+HS6_SETTED_WIFI ----> "settedWifi".<br/>
+</li>
+</ul>
+<b>Value range: 1 setted ;0 not</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line166">line 166</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HS6_UNBIND_RESULT"><span class="type-signature">(static) </span>HS6_UNBIND_RESULT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the unBind data for HS6.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+HS6_UNBIND_RESULT ----> "unBind".<br/>
+</li>
+</ul>
+<b>It's boolean,true set success,otherwise false.</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line177">line 177</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SET_UNIT_RESULT"><span class="type-signature">(static) </span>SET_UNIT_RESULT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the result of set unit.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+SET_UNIT_RESULT ----> "setUnitResult".<br/>
+</li>
+</ul>
+<b>It's boolean,true set success,otherwise false</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line198">line 198</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SETWIFI_RESULT"><span class="type-signature">(static) </span>SETWIFI_RESULT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The result of set wifi,it's a boolean.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+SETWIFI_RESULT ----> "setWifiResult".<br/>
+</li>
+</ul>
+<b>true set wifi success,otherwise false</b>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HS6ProfileModule.js.html">HS6ProfileModule.js</a>, <a href="HS6ProfileModule.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

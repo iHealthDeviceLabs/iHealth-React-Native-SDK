@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: BPProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: BPProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by zhangxu on 16/11/16.
+ */
+'use strict';
+
+
+var { NativeModules } = require('react-native');
+
+var RCTModule = NativeModules.BPProfileModule
+
+/**
+ * @module BPProfileModule
+ */
+module.exports = {
+
+
+    /**
+     * The action value of event indicates the error of BP device.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ERROR_BP BPProfileModule.ACTION_ERROR_BP("error_bp")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.ERROR_NUM_BP BPProfileModule.ERROR_NUM_BP("error")}&lt;/td>&lt;td>the error of Bp device.&lt;br/> e.g. 400&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>{&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "error": 400,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "description": "setUnit() parameter unit should be 0 or 1."&lt;br/>
+     * }&lt;br/>&lt;/b>
+     */
+    ACTION_ERROR_BP:RCTModule.ACTION_ERROR_BP,
+
+
+    /**
+     * The Key of error number of Bp device. &lt;br/>
+     *
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;p>0:not find a suitable zero in 20s.&lt;/p>
+     * &lt;p>1:not find high pressure.&lt;/p>
+     * &lt;p>2:not find low pressure or the high pressure value is lower than the low pressure value.&lt;/p>
+     * &lt;p>3:pressurization fast.&lt;/p>
+     * &lt;p>4:pressurization slow.&lt;/p>
+     * &lt;p>5:pressure exceeds 300mmHg.&lt;/p>
+     * &lt;p>6:time of pressure greater than 15 mmHg exceeds 160s.&lt;/p>
+     * &lt;p>7:EE read and write error.&lt;/p>
+     * &lt;p>8:EE three backup data error.&lt;/p>
+     * &lt;p>9:retention.&lt;/p>
+     * &lt;p>10:SPAN value error.&lt;/p>
+     * &lt;p>11:CRC errors.&lt;/p>
+     * &lt;p>12:connect error.&lt;/p>
+     * &lt;p>13:low power tips.&lt;/p>
+     * &lt;p>14:high or low pressure value of measurement exceeds the set upper limit.&lt;/p>
+     * &lt;p>15:high or low pressure value of measurement exceeds the set lower limit.&lt;/p>
+     * &lt;p>16:arm movement during the measurement over the machine set point.&lt;/p>
+     * &lt;p>400:the argument of method is illegal.&lt;/p>
+     * &lt;p>401:the operation is illegal.&lt;/p>
+     */
+    ERROR_NUM_BP:RCTModule.ERROR_NUM_BP,
+
+    /**
+     * The Key of error description of Bp device. &lt;br/>
+     *
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;p>0:not find a suitable zero in 20s.&lt;/p>
+     * &lt;p>1:not find high pressure.&lt;/p>
+     * &lt;p>2:not find low pressure or the high pressure value is lower than the low pressure value.&lt;/p>
+     * &lt;p>3:pressurization fast.&lt;/p>
+     * &lt;p>4:pressurization slow.&lt;/p>
+     * &lt;p>5:pressure exceeds 300mmHg.&lt;/p>
+     * &lt;p>6:time of pressure greater than 15 mmHg exceeds 160s.&lt;/p>
+     * &lt;p>7:EE read and write error.&lt;/p>
+     * &lt;p>8:EE three backup data error.&lt;/p>
+     * &lt;p>9:retention.&lt;/p>
+     * &lt;p>10:SPAN value error.&lt;/p>
+     * &lt;p>11:CRC errors.&lt;/p>
+     * &lt;p>12:connect error.&lt;/p>
+     * &lt;p>13:low power tips.&lt;/p>
+     * &lt;p>14:high or low pressure value of measurement exceeds the set upper limit.&lt;/p>
+     * &lt;p>15:high or low pressure value of measurement exceeds the set lower limit.&lt;/p>
+     * &lt;p>16:arm movement during the measurement over the machine set point.&lt;/p>
+     * &lt;p>400:the argument of method is illegal.&lt;/p>
+     * &lt;p>401:the operation is illegal.&lt;/p>
+     */
+    ERROR_DESCRIPTION_BP:RCTModule.ERROR_DESCRIPTION_BP,
+
+    /**
+     * The action value of event indicates the battery of BP device.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     *
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_BATTERY_BP BPProfileModule.ACTION_BATTERY_BP("battery_bp")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.BATTERY_BP BPProfileModule.BATTERY_BP("battery")}&lt;/td>&lt;td>Battery status.&lt;br/> e.g. 90&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>{&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "battery": 90&lt;br/>
+     * }&lt;br/>&lt;/b>
+     *
+     */
+    ACTION_BATTERY_BP:RCTModule.ACTION_BATTERY_BP,
+
+    /**
+     * The Key of battery for BP device. &lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-100.
+     */
+    BATTERY_BP:RCTModule.BATTERY_BP,
+    /**
+     * The action value of event indicates the Bp device is being initialized and the parameter is reset.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     *
+     * &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ZOREING_BP BPProfileModule.ACTION_ZOREING_BP("zoreing_bp")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b> null &lt;/b>
+     *
+     */
+    ACTION_ZOREING_BP:RCTModule.ACTION_ZOREING_BP,
+    /**
+     * The action value of event indicates the Initialization of the Bp device has been completed.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ZOREOVER_BP BPProfileModule.ACTION_ZOREOVER_BP("zoreover_bp")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b> null &lt;/b>
+     */
+    ACTION_ZOREOVER_BP:RCTModule.ACTION_ZOREOVER_BP,
+    /**
+     * The action value of event indicates the device's pressure in the measurement. &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ONLINE_PRESSURE_BP BPProfileModule.ACTION_ONLINE_PRESSURE_BP("online_pressure_bp")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.BLOOD_PRESSURE_BP BPProfileModule.BLOOD_PRESSURE_BP("pressure")}&lt;/td>&lt;td>Real time pressure.&lt;br/>e.g. 23&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "pressure": 0 &lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     */
+    ACTION_ONLINE_PRESSURE_BP:RCTModule.ACTION_ONLINE_PRESSURE_BP,
+
+    /**
+     * The Key of Bp device pressure. &lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;b>0-255&lt;/b>
+     */
+    BLOOD_PRESSURE_BP:RCTModule.BLOOD_PRESSURE_BP,
+    /**
+     * The action value of event indicates the device's pressure and pulse wave in the measurement. &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ONLINE_PULSEWAVE_BP BPProfileModule.ACTION_ONLINE_PULSEWAVE_BP("online_pulsewave_bp")}&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.BLOOD_PRESSURE_BP BPProfileModule.BLOOD_PRESSURE_BP("pressure")}&lt;/td>&lt;td>Real time pressure.&lt;br/> e.g. 23&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.PULSEWAVE_BP BPProfileModule.PULSEWAVE_BP("wave")}&lt;/td>&lt;td>Blood pressure pulse wave.&lt;br/> e.g. [15,15,15,15,15]&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.FLAG_HEARTBEAT_BP BPProfileModule.FLAG_HEARTBEAT_BP("heartbeat")}&lt;/td>&lt;td>heartbeat.&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "pressure": 37, &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "wave": "[15,15,15,15,15]", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "heartbeat": false &lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     */
+    ACTION_ONLINE_PULSEWAVE_BP:RCTModule.ACTION_ONLINE_PULSEWAVE_BP,
+
+    /**
+     * The Key of heartbeat graphical control flag. &lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;b>true: device can check the heartbeat&lt;/b> &lt;br/>
+     * &lt;b>false: device can't check the heartbeat&lt;/b> &lt;br/>
+     */
+    FLAG_HEARTBEAT_BP:RCTModule.FLAG_HEARTBEAT_BP,
+
+    /**
+     * The Key of blood pressure pulse wave.&lt;br />
+     */
+    PULSEWAVE_BP:RCTModule.PULSEWAVE_BP,
+    /**
+     * The action value of event indicates the result of measurement. &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ONLINE_RESULT_BP BPProfileModule.ACTION_ONLINE_RESULT_BP("online_result_bp")}&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.HIGH_BLOOD_PRESSURE_BP BPProfileModule.HIGH_BLOOD_PRESSURE_BP("sys")}&lt;/td>&lt;td>The high pressure for blood pressure.&lt;br/> e.g. 118&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.LOW_BLOOD_PRESSURE_BP BPProfileModule.LOW_BLOOD_PRESSURE_BP("dia")}&lt;/td>&lt;td>The low pressure for blood pressure.&lt;br/> e.g. 77&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.PULSE_BP BPProfileModule.PULSE_BP("heartRate")}&lt;/td>&lt;td>Blood pressure pulse, e.g. 77&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_AHR_BP BPProfileModule.MEASUREMENT_AHR_BP("arrhythmia")}&lt;/td>&lt;td>The key of measurement is arrhythmia or not.&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_HSD_BP BPProfileModule.MEASUREMENT_HSD_BP("hsd")}(ios hsd 0:false 1:true)&lt;/td>&lt;td>The key of hemodynamic stability diagnosis, that Determines.&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.DATAID BPProfileModule.DATAID("dataID")}&lt;/td>&lt;td>return blood pressure data id.&lt;br/> e.g. 9F78D808BAB380CC8B8DA5F2DECA24F3&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "sys": 114, &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "dia": 68, &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "heartRate": 66, &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "arrhythmia": false, &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "hsd": false, &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "dataID": "D21A8DB6F6E0311DC016B203E2055A40" &lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     *
+     */
+    ACTION_ONLINE_RESULT_BP:RCTModule.ACTION_ONLINE_RESULT_BP,
+
+    /**
+     * The Key of high pressure for blood pressure. &lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;b>0-255&lt;/b>
+     */
+    HIGH_BLOOD_PRESSURE_BP:RCTModule.HIGH_BLOOD_PRESSURE_BP,
+
+    /**
+     * The Key of low pressure for blood pressure. &lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;b>0-255&lt;/b>
+     */
+    LOW_BLOOD_PRESSURE_BP:RCTModule.LOW_BLOOD_PRESSURE_BP,
+
+    /**
+     * The Key of blood pressure pulse. &lt;br/>
+     */
+    PULSE_BP:RCTModule.PULSE_BP,
+
+    /**
+     * The Key of measurement is arrhythmia or not.&lt;br />
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;b>true: is arrhythmia&lt;/b>&lt;br/>
+     * &lt;b>false: not arrhythmia&lt;/b>
+     */
+    MEASUREMENT_AHR_BP:RCTModule.MEASUREMENT_AHR_BP,
+
+    /**
+     * The key of hemodynamic stability diagnosis, that Determines whether the circulatory system is sufficiently at rest or not. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    MEASUREMENT_HSD_BP:RCTModule.MEASUREMENT_HSD_BP,
+
+    /**
+     * The key of blood pressure data id.&lt;br/>
+     * &lt;b>Value Format:&lt;/b> 32 bits Hex String.
+     * &lt;p>Example:&lt;/p>
+     * "810D4F4CED95759AB738EBC1E74EA8F6"
+     */
+    DATAID:RCTModule.DATAID,
+
+    /**
+     * The action value of event indicates number of historical data for Bp device. &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_HISTORICAL_NUM_BP BPProfileModule.ACTION_HISTORICAL_NUM_BP("offlinenum")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.HISTORICAL_NUM_BP BPProfileModule.HISTORICAL_NUM_BP("num")}&lt;/td>&lt;td>Offline data number. &lt;br/> e.g. 2&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     *
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "offlinenum":22 &lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     */
+    ACTION_HISTORICAL_NUM_BP:RCTModule.ACTION_HISTORICAL_NUM_BP,
+
+    /**
+     * The key of number of historical data for Bp device.&lt;br />
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;b>0-255&lt;/b>
+     */
+    HISTORICAL_NUM_BP:RCTModule.HISTORICAL_NUM_BP,
+
+    /**
+     * The action value of event indicates historical data for Bp device.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_HISTORICAL_DATA_BP BPProfileModule.ACTION_HISTORICAL_DATA_BP("historicaldata_bp")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.HISTORICAL_DATA_BP BPProfileModule.HISTORICAL_DATA_BP("data")}&lt;/td>&lt;td>Array of history Data. &lt;br/> e.g. {"data":[{"time":"2016-12-6 22:27:00","sys":119,"dia":67,"heartRate":69,"arrhythmia":false,"hsd":false,"dataID":"EFDF63A63749388AD17EA416AC97CB09"}]} &lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_DATE_BP BPProfileModule.MEASUREMENT_DATE_BP("time")}&lt;/td>&lt;td>Measuring time. &lt;br/> e.g. 2016-12-6 22:27:00&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.HIGH_BLOOD_PRESSURE_BP BPProfileModule.HIGH_BLOOD_PRESSURE_BP("sys")}&lt;/td>&lt;td>The high pressure for blood pressure. &lt;br/> e.g. 127&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.LOW_BLOOD_PRESSURE_BP BPProfileModule.LOW_BLOOD_PRESSURE_BP("dia")}&lt;/td>&lt;td>The low pressure for blood pressure. &lt;br/> e.g. 80&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.PULSE_BP BPProfileModule.PULSE_BP("heartRate")}&lt;/td>&lt;td>Blood pressure pulse.&lt;br/> e.g. 77&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_AHR_BP BPProfileModule.MEASUREMENT_AHR_BP("arrhythmia")}&lt;/td>&lt;td>The key of measurement is arrhythmia or not. &lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.MEASUREMENT_HSD_BP BPProfileModule.MEASUREMENT_HSD_BP("hsd")}&lt;/td>&lt;td>The key of hemodynamic stability diagnosis, that Determines.&lt;br/> e.g. false&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.DATAID BPProfileModule.DATAID("dataID")}&lt;/td>&lt;td>return blood pressure data id. &lt;br/> e.g. 9F78D808BAB380CC8B8DA5F2DECA24F3&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     *
+     * &lt;p>Message example of 550BT、BP5、BP7:&lt;/p>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "data": [&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;{&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-18 09:00:00",&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sys": 99,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dia": 60&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "heartRate": 60,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "arrhythmia":false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "hsd": "false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID":"E4A5B3ABB0AF67F836880694AB7800D6"&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-19 09:05:00",&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sys": 105,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dia": 65,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "heartRate": 60,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "arrhythmia":false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "hsd": "false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID":"E4A5B3ABB0AF67F836880694AB7800D6"&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     *
+     * &lt;p>Message example of BP7S:&lt;/p>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "data": [&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;{&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-18 09:00:00",&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sys": 99,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dia": 60&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "heartRate": 60,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "arrhythmia":false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "hsd": "false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "startAngle":25,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "measureAngleChange":0,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "chooseHand":1,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID":"E4A5B3ABB0AF67F836880694AB7800D6"&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; },&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "time": "2016-07-19 09:05:00",&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "sys": 105,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dia": 65,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "heartRate": 60,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "arrhythmia":false,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "hsd": "false&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "startAngle":25,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "measureAngleChange":0,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "chooseHand":1,&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; "dataID":"E4A5B3ABB0AF67F836880694AB7800D6"&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; ]&lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     */
+    ACTION_HISTORICAL_DATA_BP:RCTModule.ACTION_HISTORICAL_DATA_BP,
+
+
+    /**
+     * The key of historical data for Bp device.&lt;br/>
+     */
+    HISTORICAL_DATA_BP:RCTModule.HISTORICAL_DATA_BP,
+
+    /**
+     * The key of measurement time.&lt;br />
+     * &lt;b>Value format: &lt;/b>&lt;br/>
+     * yyyy-MM-dd HH:mm:ss&lt;br/>
+     * &lt;b>Example: &lt;/b>&lt;br/>
+     * 2016-07-18 09:00:00
+     */
+    MEASUREMENT_DATE_BP:RCTModule.MEASUREMENT_DATE_BP,
+
+    /**
+     * The key of start angle for measurement.&lt;br />
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>0-180&lt;/b>
+     */
+    MEASUREMENT_STRAT_ANGLE_BP:RCTModule.MEASUREMENT_STRAT_ANGLE_BP,
+
+    /**
+     * The key of angle change during measurement.&lt;br />
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>0-180&lt;/b>
+     */
+    MEASUREMENT_ANGLE_CHANGE_BP:RCTModule.MEASUREMENT_ANGLE_CHANGE_BP,
+
+    /**
+     * The key of hand for measurement.&lt;br />
+     * &lt;b>Value Range:&lt;/b>
+     * &lt;b>0, left hand;&lt;/b> &lt;br/>
+     * &lt;b>1, right hand;&lt;/b> &lt;br/>
+     * &lt;b>2, unknown &lt;/b> &lt;br/>
+     */
+    MEASUREMENT_HAND_BP:RCTModule.MEASUREMENT_HAND_BP,
+
+
+    /**
+     * The action value of event indicates historical data update over &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_HISTORICAL_OVER_BP BPProfileModule.ACTION_HISTORICAL_OVER_BP("get_historical_over_bp")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>null&lt;/b>
+     *
+     */
+    ACTION_HISTORICAL_OVER_BP:RCTModule.ACTION_HISTORICAL_OVER_BP,
+
+
+    /**
+     * The action value of event indicates the function information data of bp devices. &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_FUNCTION_INFORMATION_BP BPProfileModule.ACTION_FUNCTION_INFORMATION_BP("function_info_bp")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_IS_UPAIR_MEASURE BPProfileModule.FUNCTION_IS_UPAIR_MEASURE("upAirMeasureFlg")}&lt;/td>&lt;td>The way to measure is up air or low air, up is "true", low is "false".&lt;br/> e.g. false&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_IS_ARM_MEASURE BPProfileModule.FUNCTION_IS_ARM_MEASURE("armMeasureFlg")}&lt;/td>&lt;td>device is arm or wrist, arm is "true", wrist is "false".&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_HAVE_ANGLE_SENSOR BPProfileModule.FUNCTION_HAVE_ANGLE_SENSOR("haveAngleSensor")}&lt;/td>&lt;td>device has angle sensor or not, have is "true", otherwise is "false"device has angle sensor or not, have is "true", otherwise is "false".&lt;br/> e.g. false&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_HAVE_OFFLINE BPProfileModule.FUNCTION_HAVE_OFFLINE("haveOffline")}&lt;/td>&lt;td>device has offline-measure function or not, have is "true", otherwise is "false".&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_HAVE_HSD BPProfileModule.FUNCTION_HAVE_HSD("haveHSD")}&lt;/td>&lt;td>device had HSD function or not, have is "true", otherwise is "false".&lt;br/> e.g. false&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_HAVE_ANGLE_SETTING BPProfileModule.FUNCTION_HAVE_ANGLE_SETTING("haveAngleSet")}&lt;/td>&lt;td>device has angle setting function or not, have is "true", otherwise is "false".&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_IS_MULTI_UPLOAD BPProfileModule.FUNCTION_IS_MULTI_UPLOAD("mutableUpload")}&lt;/td>&lt;td>device is multi upload or single upload, multi is "true", single is "false".&lt;br/> e.g. true&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:BPProfileModule.FUNCTION_HAVE_SELF_UPDATE BPProfileModule.FUNCTION_HAVE_SELF_UPDATE("selfUpdate")}&lt;/td>&lt;td>device had self update function or not, have is "true", otherwise is "false".&lt;br/> e.g. false&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "modenumber": "KN-550BT 11070", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "serialnumber": "7CEC793DF3BC", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "manufacture": "iHealth", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "hardwareversion": "100", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "firmwareversion": "100", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "accessoryname": "BP Monitor", &lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "protocolstring": "com.jiuan.BPAV10" &lt;br/>
+     *
+     *     }&lt;br/>
+     * &lt;/b>
+     */
+    ACTION_FUNCTION_INFORMATION_BP:RCTModule.ACTION_FUNCTION_INFORMATION_BP,
+
+    /**
+     * The Key of the function information:The way to measure is up air or down air. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: up air&lt;/b>&lt;br/>
+     * &lt;b>false: down air&lt;/b>
+     */
+    FUNCTION_IS_UPAIR_MEASURE:RCTModule.FUNCTION_IS_UPAIR_MEASURE,
+
+    /**
+     * The Key of the function information:device is arm or wrist. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: arm&lt;/b>&lt;br/>
+     * &lt;b>false: wrist air&lt;/b>
+     */
+    FUNCTION_IS_ARM_MEASURE:RCTModule.FUNCTION_IS_ARM_MEASURE,
+
+    /**
+     * The Key of the function information:device has angle sensor or not. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: have angle sensor&lt;/b>&lt;br/>
+     * &lt;b>false: don't have angle sensor&lt;/b>
+     */
+    FUNCTION_HAVE_ANGLE_SENSOR:RCTModule.FUNCTION_HAVE_ANGLE_SENSOR,
+
+    /**
+     * The Key of the function information:device has offline-measure function or not. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: have offline-measure function&lt;/b>&lt;br/>
+     * &lt;b>false: don't have offline-measure function&lt;/b>
+     */
+    FUNCTION_HAVE_OFFLINE:RCTModule.FUNCTION_HAVE_OFFLINE,
+
+    /**
+     * The Key of the function information:device had HSD function or not. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: have HSD function&lt;/b>&lt;br/>
+     * &lt;b>false: don't have HSD function&lt;/b>
+     */
+    FUNCTION_HAVE_HSD:RCTModule.FUNCTION_HAVE_HSD,
+
+    /**
+     * The Key of the function information:device has angle setting function or not. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: have angle setting function&lt;/b>&lt;br/>
+     * &lt;b>false: don't have angle setting function&lt;/b>
+     */
+    FUNCTION_HAVE_ANGLE_SETTING:RCTModule.FUNCTION_HAVE_ANGLE_SETTING,
+
+    /**
+     * The Key of the function information:device is multi upload or single upload. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: multi/b>&lt;br/>
+     * &lt;b>false: single&lt;/b>
+     */
+    FUNCTION_IS_MULTI_UPLOAD:RCTModule.FUNCTION_IS_MULTI_UPLOAD,
+
+    /**
+     * The Key of the function information:device had self update function or not. &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true: have self update function/b>&lt;br/>
+     * &lt;b>false: don't have self update function&lt;/b>
+     */
+    FUNCTION_HAVE_SELF_UPDATE:RCTModule.FUNCTION_HAVE_SELF_UPDATE,
+
+    /**
+     * The action value of event indicates setting unit successfully &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_SET_UNIT_SUCCESS_BP BPProfileModule.ACTION_SET_UNIT_SUCCESS_BP("set_unit_success")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>null&lt;/b>
+     *
+     */
+    ACTION_SET_UNIT_SUCCESS_BP:RCTModule.ACTION_SET_UNIT_SUCCESS_BP,
+
+    /**
+     * The action value of event indicates setting angle successfully &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_SET_ANGLE_SUCCESS_BP BPProfileModule.ACTION_SET_ANGLE_SUCCESS_BP("set_angle_success")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>null&lt;/b>
+     *
+     */
+    ACTION_SET_ANGLE_SUCCESS_BP:RCTModule.ACTION_SET_ANGLE_SUCCESS_BP,
+    /**
+     * The action value of event indicates enabling Off-line measurement operation is success &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_ENABLE_OFFLINE_BP BPProfileModule.ACTION_ENABLE_OFFLINE_BP("enable_offline_bp")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>null&lt;/b>
+     *
+     */
+    ACTION_ENABLE_OFFLINE_BP:RCTModule.ACTION_ENABLE_OFFLINE_BP,
+
+    /**
+     * The action value of event indicates disenabling Off-line measurement operation is success &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_DISENABLE_OFFLINE_BP BPProfileModule.ACTION_DISENABLE_OFFLINE_BP("disenable_offline_bp")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>null&lt;/b>
+     *
+     */
+    ACTION_DISENABLE_OFFLINE_BP:RCTModule.ACTION_DISENABLE_OFFLINE_BP,
+
+    /**
+     * The action value of event indicates whether off-line measurement is on or not &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_IS_ENABLE_OFFLINE BPProfileModule.ACTION_IS_ENABLE_OFFLINE("offlinestatus")}&lt;/td>&lt;/tr>
+     *     &lt;tr>&lt;td>{@link module:BPProfileModule.IS_ENABLE_OFFLINE BPProfileModule.IS_ENABLE_OFFLINE("offlinestatus")}&lt;/td>&lt;td>Indicate device can measure offline or not. &lt;br/> e.g. true&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>
+     *     {&lt;br/>
+     *     &amp;nbsp; &amp;nbsp; "offlinestatus":true &lt;br/>
+     *     }&lt;br/>
+     * &lt;/b>
+     *
+     */
+    ACTION_IS_ENABLE_OFFLINE:RCTModule.ACTION_IS_ENABLE_OFFLINE,
+
+    /**
+     * The Key of status indicates whether off-line measurement is on or not . &lt;br/>
+     * &lt;b>Value Range:&lt;/b>&lt;br/>
+     * &lt;b>true:  on/b>&lt;br/>
+     * &lt;b>false: off&lt;/b>
+     */
+    IS_ENABLE_OFFLINE:RCTModule.IS_ENABLE_OFFLINE,
+
+    /**
+     * The action value of event indicates interrupting measure &lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BPProfileModule.ACTION_INTERRUPTED_BP BPProfileModule.ACTION_INTERRUPTED_BP("interrupted_bp")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>null&lt;/b>
+     *
+     */
+    ACTION_INTERRUPTED_BP:RCTModule.ACTION_INTERRUPTED_BP,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

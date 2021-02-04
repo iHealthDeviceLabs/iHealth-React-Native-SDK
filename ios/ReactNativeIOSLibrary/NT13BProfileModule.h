@@ -1,0 +1,36 @@
+//
+//  NT13BProfileModule.h
+//  ReactNativeIOSLibrary
+//
+//  Created by user on 2019/11/14.
+//  Copyright © 2019 daiqingquan. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#if __has_include(<React/RCTAssert.h>)
+#import <React/RCTBridgeModule.h>
+#else
+#import "RCTBridgeModule.h"
+#endif
+
+
+@interface NT13BProfileModule : NSObject<RCTBridgeModule>
+
+#define NT13B_EVENT_NOTIFY @"event_notify_nt13b"
+
+#define NT13B_ACTION @"action"
+
+#define NT13B_DEVICE @"devices"
+
+#define NT13B_KEY_MAC        @"mac"
+
+#define kACTION_GET_ALL_CONNECTED_DEVICES   @"ACTION_GET_ALL_CONNECTED_DEVICES"
+
+#define NT13B_RESULT @"result"
+
+#define NT13B_UNIT_FLAG @"unit_flag"
+
+#define NT13B_THERMOMETER_TYPE @"thermometer_type"
+
+@end
+

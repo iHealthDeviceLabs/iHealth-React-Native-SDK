@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: HSProfileModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: HSProfileModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ACTION_ERROR_HS"><span class="type-signature">(static) </span>ACTION_ERROR_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action type of callback indicating the error of HS device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_ERROR_HS">HSProfileModule.ACTION_ERROR_HS("error_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_NUM_HS">HSProfileModule.ERROR_NUM_HS("error")</a></td><td>
+<a href="module-HSProfileModule.html#.ERROR_ID_ILLEGAL_ARGUMENT">HSProfileModule.ERROR_ID_ILLEGAL_ARGUMENT</a> indicates parameter error("400")<br/>
+<a href="module-HSProfileModule.html#.ERROR_ID_WIFI_DISABLED">HSProfileModule.ERROR_ID_WIFI_DISABLED</a> indicates wifi is disabled("500")
+</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_DESCRIPTION_HS">HSProfileModule.ERROR_DESCRIPTION_HS("description")</a></td><td>The error description data.<br/>Example: getOfflineData() parameter userPstCode should be in the range [0, 19].</td></tr>
+</tbody>
+</table>
+<b>Example message:</b><br/>
+{<br/>
+&nbsp; &nbsp; "error": 400,<br/>
+&nbsp; &nbsp; "description": "getOfflineData() parameter userPstCode should be in the range [0, 19]."<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALL_CONNECTED_DEVICES"><span class="type-signature">(static) </span>ACTION_GET_ALL_CONNECTED_DEVICES<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates get all connected devices.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line317">line 317</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HISTORICAL_DATA_COMPLETE_HS"><span class="type-signature">(static) </span>ACTION_HISTORICAL_DATA_COMPLETE_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Callback indicating historical data transferred complete for Hs device.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_HISTORICAL_DATA_HS"><span class="type-signature">(static) </span>ACTION_HISTORICAL_DATA_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the history data of HS device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_HISTORICAL_DATA_HS">HSProfileModule.ACTION_HISTORICAL_DATA_HS("historicaldata_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.HISTORDATA__HS">HSProfileModule.HISTORDATA__HS("historyData")</a></td><td>
+<a href="module-HSProfileModule.html#.DATAID">HSProfileModule.DATAID("dataID")</a> The data id. Example: 67FFC7A454148723718144A604D4152B<br/>
+<a href="module-HSProfileModule.html#.MEASUREMENT_DATE_HS">HSProfileModule.MEASUREMENT_DATE_HS("date")</a> The measure date. Value format: yyyy-MM-dd HH:mm:ss<br/>
+<a href="module-HSProfileModule.html#.WEIGHT_HS">HSProfileModule.WEIGHT_HS("value")</a> The key of the weight result. The value's unit is kg. Value range: 0.0-150.0<br/>
+<a href="module-HSProfileModule.html#.FAT_HS">HSProfileModule.FAT_HS("fat")</a> The body fat rate. Value range: 0.0-100.0<br/>
+<a href="module-HSProfileModule.html#.WATER_HS">HSProfileModule.WATER_HS("water")</a> The body water rate. Value range: 0.0-100.0<br/>
+<a href="module-HSProfileModule.html#.MUSCLE_HS">HSProfileModule.MUSCLE_HS("muscle")</a> The body muscle rate. Value range: 0.0-100.0<br/>
+<a href="module-HSProfileModule.html#.SKELETON_HS">HSProfileModule.SKELETON_HS("skeleton")</a> The bone mass. Value range: 0.0-25.5(0xFF/10.0)<br/>
+<a href="module-HSProfileModule.html#.FATELEVEL_HS">HSProfileModule.FATELEVEL_HS("fatelevel")</a> The fate level. Value range: 0-255(0xFF)<br/>
+<a href="module-HSProfileModule.html#.DCI_HS">HSProfileModule.DCI_HS("DCI")</a> he DCI data. Value range: 0-65535(0xFFFF)
+</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_LIVEDATA_HS"><span class="type-signature">(static) </span>ACTION_LIVEDATA_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the start measure of HS device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_LIVEDATA_HS">HSProfileModule.ACTION_LIVEDATA_HS("liveData_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.LIVEDATA_HS">HSProfileModule.LIVEDATA_HS("value")</a></td><td>The key of live data weight<br/>Value range: 0.0-150.0</td></tr>
+</tbody>
+</table>
+<b>message example:</b><br/>
+{<br/>
+&nbsp; "value": 62.79999923706055<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_NO_HISTORICALDATA"><span class="type-signature">(static) </span>ACTION_NO_HISTORICALDATA<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the no history data of HS device.<br/>
+Callback indicating no historical data for HS device.<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_NO_HISTORICALDATA">HSProfileModule.ACTION_NO_HISTORICALDATA("noHistoryData")</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_ONLINE_RESULT_HS"><span class="type-signature">(static) </span>ACTION_ONLINE_RESULT_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the stop measure of HS device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-HSProfileModule.html#.ACTION_ONLINE_RESULT_HS">HSProfileModule.ACTION_ONLINE_RESULT_HS("online_result_hs")</a></td></tr>
+<tr><td><a href="module-HSProfileModule.html#.DATAID">HSProfileModule.DATAID("dataID")</a></td><td>The data id.<br/>Example: 67FFC7A454148723718144A604D4152B</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.WEIGHT_HS">HSProfileModule.WEIGHT_HS("value")</a></td><td>The weight result.<br/>Value range: 0.0-150.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.FAT_HS">HSProfileModule.FAT_HS("fat")</a></td><td>The body fat rate.<br/>Value range: 0.0-100.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.WATER_HS">HSProfileModule.WATER_HS("water")</a></td><td>The body water rate.<br/>Value range: 0.0-100.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.MUSCLE_HS">HSProfileModule.MUSCLE_HS("muscle")</a></td><td>The body muscle rate.<br/>Value range: 0.0-100.0</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.SKELETON_HS">HSProfileModule.SKELETON_HS("skeleton")</a></td><td>The bone mass.<br/>Value range: 0.0-25.5(0xFF/10.0)</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.FATELEVEL_HS">HSProfileModule.FATELEVEL_HS("fatelevel")</a></td><td>The fate level.<br/>Value range: 0-255(0xFF)</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.DCI_HS">HSProfileModule.DCI_HS("DCI")</a></td><td>The DCI data.<br/>Value range: 0-65535(0xFFFF)</td></tr>
+</tbody>
+</table>
+<b>message example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "dataID": "D433708291F0427F8D412268B91C44F3",<br/>
+&nbsp; &nbsp; "value": 84.19999694824219,<br/>
+&nbsp; &nbsp; "fat": 47.70000076293945,<br/>
+&nbsp; &nbsp; "water": 45.29999923706055,<br/>
+&nbsp; &nbsp; "muscle": 41.29999923706055,<br/>
+&nbsp; &nbsp; "skeleton": 2.200000047683716,<br/>
+&nbsp; &nbsp; "fatelevel": 8,<br/>
+&nbsp; &nbsp; "DCI": 2502<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DATAID"><span class="type-signature">(static) </span>DATAID<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the data id for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+DATAID ----> "dataID".<br/>
+</li>
+</ul>
+<b>Example: </b><br/>
+67FFC7A454148723718144A604D4152B
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line148">line 148</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".DCI_HS"><span class="type-signature">(static) </span>DCI_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the DCI for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+DCI_HS ----> "DCI".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-65535(0xFFFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_DESCRIPTION_HS"><span class="type-signature">(static) </span>ERROR_DESCRIPTION_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the data id for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+ERROR_DESCRIPTION_HS ----> "description".<br/>
+</li>
+</ul>
+<b>Example: </b><br/>
+{<br/>
+&nbsp; "description": "getOfflineData() parameter userPstCode should be in the range [0, 19]."<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line312">line 312</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_ID_ILLEGAL_ARGUMENT"><span class="type-signature">(static) </span>ERROR_ID_ILLEGAL_ARGUMENT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The error ID indicates parameter error.<br/>
+<b>Value</b>
+400
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line292">line 292</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_ID_WIFI_DISABLED"><span class="type-signature">(static) </span>ERROR_ID_WIFI_DISABLED<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The error ID indicates wifi is disabled.<br/>
+<b>Value</b>
+500
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line298">line 298</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_NUM_HS"><span class="type-signature">(static) </span>ERROR_NUM_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of error ID number of HS device.<br/>
+The key and value will be as below:<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>1</td><td>Battery level is low.</td></tr>
+<tr><td>2</td><td>The Scale failed to initialize.</td></tr>
+<tr><td>3</td><td>Maximum weight has been exceeded.</td></tr>
+<tr><td>4</td><td>The Scale can't capture a steady reading.</td></tr>
+<tr><td>5</td><td>Bluetooth connection error.</td></tr>
+<tr><td>6</td><td>Movement while measuring.</td></tr>
+<tr><td>7</td><td>Invalidate.</td></tr>
+<tr><td>8</td><td>Scale memory access error.</td></tr>
+<tr><td>9</td><td>No memory.</td></tr>
+<tr><td>10</td><td>Device disconnect.</td></tr>
+<tr><td>11</td><td>Communication error.</td></tr>
+<tr><td>12</td><td>HS4DeviceRecWeightError.</td></tr>
+<tr><td>13</td><td>Failed to create measurement connections.</td></tr>
+<tr><td>14</td><td>Instruction timeout.</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_ID_ILLEGAL_ARGUMENT">400</a></td><td>indicates parameter error("400")</td></tr>
+<tr><td><a href="module-HSProfileModule.html#.ERROR_ID_WIFI_DISABLED">500</a></td><td>indicates wifi is disabled("500")</td></tr>
+</tbody>
+</table>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+ERROR_NUM_HS ----> "error".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line286">line 286</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".FAT_HS"><span class="type-signature">(static) </span>FAT_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the body fat rate for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+FAT_HS ----> "fat".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0.0-100.0
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line172">line 172</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".FATELEVEL_HS"><span class="type-signature">(static) </span>FATELEVEL_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the fat level for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+FATELEVEL_HS ----> "fatelevel".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-255(0xFF)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".HISTORDATA__HS"><span class="type-signature">(static) </span>HISTORDATA__HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the historical data for HS device.<br/>
+Returns the message Key corresponding relation:
+<ul>
+<li>
+HISTORDATA__HS ----> "historyData".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line242">line 242</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".LIVEDATA_HS"><span class="type-signature">(static) </span>LIVEDATA_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of live data weight<br/>
+The value is float type, it's unit is kg.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+LIVEDATA_HS ----> "value".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0.0-150.0
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line136">line 136</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".MEASUREMENT_DATE_HS"><span class="type-signature">(static) </span>MEASUREMENT_DATE_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the measure date for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+MEASUREMENT_DATE_HS ----> "date".<br/>
+</li>
+</ul>
+<b>Value format:</b>
+yyyy-MM-dd HH:mm:ss
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line254">line 254</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".MUSCLE_HS"><span class="type-signature">(static) </span>MUSCLE_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the body muscle rate for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+MUSCLE_HS ----> "muscle".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0.0-100.0
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line196">line 196</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".SKELETON_HS"><span class="type-signature">(static) </span>SKELETON_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the bone mass for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+SKELETON_HS ----> "skeleton".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0.0-25.5(0xFF/10.0)
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line208">line 208</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".WATER_HS"><span class="type-signature">(static) </span>WATER_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the body water rate for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+WATER_HS ----> "water".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0.0-100.0
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line184">line 184</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".WEIGHT_HS"><span class="type-signature">(static) </span>WEIGHT_HS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the weight result for HS device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+WEIGHT_HS ----> "value".<br/>
+</li>
+</ul>
+<b>Value range: </b><br/>
+0.0-150.0
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="HSProfileModule.js.html">HSProfileModule.js</a>, <a href="HSProfileModule.js.html#line160">line 160</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

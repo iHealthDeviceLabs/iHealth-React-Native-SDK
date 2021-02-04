@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: BTMProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: BTMProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by lixuesong on 15/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.BTMProfileModule
+
+/**
+ * @module BTMProfileModule
+ */
+module.exports = {
+    // Actions
+    /**
+     * The action value of event indicating the battery of BTM device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BTMProfileModule.ACTION_BTM_BATTERY BTMProfileModule.ACTION_BTM_BATTERY("battery_btm")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_BATTERY BTMProfileModule.BTM_BATTERY("battery")}&lt;/td>&lt;td>Battery percentage.&lt;br/>0 Low powe ,1 Not Low power&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * {&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "battery": 0&lt;br/>
+     * }&lt;br/>
+     */
+    ACTION_BTM_BATTERY: RCTModule.ACTION_BTM_BATTERY,
+    /**
+     * The action value of event indicating the get memory data of BTM device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BTMProfileModule.ACTION_BTM_MEMORY BTMProfileModule.ACTION_BTM_MEMORY("memory_btm")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.MEMORY_COUNT BTMProfileModule.MEMORY_COUNT("memory_count")}&lt;/td>&lt;td>The key of the count of memory for BTM device.&lt;br/>alue range: 0-255&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_TEMPERATURE_ARRAY BTMProfileModule.BTM_TEMPERATURE_ARRAY("btm_temperature_array")}&lt;/td>&lt;td>The key of the temperature array for BTM device.&lt;br/>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_TEMPERATURE BTMProfileModule.BTM_TEMPERATURE("btm_temperature")}&lt;/td>&lt;td>The key of the temperature for BTM device.&lt;br/>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_TEMPERATURE_TARGET BTMProfileModule.BTM_TEMPERATURE_TARGET("btm_temperature_target")}&lt;/td>&lt;td>The key of the temperature target for BTM device.&lt;br/>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_MEASURE_TIME BTMProfileModule.BTM_MEASURE_TIME("measure_time")}&lt;/td>&lt;td>The key of the time of memory data for BTM device.&lt;br/>Value Format: yyyy-MM-dd HH:mm&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_BTM_MEMORY: RCTModule.ACTION_BTM_MEMORY,
+    /**
+     * The action value of event indicating the measure result of BTM device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BTMProfileModule.ACTION_BTM_MEASURE BTMProfileModule.ACTION_BTM_MEASURE("measure_btm")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_TEMPERATURE BTMProfileModule.BTM_TEMPERATURE("btm_temperature")}&lt;/td>&lt;td>The key of the temperature for BTM device.&lt;br/>&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.BTM_TEMPERATURE_TARGET BTMProfileModule.BTM_TEMPERATURE_TARGET("btm_temperature_target")}&lt;/td>&lt;td>The key of the temperature target for BTM device.&lt;br/>&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_BTM_MEASURE: RCTModule.ACTION_BTM_MEASURE,
+    /**
+     * The action type of callback after all method is called of BTM device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BTMProfileModule.ACTION_BTM_CALLBACK BTMProfileModule.ACTION_BTM_CALLBACK("btm_callback")}&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_BTM_CALLBACK: RCTModule.ACTION_BTM_CALLBACK,
+    /**
+     * Callback indicating no the error for BTM device.&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:BTMProfileModule.ACTION_ERROR_BTM BTMProfileModule.ACTION_ERROR_BTM("action_error_btm")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.ERROR_NUM_BTM BTMProfileModule.ERROR_NUM_BTM("error_num")}&lt;/td>&lt;td>The key of error ID number of continue BTM device.&lt;br/>101:Invalid state.&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:BTMProfileModule.ERROR_DESCRIPTION_BTM BTMProfileModule.ERROR_DESCRIPTION_BTM("description")}&lt;/td>&lt;td>Callback indicating the error message.&lt;br/>Invalid state.&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_ERROR_BTM: RCTModule.ACTION_ERROR_BTM,
+
+    //Keys
+    /**
+     * The key of the power of battery for BTM device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BTM_BATTERY ----> "battery".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0 Low power
+     * 1 Not Low power
+     */
+    BTM_BATTERY: RCTModule.BTM_BATTERY,
+    /**
+     * The key of the count of memory for BTM device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * MEMORY_COUNT ----> "memory_count".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-255
+     */
+    MEMORY_COUNT: RCTModule.MEMORY_COUNT,
+    /**
+     * The key of the temperature array for BTM device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BTM_TEMPERATURE_ARRAY ----> "btm_temperature_array".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    BTM_TEMPERATURE_ARRAY: RCTModule.BTM_TEMPERATURE_ARRAY,
+    /**
+     * The key of the temperature target for BTM device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BTM_TEMPERATURE_TARGET ----> "btm_temperature_target".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    BTM_TEMPERATURE_TARGET: RCTModule.BTM_TEMPERATURE_TARGET,
+    /**
+     * The key of the temperature for BTM device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BTM_TEMPERATURE ----> "btm_temperature".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    BTM_TEMPERATURE: RCTModule.BTM_TEMPERATURE,
+    /**
+     * The key of the time of memory data for BTM device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BTM_MEASURE_TIME ----> "measure_time".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value Format:&lt;/b>&lt;br/>
+     * yyyy-MM-dd HH:mm
+     */
+    BTM_MEASURE_TIME: RCTModule.BTM_MEASURE_TIME,
+    /**
+     * The key of error ID number of continue BTM device.&lt;br/>
+     * &lt;p>
+     * Flag Error number of BTM device.
+     * &lt;ol>
+     * &lt;p>Error code and Description&lt;/p>
+     * &lt;p>
+     * &lt;p>101:Invalid state.&lt;/p>
+     */
+    ERROR_NUM_BTM: RCTModule.ERROR_NUM_BTM,
+    /**
+     * Callback indicating the error message.
+     */
+    ERROR_DESCRIPTION_BTM: RCTModule.ERROR_DESCRIPTION_BTM,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

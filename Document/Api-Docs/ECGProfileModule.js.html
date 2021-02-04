@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ECGProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ECGProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ */
+'use strict';
+
+
+var { NativeModules } = require('react-native');
+
+var RCTModule = NativeModules.ECGProfileModule
+
+/**
+ * @module ECGProfileModule
+ */
+module.exports = {
+
+
+    /**
+     * The action value of event indicates the error of ECG device.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:ECGProfileModule.ACTION_ERROR_ECG ECGProfileModule.ACTION_ERROR_ECG("error_ecg")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:ECGProfileModule.ERROR_NUM_ECG ECGProfileModule.ERROR_NUM_ECG("error")}&lt;/td>&lt;td>the error of ECG device.&lt;br/> e.g. 400&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>{&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "error": 400,&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "description": "setUnit() parameter unit should be 0 or 1."&lt;br/>
+     * }&lt;br/>&lt;/b>
+     */
+    ACTION_ERROR_ECG:RCTModule.ACTION_ERROR_ECG,
+
+
+    /**
+     * The Key of error number of ECG device. &lt;br/>
+     *
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * &lt;p>1:Electrode Loss.&lt;/p>
+     * &lt;p>2:Electrode Loss Recovery.&lt;/p>
+     * &lt;p>3:Electrode Loss Timeout.&lt;/p>
+     * &lt;p>4:SDCard Communication Error.&lt;/p>
+     * &lt;p>5:Collection Module Error.&lt;/p>
+     * &lt;p>6:Low Power.&lt;/p>
+     * &lt;p>7:Device Memory Full.&lt;/p>
+     * &lt;p>8:Disconnect.&lt;/p>
+     * &lt;p>9:Over Time.&lt;/p>
+     * &lt;p>10:Delete Error.&lt;/p>
+     * &lt;p>11:Error Data.&lt;/p>
+     * &lt;p>12:No Data.&lt;/p>
+     * &lt;p>13:Reset SDCard Error.&lt;/p>
+     * &lt;p>400:Parameter Error.&lt;/p>
+     * &lt;p>401:Firmware Version Is Not Supported.&lt;/p>
+     */
+    ERROR_NUM_ECG:RCTModule.ERROR_NUM_ECG,
+
+    /**
+     * The Key of error description of ECG device. &lt;br/>
+     *
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+          * &lt;p>1:Electrode Loss.&lt;/p>
+     * &lt;p>2:Electrode Loss Recovery.&lt;/p>
+     * &lt;p>3:Electrode Loss Timeout.&lt;/p>
+     * &lt;p>4:SDCard Communication Error.&lt;/p>
+     * &lt;p>5:Collection Module Error.&lt;/p>
+     * &lt;p>6:Low Power.&lt;/p>
+     * &lt;p>7:Device Memory Full.&lt;/p>
+     * &lt;p>8:Disconnect.&lt;/p>
+     * &lt;p>9:Over Time.&lt;/p>
+     * &lt;p>10:Delete Error.&lt;/p>
+     * &lt;p>11:Error Data.&lt;/p>
+     * &lt;p>12:No Data.&lt;/p>
+     * &lt;p>13:Reset SDCard Error.&lt;/p>
+     * &lt;p>400:Parameter Error.&lt;/p>
+     * &lt;p>401:Firmware Version Is Not Supported.&lt;/p>
+     */
+    ERROR_DESCRIPTION_ECG:RCTModule.ERROR_DESCRIPTION_ECG,
+
+    /**
+     * The action value of event indicates the battery of ECG device.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     *
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *      &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *      &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:ECGProfileModule.ACTION_BATTERY_ECG ECGProfileModule.ACTION_BATTERY_ECG("battery_ecg")}&lt;/td>&lt;/tr>
+     *      &lt;tr>&lt;td>{@link module:ECGProfileModule.BATTERY_ECG ECGProfileModule.BATTERY_ECG("battery")}&lt;/td>&lt;td>Battery status.&lt;br/> e.g. 90&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b>{&lt;br/>
+     * &amp;nbsp; &amp;nbsp; "battery": 90&lt;br/>
+     * }&lt;br/>&lt;/b>
+     *
+     */
+    ACTION_BATTERY_ECG:RCTModule.ACTION_BATTERY_ECG,
+
+    /**
+     * The Key of BATTERY_ECG for ECG device. &lt;br/>
+     * &lt;b>Value range:&lt;/b>&lt;br/>
+     * 0-100.
+     */
+    BATTERY_ECG:RCTModule.BATTERY_ECG,
+    /**
+     * sync time.&lt;br/>
+     * The key and value will be as below: &lt;br/>
+     *
+     * &lt;table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     *     &lt;tr bgcolor="#cccccc">&lt;th >Key&lt;/th>&lt;th align="center" >Value&lt;/th>&lt;/tr>
+     *     &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:ECGProfileModule.ACTION_SYSTIME ECGProfileModule.ACTION_SYSTIME("ACTION_SYSTIME")}&lt;/td>&lt;/tr>
+     * &lt;/table>
+     *
+     * &lt;b>message example:&lt;/b>&lt;br/>
+     * &lt;b> null &lt;/b>
+     *
+     */
+    ACTION_SYSTIME:RCTModule.ACTION_SYSTIME,
+
+    /**
+     * Measure. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_MEASURE_ECG:RCTModule.ACTION_MEASURE_ECG,
+
+    /**
+     * Stop Measure.&lt;br/>
+     * &lt;b>Value Format:&lt;/b> 32 bits Hex String.
+     * &lt;p>Example:&lt;/p>
+     * "810D4F4CED95759AB738EBC1E74EA8F6"
+     */
+    ACTION_STOPMEASURE_ECG:RCTModule.ACTION_STOPMEASURE_ECG,
+
+    /**
+     * ACTION_MEASURE_WAVEData. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_MEASURE_WAVEData:RCTModule.ACTION_MEASURE_WAVEData,
+    /**
+     * ACTION_MEASURE_ECGPulse. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_MEASURE_ECGPulse:RCTModule.ACTION_MEASURE_ECGPulse,
+    /**
+     * ACTION_SYNCDATA_ECGUSB. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+
+    ACTION_SYNCDATA_ECGUSB:RCTModule.ACTION_SYNCDATA_ECGUSB,
+    /**
+     * ACTION_STARTSYNCDATA_ECGUSB. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_STARTSYNCDATA_ECGUSB:RCTModule.ACTION_STARTSYNCDATA_ECGUSB,
+    /**
+     * ACTION_SYNCDATAINFO_ECGUSB. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_SYNCDATAINFO_ECGUSB:RCTModule.ACTION_SYNCDATAINFO_ECGUSB,
+    /**
+     * DATAINFO. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    DATAINFO:RCTModule.DATAINFO,
+    /**
+     * ACTION_FINISHSYNCDATA_ECGUSB. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_FINISHSYNCDATA_ECGUSB:RCTModule.ACTION_FINISHSYNCDATA_ECGUSB,
+    /**
+     * ACTION_SYNCDATAPROGRESS_ECGUSB. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_SYNCDATAPROGRESS_ECGUSB:RCTModule.ACTION_SYNCDATAPROGRESS_ECGUSB,
+    /**
+     * PROGRESS. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    PROGRESS:RCTModule.PROGRESS,
+    /**
+     * ACTION_DELETEDATA_ECGUSB. &lt;br>
+     * &lt;b>Value range:&lt;/b>&lt;br/>&lt;br/>
+     * &lt;b>true: sufficiently&lt;/b>&lt;br/>
+     * &lt;b>false: insufficiently&lt;/b>
+     */
+    ACTION_DELETEDATA_ECGUSB:RCTModule.ACTION_DELETEDATA_ECGUSB,
+
+    /**
+     * Indicates get all connected devices.
+     */
+    ACTION_GET_ALL_CONNECTED_DEVICES: RCTModule.ACTION_GET_ALL_CONNECTED_DEVICES
+
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

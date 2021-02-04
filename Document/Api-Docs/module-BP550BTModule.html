@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: BP550BTModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: BP550BTModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".Event_Notify"><span class="type-signature">(static) </span>Event_Notify<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Notify event type for BP550BT.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".disconnect"><span class="type-signature">(static) </span>disconnect<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Disconnect the KN-550BT
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line208">line 208</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getAllConnectedDevices"><span class="type-signature">(static) </span>getAllConnectedDevices<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get all connected BP550BT device
+
+e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line222">line 222</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getBattery"><span class="type-signature">(static) </span>getBattery<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the BP550BT device's battery.
+<ul>
+    <li>This is an asynchronous call, it will return immediately.</li>
+    <li>If get successfully, following event will be emit:<br/>
+    <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a><br/>
+    The key and value will be as below:
+    <table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+         <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+         <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_BATTERY_BP">BPProfileModule.ACTION_BATTERY_BP("battery_bp")</a></td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.BATTERY_BP">BPProfileModule.BATTERY_BP("battery")</a></td><td>Battery status.<br/> e.g. 90</td></tr>
+    </table>
+    </li>
+
+    <li>
+        If error happens, following event will be emit:</br>
+        <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a></br>
+        The key and value will be as below:
+        <table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+            <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+            <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_ERROR_BP">BPProfileModule.ACTION_ERROR_BP("error_bp")</a></td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_NUM_BP">BPProfileModule.ERROR_NUM_BP("error")</a></td><td>the error of Bp device.<br/> e.g. 400</td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_DESCRIPTION_BP">BPProfileModule.ERROR_DESCRIPTION_BP("description")</a></td><td>the description of error.<br/> e.g. the argument of method is illegal</td></tr>
+        </table>
+    </li>
+
+    <li>
+        <b>Attention</b>, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+        <b>DeviceEventEmitter.addListener(BP550BTModule.Event_Notify, function (e: Event){});</b>
+    </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getFunctionInfo"><span class="type-signature">(static) </span>getFunctionInfo<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the BP7S device's functionInfo.
+<ul>
+    <li>This is an asynchronous call, it will return immediately.</li>
+    <li>If get successfully, following event will be emit:<br/>
+    <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a><br/>
+    The key and value will be as below:
+    <table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+         <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+         <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_FUNCTION_INFORMATION_BP">BPProfileModule.ACTION_FUNCTION_INFORMATION_BP("function_info_bp")</a></td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_IS_UPAIR_MEASURE">BPProfileModule.FUNCTION_IS_UPAIR_MEASURE("upAirMeasureFlg")</a></td><td>The way to measure is up air or low air, up is "true", low is "false".<br/> e.g. false</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_IS_ARM_MEASURE">BPProfileModule.FUNCTION_IS_ARM_MEASURE("armMeasureFlg")</a></td><td>device is arm or wrist, arm is "true", wrist is "false".<br/> e.g. true</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_HAVE_ANGLE_SENSOR">BPProfileModule.FUNCTION_HAVE_ANGLE_SENSOR("haveAngleSensor")</a></td><td>device has angle sensor or not, have is "true", otherwise is "false"device has angle sensor or not, have is "true", otherwise is "false".<br/> e.g. false</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_HAVE_OFFLINE">BPProfileModule.FUNCTION_HAVE_OFFLINE("haveOffline")</a></td><td>device has offline-measure function or not, have is "true", otherwise is "false".<br/> e.g. true</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_HAVE_HSD">BPProfileModule.FUNCTION_HAVE_HSD("haveHSD")</a></td><td>device had HSD function or not, have is "true", otherwise is "false".<br/> e.g. false</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_HAVE_ANGLE_SETTING">BPProfileModule.FUNCTION_HAVE_ANGLE_SETTING("haveAngleSet")</a></td><td>device has angle setting function or not, have is "true", otherwise is "false".<br/> e.g. true</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_IS_MULTI_UPLOAD">BPProfileModule.FUNCTION_IS_MULTI_UPLOAD("mutableUpload")</a></td><td>device is multi upload or single upload, multi is "true", single is "false".<br/> e.g. true</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.FUNCTION_HAVE_SELF_UPDATE">BPProfileModule.FUNCTION_HAVE_SELF_UPDATE("selfUpdate")</a></td><td>device had self update function or not, have is "true", otherwise is "false".<br/> e.g. false</td></tr>
+    </table>
+    </li>
+
+    <li>
+        If error happens, following event will be emit:</br>
+        <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a></br>
+        The key and value will be as below:
+        <table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+            <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+            <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_ERROR_BP">BPProfileModule.ACTION_ERROR_BP("error_bp")</a></td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_NUM_BP">BPProfileModule.ERROR_NUM_BP("error")</a></td><td>the error of Bp device.<br/> e.g. 400</td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_DESCRIPTION_BP">BPProfileModule.ERROR_DESCRIPTION_BP("description")</a></td><td>the description of error.<br/> e.g. the argument of method is illegal</td></tr>
+        </table>
+    </li>
+
+    <li>
+        <b>Attention</b>, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+        <b>DeviceEventEmitter.addListener(BP550BTModule.Event_Notify, function (e: Event){});</b>
+    </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line195">line 195</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getOffLineData"><span class="type-signature">(static) </span>getOffLineData<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    get offline data number.
+<ul>
+    <li>This is an asynchronous call, it will return immediately.</li>
+    <li>If get successfully, following event will be emit:<br/>
+    <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a><br/>
+    The key and value will be as below:
+    <table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+         <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+         <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_HISTORICAL_DATA_BP">BPProfileModule.ACTION_HISTORICAL_DATA_BP("historicaldata_bp")</a></td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.HISTORICAL_DATA_BP">BPProfileModule.HISTORICAL_DATA_BP("data")</a></td><td>Array of history Data. <br/> e.g. {"data":[{"time":"2016-12-7 0:11:00","sys":136,"dia":76,"heartRate":64,"arrhythmia":0,"hsd":false,"dataID":"6D7756186EF4356F3C58D3933CD2437A"}]} </td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.MEASUREMENT_DATE_BP">BPProfileModule.MEASUREMENT_DATE_BP("time")</a></td><td>Measuring time. <br/> e.g. 2016-12-6 22:27:00</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.HIGH_BLOOD_PRESSURE_BP">BPProfileModule.HIGH_BLOOD_PRESSURE_BP("sys")</a></td><td>The high pressure for blood pressure. <br/> e.g. 127</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.LOW_BLOOD_PRESSURE_BP">BPProfileModule.LOW_BLOOD_PRESSURE_BP("dia")</a></td><td>The low pressure for blood pressure. <br/> e.g. 80</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.PULSE_BP">BPProfileModule.PULSE_BP("heartRate")</a></td><td>Blood pressure pulse.<br/> e.g. 77</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.MEASUREMENT_AHR_BP">BPProfileModule.MEASUREMENT_AHR_BP("arrhythmia")</a></td><td>The key of measurement is arrhythmia or not. <br/> e.g. true</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.MEASUREMENT_HSD_BP">BPProfileModule.MEASUREMENT_HSD_BP("hsd")</a>(ios hsd 0:false 1:true)</td><td>The key of hemodynamic stability diagnosis, that Determines.<br/> e.g. false</td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.DATAID">BPProfileModule.DATAID("dataID")</a></td><td>return blood pressure data id. <br/> e.g. 9F78D808BAB380CC8B8DA5F2DECA24F3</td></tr>
+    </table>
+    </li>
+
+    <li>
+        If error happens, following event will be emit:</br>
+        <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a></br>
+        The key and value will be as below:
+        <table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+            <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+            <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_ERROR_BP">BPProfileModule.ACTION_ERROR_BP("error_bp")</a></td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_NUM_BP">BPProfileModule.ERROR_NUM_BP("error")</a></td><td>the error of Bp device.<br/> e.g. 400</td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_DESCRIPTION_BP">BPProfileModule.ERROR_DESCRIPTION_BP("description")</a></td><td>the description of error.<br/> e.g. the argument of method is illegal</td></tr>
+        </table>
+    </li>
+
+    <li>
+        <b>Attention</b>, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+        <b>DeviceEventEmitter.addListener(BP550BTModule.Event_Notify, function (e: Event){});</b>
+    </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line147">line 147</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".getOffLineNum"><span class="type-signature">(static) </span>getOffLineNum<span class="signature">(mac)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    get offline data number.
+<ul>
+    <li>This is an asynchronous call, it will return immediately.</li>
+    <li>If get successfully, following event will be emit:<br/>
+    <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a><br/>
+    The key and value will be as below:
+    <table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+         <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+         <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_HISTORICAL_NUM_BP">BPProfileModule.ACTION_HISTORICAL_NUM_BP("offlinenum")</a></td></tr>
+         <tr><td><a href="module-BPProfileModule.html#.HISTORICAL_NUM_BP">BPProfileModule.HISTORICAL_NUM_BP("num")</a></td><td>Offline data number. <br/> e.g. 2</td></tr>
+    </table>
+    </li>
+
+    <li>
+        If error happens, following event will be emit:</br>
+        <a href="module-BP550BTModule.html#.Event_Notify">BP550BTModule.Event_Notify("event_notify_bp550bt")</a></br>
+        The key and value will be as below:
+        <table style="width:100px" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+            <tr bgcolor="#cccccc"><th >Key</th><th align="center" >Value</th></tr>
+            <tr><td>action</td><td><a href="module-BPProfileModule.html#.ACTION_ERROR_BP">BPProfileModule.ACTION_ERROR_BP("error_bp")</a></td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_NUM_BP">BPProfileModule.ERROR_NUM_BP("error")</a></td><td>the error of Bp device.<br/> e.g. 400</td></tr>
+            <tr><td><a href="module-BPProfileModule.html#.ERROR_DESCRIPTION_BP">BPProfileModule.ERROR_DESCRIPTION_BP("description")</a></td><td>the description of error.<br/> e.g. the argument of method is illegal</td></tr>
+        </table>
+    </li>
+
+    <li>
+        <b>Attention</b>, if you want to be notified, it is mandatory to call following method before you call this method:<br/>
+        <b>DeviceEventEmitter.addListener(BP550BTModule.Event_Notify, function (e: Event){});</b>
+    </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mac</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Device's mac address</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BP550BTModule.js.html">BP550BTModule.js</a>, <a href="BP550BTModule.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "@ihealth/ihealthlibrary-react-native",
+  "version": "1.4.6",
+  "description": "React Native Model for iHealth Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://iHealthLabs@github.com/iHealthLab/ReactNativeLibrary.git"
+  },
+  "author": "iHealthLabs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iHealthDeviceLabs/iHealthLibrary_ReactNative/issues"
+  },
+  "homepage": "https://github.com/iHealthDeviceLabs/iHealthLibrary_ReactNative#readme"
+}

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: BTMProfileModule</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: BTMProfileModule</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ACTION_BTM_BATTERY"><span class="type-signature">(static) </span>ACTION_BTM_BATTERY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the battery of BTM device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-BTMProfileModule.html#.ACTION_BTM_BATTERY">BTMProfileModule.ACTION_BTM_BATTERY("battery_btm")</a></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_BATTERY">BTMProfileModule.BTM_BATTERY("battery")</a></td><td>Battery percentage.<br/>0 Low powe ,1 Not Low power</td></tr>
+</tbody>
+</table>
+<b>message example:</b><br/>
+{<br/>
+&nbsp; &nbsp; "battery": 0<br/>
+}<br/>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_BTM_CALLBACK"><span class="type-signature">(static) </span>ACTION_BTM_CALLBACK<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action type of callback after all method is called of BTM device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-BTMProfileModule.html#.ACTION_BTM_CALLBACK">BTMProfileModule.ACTION_BTM_CALLBACK("btm_callback")</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line71">line 71</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_BTM_MEASURE"><span class="type-signature">(static) </span>ACTION_BTM_MEASURE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the measure result of BTM device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-BTMProfileModule.html#.ACTION_BTM_MEASURE">BTMProfileModule.ACTION_BTM_MEASURE("measure_btm")</a></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_TEMPERATURE">BTMProfileModule.BTM_TEMPERATURE("btm_temperature")</a></td><td>The key of the temperature for BTM device.<br/></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_TEMPERATURE_TARGET">BTMProfileModule.BTM_TEMPERATURE_TARGET("btm_temperature_target")</a></td><td>The key of the temperature target for BTM device.<br/></td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line60">line 60</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_BTM_MEMORY"><span class="type-signature">(static) </span>ACTION_BTM_MEMORY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The action value of event indicating the get memory data of BTM device.<br/>
+The key and value will be as below:
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-BTMProfileModule.html#.ACTION_BTM_MEMORY">BTMProfileModule.ACTION_BTM_MEMORY("memory_btm")</a></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.MEMORY_COUNT">BTMProfileModule.MEMORY_COUNT("memory_count")</a></td><td>The key of the count of memory for BTM device.<br/>alue range: 0-255</td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_TEMPERATURE_ARRAY">BTMProfileModule.BTM_TEMPERATURE_ARRAY("btm_temperature_array")</a></td><td>The key of the temperature array for BTM device.<br/></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_TEMPERATURE">BTMProfileModule.BTM_TEMPERATURE("btm_temperature")</a></td><td>The key of the temperature for BTM device.<br/></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_TEMPERATURE_TARGET">BTMProfileModule.BTM_TEMPERATURE_TARGET("btm_temperature_target")</a></td><td>The key of the temperature target for BTM device.<br/></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.BTM_MEASURE_TIME">BTMProfileModule.BTM_MEASURE_TIME("measure_time")</a></td><td>The key of the time of memory data for BTM device.<br/>Value Format: yyyy-MM-dd HH:mm</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_ERROR_BTM"><span class="type-signature">(static) </span>ACTION_ERROR_BTM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Callback indicating no the error for BTM device.<br/>
+<table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<tbody>
+<tr><td>Key</td><td>Value</td></tr>
+<tr><td>action</td><td><a href="module-BTMProfileModule.html#.ACTION_ERROR_BTM">BTMProfileModule.ACTION_ERROR_BTM("action_error_btm")</a></td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.ERROR_NUM_BTM">BTMProfileModule.ERROR_NUM_BTM("error_num")</a></td><td>The key of error ID number of continue BTM device.<br/>101:Invalid state.</td></tr>
+<tr><td><a href="module-BTMProfileModule.html#.ERROR_DESCRIPTION_BTM">BTMProfileModule.ERROR_DESCRIPTION_BTM("description")</a></td><td>Callback indicating the error message.<br/>Invalid state.</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ACTION_GET_ALL_CONNECTED_DEVICES"><span class="type-signature">(static) </span>ACTION_GET_ALL_CONNECTED_DEVICES<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Indicates get all connected devices.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line171">line 171</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BTM_BATTERY"><span class="type-signature">(static) </span>BTM_BATTERY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the power of battery for BTM device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BTM_BATTERY ----> "battery".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0 Low power
+1 Not Low power
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line98">line 98</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BTM_MEASURE_TIME"><span class="type-signature">(static) </span>BTM_MEASURE_TIME<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the time of memory data for BTM device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BTM_MEASURE_TIME ----> "measure_time".<br/>
+</li>
+</ul>
+<b>Value Format:</b><br/>
+yyyy-MM-dd HH:mm
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line152">line 152</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BTM_TEMPERATURE"><span class="type-signature">(static) </span>BTM_TEMPERATURE<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the temperature for BTM device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BTM_TEMPERATURE ----> "btm_temperature".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line140">line 140</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BTM_TEMPERATURE_ARRAY"><span class="type-signature">(static) </span>BTM_TEMPERATURE_ARRAY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the temperature array for BTM device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BTM_TEMPERATURE_ARRAY ----> "btm_temperature_array".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line120">line 120</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".BTM_TEMPERATURE_TARGET"><span class="type-signature">(static) </span>BTM_TEMPERATURE_TARGET<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the temperature target for BTM device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+BTM_TEMPERATURE_TARGET ----> "btm_temperature_target".<br/>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line130">line 130</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_DESCRIPTION_BTM"><span class="type-signature">(static) </span>ERROR_DESCRIPTION_BTM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Callback indicating the error message.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line166">line 166</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".ERROR_NUM_BTM"><span class="type-signature">(static) </span>ERROR_NUM_BTM<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of error ID number of continue BTM device.<br/>
+<p>
+Flag Error number of BTM device.
+<ol>
+<p>Error code and Description</p>
+<p>
+<p>101:Invalid state.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line162">line 162</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".MEMORY_COUNT"><span class="type-signature">(static) </span>MEMORY_COUNT<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    The key of the count of memory for BTM device.<br/>
+Returns the message Key corresponding relation:<br/>
+<ul>
+<li>
+MEMORY_COUNT ----> "memory_count".<br/>
+</li>
+</ul>
+<b>Value range:</b><br/>
+0-255
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="BTMProfileModule.js.html">BTMProfileModule.js</a>, <a href="BTMProfileModule.js.html#line110">line 110</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

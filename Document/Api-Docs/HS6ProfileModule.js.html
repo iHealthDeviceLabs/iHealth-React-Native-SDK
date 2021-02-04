@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: HS6ProfileModule.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: HS6ProfileModule.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Created by lixuesong on 15/11/2016.
+ */
+'use strict';
+
+
+var {NativeModules} = require('react-native');
+
+var RCTModule = NativeModules.HS6ProfileModule
+
+/**
+ * @module HS6ProfileModule
+ */
+module.exports = {
+    // Actions
+    /**
+     * The action value of event indicating the setting wifi of HS6 device.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.ACTION_HS6_SETWIFI HS6ProfileModule.ACTION_HS6_SETWIFI("hs6_setwifi")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HS6ProfileModule.SETWIFI_RESULT HS6ProfileModule.SETWIFI_RESULT("setWifiResult")}&lt;/td>&lt;td>The result of set wifi,it's a boolean,true set wifi success,otherwise false&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HS6_SETWIFI: RCTModule.ACTION_HS6_SETWIFI,
+    /**
+     * The action value of event indicating the bind user to the scale.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.ACTION_HS6_BIND HS6ProfileModule.ACTION_HS6_BIND("hs6_bind")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HS6ProfileModule.HS6_BIND_EXTRA HS6ProfileModule.HS6_BIND_EXTRA("bindData")}&lt;/td>&lt;td>
+     * {@link module:HS6ProfileModule.BIND_HS6_RESULT HS6ProfileModule.BIND_HS6_RESULT("bindResult")} The result of bind HS6 device. 1 bind success; 2 the scale has no empty position ;3 bind fail&lt;br/>
+     * {@link module:HS6ProfileModule.HS6_MODEL HS6ProfileModule.HS6_MODEL("model")} The model of HS6.&lt;br/>
+     * {@link module:HS6ProfileModule.HS6_POSITION HS6ProfileModule.HS6_POSITION("position")} The user position in the HS6 range from 1 to 10,  -1 if bind false.&lt;br/>
+     * {@link module:HS6ProfileModule.HS6_SETTED_WIFI HS6ProfileModule.HS6_SETTED_WIFI("settedWifi")} Whether has setted wifi.1 setted ;0 not
+     * &lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HS6_BIND: RCTModule.ACTION_HS6_BIND,
+    /**
+     * The action value of event indicating the unbind of HS6.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.ACTION_HS6_UNBIND HS6ProfileModule.ACTION_HS6_UNBIND("hs6_unbind")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HS6ProfileModule.HS6_UNBIND_RESULT HS6ProfileModule. HS6_UNBIND_RESULT("unBind")}&lt;/td>&lt;td>the result of unBind,it's boolean,true set success,otherwise false&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HS6_UNBIND: RCTModule.ACTION_HS6_UNBIND,
+    /**
+     * The action value of event indicating the getting token of HS6.&lt;br/>
+     * The key and value will be as below:
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.ACTION_HS6_GET_TOKEN HS6ProfileModule.ACTION_HS6_GET_TOKEN("hs6_get_token")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HS6ProfileModule.GET_TOKEN_RESULT HS6ProfileModule. GET_TOKEN_RESULT("getTokenResult")}&lt;/td>&lt;td>The result of get token,it's a JSONObject&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HS6_GET_TOKEN: RCTModule.ACTION_HS6_GET_TOKEN,
+    /**
+     * The action value of event indicating the set unit to the device.&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.ACTION_HS6_SET_UNIT HS6ProfileModule.ACTION_HS6_SET_UNIT("hs6_set_unit")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HS6ProfileModule.SET_UNIT_RESULT HS6ProfileModule. SET_UNIT_RESULT("setUnitResult")}&lt;/td>&lt;td>The result of set unit,it's boolean,true set success,otherwise false&lt;/td>&lt;/tr>
+     &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HS6_SET_UNIT: RCTModule.ACTION_HS6_SET_UNIT,
+
+    ACTION_HS6_GET_CLOUDDATA:RCTModule.ACTION_HS6_GET_CLOUDDATA,
+    HS6_CLOUDDATA:RCTModule.HS6_CLOUDDATA,
+
+    ACTION_HS6_GET_CLOUDDATA_LASTTS:RCTModule.ACTION_HS6_GET_CLOUDDATA_LASTTS,
+    HS6_CLOUDDATA_LASTTS:RCTModule.HS6_CLOUDDATA_LASTTS,
+
+    ACTION_HS6_GET_CLOUDDATA_LEFTNUM:RCTModule.ACTION_HS6_GET_CLOUDDATA_LEFTNUM,
+    HS6_CLOUDDATA_LEFTNUM:RCTModule.HS6_CLOUDDATA_LEFTNUM,
+
+    /**
+     * Callback indicating no the error for HS6 device.&lt;br/>
+     * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+     * &lt;tbody>
+     * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.ACTION_HS6_ERROR HS6ProfileModule.ACTION_HS6_ERROR("hs6_error")}&lt;/td>&lt;/tr>
+     * &lt;tr>&lt;td>{@link module:HS6ProfileModule.HS6_ERROR HS6ProfileModule. HS6_ERROR("hs6_error")}&lt;/td>&lt;td>The error code: 1 user information upload error; 2 bind error&lt;/td>&lt;/tr>
+     * &lt;/tbody>
+     * &lt;/table>
+     */
+    ACTION_HS6_ERROR: RCTModule.ACTION_HS6_ERROR,
+
+    //Keys
+    /**
+     * The result of set wifi,it's a boolean.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * SETWIFI_RESULT ----> "setWifiResult".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>true set wifi success,otherwise false&lt;/b>
+     */
+    SETWIFI_RESULT: RCTModule.SETWIFI_RESULT,
+    /**
+     * The key of the return data of bind user.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * HS6_BIND_EXTRA ----> "bindData".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    HS6_BIND_EXTRA: RCTModule.HS6_BIND_EXTRA,
+    /**
+     * The key of the result of bind HS6 device.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * BIND_HS6_RESULT ----> "bindResult".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>1 bind success; 2 the scale has no empty position ;3 bind fail&lt;/b>
+     */
+    BIND_HS6_RESULT: RCTModule.BIND_HS6_RESULT,
+    /**
+     * The key of the model of HS6.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * HS6_MODEL ----> "model".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    HS6_MODEL: RCTModule.HS6_MODEL,
+    /**
+     * The key of the user position in the HS6.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * HS6_POSITION ----> "position".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>range from 1 to 10,  -1 if bind false&lt;/b>
+     */
+    HS6_POSITION: RCTModule.HS6_POSITION,
+    /**
+     * The key of the Whether has setted wifi.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * HS6_SETTED_WIFI ----> "settedWifi".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>Value range: 1 setted ;0 not&lt;/b>
+     */
+    HS6_SETTED_WIFI: RCTModule.HS6_SETTED_WIFI,
+    /**
+     * The key of the unBind data for HS6.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * HS6_UNBIND_RESULT ----> "unBind".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>It's boolean,true set success,otherwise false.&lt;/b>
+     */
+    HS6_UNBIND_RESULT: RCTModule.HS6_UNBIND_RESULT,
+    /**
+     * The key of the result of get token,it's a JSONObject.&lt;br/>
+     * Returns the message Key corresponding relation:
+     * &lt;ul>
+     * &lt;li>
+     * GET_TOKEN_RESULT ----> "getTokenResult".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     */
+    GET_TOKEN_RESULT: RCTModule.GET_TOKEN_RESULT,
+    /**
+     * The key of the result of set unit.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * SET_UNIT_RESULT ----> "setUnitResult".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>It's boolean,true set success,otherwise false&lt;/b>
+     */
+    SET_UNIT_RESULT: RCTModule.SET_UNIT_RESULT,
+    /**
+     * The key of the error code.&lt;br/>
+     * Returns the message Key corresponding relation:&lt;br/>
+     * &lt;ul>
+     * &lt;li>
+     * HS6_ERROR ----> "hs6_error".&lt;br/>
+     * &lt;/li>
+     * &lt;/ul>
+     * &lt;b>1 user information upload error; 2 bind error&lt;/b>
+     */
+    HS6_ERROR: RCTModule.HS6_ERROR,
+
+  /**
+ * Callback indicating the getting data of HS6
+ * The key and value will be as below:
+ * &lt;table style="width:100px;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+ * &lt;tbody>
+ * &lt;tr>&lt;td>Key&lt;/td>&lt;td>Value&lt;/td>&lt;/tr>
+ * &lt;tr>&lt;td>action&lt;/td>&lt;td>{@link module:HS6ProfileModule.DATA_RESULT HS6ProfileModule.DATA_RESULT("data")}&lt;/td>&lt;td>The result of get data, it's a JSONObject.&lt;/td>&lt;/tr>
+ * &lt;tr>&lt;td>{@link module:HS6ProfileModule.DATA_DOWNLOAD_TS HS6ProfileModule.DATA_DOWNLOAD_TS("downloadTS")}&lt;/td>&lt;td>Current time offset after this download operation, if equals to input TS, indicating download finish.&lt;/td>&lt;/tr>
+ * &lt;/tbody>
+ * &lt;/table>
+ */
+
+ACTION_HS6_GET_DATA: RCTModule.ACTION_HS6_GET_DATA,
+/**
+ * The result of get data, it's a JSONObject
+ */
+DATA_RESULT: RCTModule.DATA_RESULT,
+
+/**
+ * Current time offset after this download operation.
+ */
+DATA_DOWNLOAD_TS: RCTModule.DATA_DOWNLOAD_TS,
+
+/**
+ * The left number of data that meets the query conditions
+ */
+DATA_LEFTNUMBER: RCTModule.DATA_LEFTNUMBER
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AM3SModule.html">AM3SModule</a></li><li><a href="module-AM4Module.html">AM4Module</a></li><li><a href="module-AMProfileModule.html">AMProfileModule</a></li><li><a href="module-BG1Module.html">BG1Module</a></li><li><a href="module-BG1ProfileModule.html">BG1ProfileModule</a></li><li><a href="module-BG5Module.html">BG5Module</a></li><li><a href="module-BGProfileModule.html">BGProfileModule</a></li><li><a href="module-BP3LModule.html">BP3LModule</a></li><li><a href="module-BP5Module.html">BP5Module</a></li><li><a href="module-BP7SModule.html">BP7SModule</a></li><li><a href="module-BP550BTModule.html">BP550BTModule</a></li><li><a href="module-BPProfileModule.html">BPProfileModule</a></li><li><a href="module-BTMModule.html">BTMModule</a></li><li><a href="module-BTMProfileModule.html">BTMProfileModule</a></li><li><a href="module-ECGModule.html">ECGModule</a></li><li><a href="module-ECGProfileModule.html">ECGProfileModule</a></li><li><a href="module-ECGUSBModule.html">ECGUSBModule</a></li><li><a href="module-HS4SModule.html">HS4SModule</a></li><li><a href="module-HS6Module.html">HS6Module</a></li><li><a href="module-HS6ProfileModule.html">HS6ProfileModule</a></li><li><a href="module-HSProfileModule.html">HSProfileModule</a></li><li><a href="module-iHealthDeviceManagerModule.html">iHealthDeviceManagerModule</a></li><li><a href="module-PO3Module.html">PO3Module</a></li><li><a href="module-POProfileModule.html">POProfileModule</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 29 2018 16:58:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
