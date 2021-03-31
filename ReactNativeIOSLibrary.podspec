@@ -5,9 +5,9 @@ Pod::Spec.new do |s|
   s.name         = "iHealth Library"
   s.version      = package["version"]
   s.summary      = package["description"]
-  s.homepage     = "https://github.com/SynappzMA/iHealth-React-Native-SDK.git"
-  s.license      = "ISC"
-  s.author       = { "Synappz Digital Health" => "developer@synappz.nl" }
+  s.homepage     = package['homepage']
+  s.license      = package['license']
+  s.authors      = package['author']
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/SynappzMA/iHealth-React-Native-SDK.git", :tag => s.version.to_s }
   s.source_files = "ios/**/*.{h,m}"
