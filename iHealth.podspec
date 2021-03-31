@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/SynappzMA/iHealth-React-Native-SDK.git", :tag => s.version.to_s }
   s.source_files = "ios/**/*.{h,m}"
   s.public_header_files = "ios/ReactNativeIOSLibrary/Communication_SDK/Headers/*.h"
-  s.vendored_libraries  = "ios/ReactNativeIOSLibrary/Communication_SDK/iHealthSDK2.7.2.6.a"
+  s.vendored_libraries  = "ios/ReactNativeIOSLibrary/Communication_SDK/libiHealthSDK2.7.2.6.a"
   s.requires_arc = true
   s.dependency "React"
 end
