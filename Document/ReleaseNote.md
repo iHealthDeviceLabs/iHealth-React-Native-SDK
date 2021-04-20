@@ -167,7 +167,7 @@ Release Date: 2020-9-18
 1. Support new device PO1
 2. Support new device PT3SBT
 
-Release Date: 2020-10-12
+Release Date: 2020-11-12
 
 ### 20. V1.4.5
 
@@ -181,3 +181,10 @@ Release Date: 2020-12-11
 2. Support new device HS2S
 
 Release Date: 2021-01-14
+
+### 21. V1.4.7
+
+1. Support new device BG1S
+
+
+Release Date: 2021-04-16

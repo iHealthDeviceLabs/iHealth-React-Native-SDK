@@ -176,6 +176,8 @@
 
 /**
  Query BG5S state information including battery value,device date, device timezone, strip used, quantity of offline data, blood code version, CTL code version, unit.
+ 
+ After the device is successfully connected, this method must be called first！！！
 
  @param stateInfoBlock BG5SStateInfo object
  @param errorBlock the block means fail. You can get error from this block

@@ -22,8 +22,8 @@
 		18B752C91FFF67DE00DE2629 /* ECGProfileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B752C81FFF67DE00DE2629 /* ECGProfileModule.m */; };
 		18B752CC1FFF67F100DE2629 /* ECGUSBModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B752CB1FFF67F100DE2629 /* ECGUSBModule.m */; };
 		3F31C42B21ABE80400811B02 /* HS2Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F31C42A21ABE80400811B02 /* HS2Module.m */; };
-		3FE801E125C8D9EB005BD951 /* iHealthSDK2.7.2.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8014B25C8D9EA005BD951 /* iHealthSDK2.7.2.6.a */; };
 		45A72D18256E5FCB00825201 /* BP7Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A72D16256E5FCB00825201 /* BP7Module.m */; };
+		6C839B21262F06DB00BFECEB /* libiHealthSDK2.7.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C839B20262F06DB00BFECEB /* libiHealthSDK2.7.3.a */; };
 		8CCCE9B21E5ADF49007F7FE4 /* PO3Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCE9AF1E5ADF49007F7FE4 /* PO3Module.m */; };
 		8CCCE9B31E5ADF49007F7FE4 /* POProfileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCE9B11E5ADF49007F7FE4 /* POProfileModule.m */; };
 		8CCCE9E31E5E7C58007F7FE4 /* HS6ProfileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCE9E21E5E7C58007F7FE4 /* HS6ProfileModule.m */; };
@@ -95,7 +95,6 @@
 		18B752CB1FFF67F100DE2629 /* ECGUSBModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECGUSBModule.m; sourceTree = "<group>"; };
 		3F31C42921ABE80400811B02 /* HS2Module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HS2Module.h; sourceTree = "<group>"; };
 		3F31C42A21ABE80400811B02 /* HS2Module.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HS2Module.m; sourceTree = "<group>"; };
-		3FE8014B25C8D9EA005BD951 /* iHealthSDK2.7.2.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = iHealthSDK2.7.2.6.a; sourceTree = "<group>"; };
 		3FE8014D25C8D9EB005BD951 /* IDOSyncBpDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDOSyncBpDataModel.h; sourceTree = "<group>"; };
 		3FE8014E25C8D9EB005BD951 /* BPContinua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPContinua.h; sourceTree = "<group>"; };
 		3FE8014F25C8D9EB005BD951 /* IDOWeightBluetoothModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDOWeightBluetoothModel.h; sourceTree = "<group>"; };
@@ -246,6 +245,7 @@
 		3FE801E025C8D9EB005BD951 /* BPLoopMeasureSettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPLoopMeasureSettingModel.h; sourceTree = "<group>"; };
 		45A72D16256E5FCB00825201 /* BP7Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP7Module.m; sourceTree = "<group>"; };
 		45A72D17256E5FCB00825201 /* BP7Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP7Module.h; sourceTree = "<group>"; };
+		6C839B20262F06DB00BFECEB /* libiHealthSDK2.7.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiHealthSDK2.7.3.a; sourceTree = "<group>"; };
 		8CCCE9AE1E5ADF49007F7FE4 /* PO3Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PO3Module.h; sourceTree = "<group>"; };
 		8CCCE9AF1E5ADF49007F7FE4 /* PO3Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PO3Module.m; sourceTree = "<group>"; };
 		8CCCE9B01E5ADF49007F7FE4 /* POProfileModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POProfileModule.h; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE801E125C8D9EB005BD951 /* iHealthSDK2.7.2.6.a in Frameworks */,
+				6C839B21262F06DB00BFECEB /* libiHealthSDK2.7.3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,8 +421,8 @@
 		187510351DE5E6A5005E66B1 /* Communication_SDK */ = {
 			isa = PBXGroup;
 			children = (
+				6C839B20262F06DB00BFECEB /* libiHealthSDK2.7.3.a */,
 				3FE8014C25C8D9EB005BD951 /* Headers */,
-				3FE8014B25C8D9EA005BD951 /* iHealthSDK2.7.2.6.a */,
 			);
 			path = Communication_SDK;
 			sourceTree = "<group>";
@@ -785,6 +785,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ReactNativeIOSLibrary/Communication_SDK",
+					"$(PROJECT_DIR)/ReactNativeIOSLibrary",
 				);
 				MODULEMAP_PRIVATE_FILE = "";
 				OTHER_LDFLAGS = "-ObjC";
@@ -800,6 +801,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ReactNativeIOSLibrary/Communication_SDK",
+					"$(PROJECT_DIR)/ReactNativeIOSLibrary",
 				);
 				MODULEMAP_PRIVATE_FILE = "";
 				OTHER_LDFLAGS = "-ObjC";

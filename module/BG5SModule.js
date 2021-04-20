@@ -40,14 +40,6 @@ module.exports = {
         }
     },
 
-    setOfflineModel: function (mac, type){
-        if (RCTModule != null) {
-            RCTModule.setOfflineModel(mac, type);
-        } else {
-            console.log('~~~~~ BG5S setOfflineModel RCTModule is null')
-        }
-    },
-
     /**
      * Set unit to BG5 device.
      * @param {string} mac Device's mac address
@@ -117,6 +109,14 @@ module.exports = {
     adjustOfflineData: function (mac, timeString, originData){
         if (RCTModule != null) {
             RCTModule.adjustOfflineData(mac, timeString, originData);
+        } else {
+            console.log('~~~~~ BG5S adjustOfflineData RCTModule is null')
+        }
+    },
+
+    setOfflineModel: function (mac, enable) {
+        if (RCTModule != null) {
+            RCTModule.getAllConnectedDevices(mac, enable);
         } else {
             console.log('~~~~~ BG5S adjustOfflineData RCTModule is null')
         }

@@ -106,6 +106,14 @@ public class BG5SModule extends iHealthBaseModule {
     }
 
     @ReactMethod
+    public void setOfflineModel(String mac, boolean enable) {
+        Bg5sControl bg5sControl = getBg5sControl(mac);
+        if (bg5sControl != null) {
+            bg5sControl.setOfflineMeasurementMode(enable);
+        }
+    }
+
+    @ReactMethod
     public void startMeasure(String mac, int measureType) {
         Bg5sControl bg5sControl = getBg5sControl(mac);
         if (bg5sControl != null) {
@@ -120,7 +128,7 @@ public class BG5SModule extends iHealthBaseModule {
             String offlineData = bg5sControl.adjustOfflineData(timeString, originData);
             WritableMap params = Arguments.createMap();
             params.putString(Bg5Profile.HISTORICAL_DATA_BG, offlineData);
-            params.putString("action", "action_get_offline_data");
+            params.putString("action", "action_adjust_offline_data");
             sendEvent(EVENT_NOTIFY, params);
         }
     }
