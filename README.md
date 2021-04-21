@@ -14,6 +14,80 @@ npm install --save @ihealth/ihealthlibrary-react-native
 yarn add @ihealth/ihealthlibrary-react-native
 ```
 
+#### Using React Native >= 0.60
+Linking the package manually is not required anymore with [Autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md).
+
+- **iOS Platform:**
+
+  `$ npx pod-install` # CocoaPods on iOS needs this extra step
+
+- **Android Platform with Android Support:**
+
+  Using [Jetifier tool](https://github.com/mikehardy/jetifier) for backward-compatibility if needed
+
+#### Using React Native < 0.60
+
+You then need to link the native parts of the library for the platforms you are using. The easiest way to link the library is using the CLI tool by running this command from the root of your project:
+
+```
+react-native link @ihealth/ihealthlibrary-react-native
+```
+
+If you can't or don't want to use the CLI tool, you can also manually link the library using the instructions below (click on the arrow to show them):
+
+<details>
+<summary>Manually link the library on iOS</summary>
+
+Either follow the [instructions in the React Native documentation](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking) to manually link the framework or link using [Cocoapods](https://cocoapods.org) by adding this to your `Podfile`:
+
+```ruby
+pod 'ihealth', :path => '../node_modules/@ihealth/ihealthlibrary-react-native'
+```
+
+</details>
+
+<details>
+<summary>Manually link the library on Android</summary>
+
+Make the following changes:
+
+#### `android/settings.gradle`
+```groovy
+include ':ihealthlibrary-react-native'
+project(':ihealthlibrary-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/@ihealth/ihealthlibrary-react-native/android')
+```
+
+#### `android/app/build.gradle`
+```groovy
+dependencies {
+   ...
+   implementation project(':ihealthlibrary-react-native')
+}◊
+```
+
+#### `android/app/src/main/.../MainActivity.java`
+Import iHealth module in your MainActivity.java
+
+```java
+protected List<ReactPackage> getPackages() {  
+	return Arrays.<ReactPackage>asList(
+		new MainReactPackage(),
+		new iHealthDeviceManagerPackage()
+	);  
+}
+```
+</details>
+
+#### Android permissions
+
+Location permission (in AndroidManifest.xml)
+
+```xml
+<!-- Need ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission in Android API 23+ -->
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
+
 ## Usage
 
 ### Authentication
@@ -45,58 +119,22 @@ const filename = 'license.pem';
 iHealthDeviceManagerModule.sdkAuthWithLicense(filename);
 ```
 
-### Troubleshooting
-
-#### For Android
-
-1. Check settings.gradle file in your android project and node_modules, make sure input the correct module path.
-
-```gradle
-include ':ihealthlibrary-react-native'
-project(':ihealthlibrary-react-native').projectDir = new File(rootProject.projectDir,'../node_modules/@ihealth/ihealthlibrary-react-native/android')
-```
-
-2. Check build.gradle file in your android project, make sure the ihealth module is integrated
-
-```gradle
-compile project(':@ihealth_ihealthlibrary-react-native')
-```
-
-3. Import iHealth module in your MainActivity.java
-
-```java
-protected List<ReactPackage> getPackages() {  
-	return Arrays.<ReactPackage>asList(
-		new MainReactPackage(),
-		new iHealthDeviceManagerPackage()
-	);  
-}
-```
-
-4. Location permission(in AndroidManifest.xml)
-
-```xml
-<!-- Need ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission in Android API 23+ -->
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-```
-
-#### For iOS
-
-1. Open your iOS project, add node_modules/@ihealth/ihealthlibrary-react-native/ios/ReactNativeIOSLibrary.xcodeproj to libraries
-2. Under 'Build Phases' --  'Link Binary With Libraries', add libReactNativeIOSLibrary.a
-
 ### Example
 
-iHealth SDK module is based on DeviceEventEmitter, So call add listener while the component is loaded, and call remove listener while the component is unloaded, As show as below. If you want more detail information, Please the example code.
+iHealth SDK module is based on DeviceEventEmitter, So call add listener while the component is loaded, and call remove listener while the component is unloaded, As shown below
 
 ```js
+import { DeviceEventEmitter } from 'react-native';
+import { iHealthDeviceManagerModule } from '@ihealth/ihealthlibrary-react-native';
+
 componentDidMount() {
-    iHealthAPI.addListener();
+    DeviceEventEmitter.addListener(
+      iHealthDeviceManagerModule.Event_Authenticate_Result, (event) => {  }
+  	);
 }
 
 componentWillUnmount() {
-    iHealthAPI.removeListener();
+    DeviceEventEmitter.removeListener(iHealthDeviceManagerModule.Event_Authenticate_Result);
 }
 ```
 

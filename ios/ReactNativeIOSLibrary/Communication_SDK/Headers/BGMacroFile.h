@@ -480,9 +480,14 @@ typedef void(^BG5SSDKErrorBlock)(BG5SError error,NSString *detailInfo);
 typedef NS_ENUM(NSUInteger, BG1SDeviceError) {
    
     BG1SDeviceError0=0,
-    BG1SDeviceError1,
-    BG1SDeviceError2,
-    BG1SDeviceError3,
+    BG1SError_LowBattery,
+    BG1SError_ReferenceUnstable,//2.5V reference is unstable
+    BG1SError_BadStrip,
+    BG1SError_BadEEPROM,
+    BG1SError_LowAmbientTemperature,//Low ambient temperature
+    BG1SError_HighAmbientTemperature,//High ambient temperature
+    BG1SError_BleedEarly,
+    BG1SError_Other,
     
 };
 typedef void(^BlockBG1SDeviceFunction)(NSDictionary *functionDict);

@@ -191,7 +191,6 @@ RCT_EXPORT_METHOD(getHistoryData:(nonnull NSString *)mac){
             
             
             NSDictionary* deviceInfo = @{
-                                         POACTION:@"ACTION_OFFLINEDATA_PO",
                                          @"measureDate":locationString,
                                          @"dataID":[OfflineData valueForKey:@"dataID"],
                                          @"pulseWave":[OfflineData valueForKey:@"wave"],
@@ -207,7 +206,8 @@ RCT_EXPORT_METHOD(getHistoryData:(nonnull NSString *)mac){
             
         } withFinishMeasure:^(BOOL resetSuc) {
             
-                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:resultArray,@"offLineData", nil];
+                NSDictionary *dic = @{kMAC:mac,POACTION:@"ACTION_OFFLINEDATA_PO",@"offlineData":resultArray};
+//                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:resultArray,@"offLineData", nil];
                 [self.bridge.eventDispatcher sendDeviceEventWithName:EVENT_NOTIFY body:dic];
            
 

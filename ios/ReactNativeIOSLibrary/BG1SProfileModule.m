@@ -19,19 +19,25 @@ RCT_EXPORT_MODULE()
 - (NSDictionary *)constantsToExport
 {
     return @{
-             @"ACTION_MEASUREMENT_RESULT":@"action_measurement_result",
-             BG1S_ACTION:@"action",
-             BG1S_DEVICE:@"device",
-             BG1S_KEY_MAC:@"mac",
+             BG1S_ACTION:BG1S_ACTION,
+             BG1S_DEVICE:BG1S_DEVICE,
+             BG1S_KEY_MAC:BG1S_KEY_MAC,
+             BG1S_TYPE:BG1S_TYPE,
+             OPERATION_DESCRIBE:OPERATION_DESCRIBE,
+             STRIP_INSERTION_STATUS:STRIP_INSERTION_STATUS,
              kACTION_GET_ALL_CONNECTED_DEVICES:kACTION_GET_ALL_CONNECTED_DEVICES,
-             BG1S_RESULT:@"result",
-             BG1S_UNIT_FLAG:@"unit_flag",
-             BG1S_THERMOMETER_TYPE:@"thermometer_type",
-             kRN_ACTION_STRIP_IN              :kRN_ACTION_STRIP_IN,
-             kRN_ACTION_STRIP_OUT             :kRN_ACTION_STRIP_OUT,
-             kRN_ACTION_GET_BLOOD             :kRN_ACTION_GET_BLOOD,
-             kRN_ACTION_ONLINE_RESULT_BG      :kRN_ACTION_ONLINE_RESULT_BG,
-             kRN_ACTION_GET_FUNCTION          :kRN_ACTION_GET_FUNCTION
+             @"ACTION_STRIP_INSERTION_STATUS"  :ACTION_STRIP_INSERTION_STATUS,
+             @"ACTION_GET_BLOOD"             :ACTION_GET_BLOOD,
+             @"ACTION_MEASURE_RESULT"      :ACTION_MEASURE_RESULT,
+             @"ACTION_CODE_ANALYSIS"             :ACTION_CODE_ANALYSIS,
+             @"INFO_BATTERY_BG1S"                :INFO_BATTERY_BG1S,
+             @"INFO_VERSION_CODE_BLOOD_BG1S"                :INFO_VERSION_CODE_BLOOD_BG1S,
+             @"INFO_VERSION_CODE_CTL_BG1S"                :INFO_VERSION_CODE_CTL_BG1S,
+             @"ACTION_ERROR_BG1S"                :ACTION_ERROR_BG1S,
+             @"ERROR_NUM_BG1S"                :ERROR_NUM_BG1S,
+             @"ERROR_DESCRIPTION_BG1S"                :ERROR_DESCRIPTION_BG1S,
+             @"MEASURE_RESULT"          :MEASURE_RESULT,
+             @"MEASURE_MODE"            :MEASURE_MODE
              };
 };
 

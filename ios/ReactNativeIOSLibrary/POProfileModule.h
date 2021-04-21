@@ -18,7 +18,6 @@
 
 #define POACTION @"action"
 #define PO_BATTERY @"BATTERY_PO"
-
-
+#define kMAC @"mac"
 
 @end

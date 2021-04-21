@@ -16,28 +16,46 @@
 
 @interface BG1SProfileModule : NSObject<RCTBridgeModule>
 
-#define BG1S_EVENT_NOTIFY @"event_notify_BG1S"
+#define BG1S_EVENT_NOTIFY @"event_notify_bg1s"
 
 #define BG1S_ACTION @"action"
 
+#define BG1S_TYPE @"type"
+
 #define BG1S_DEVICE @"devices"
 
-#define BG1S_KEY_MAC        @"mac"
+#define BG1S_KEY_MAC @"mac"
+
+#define OPERATION_DESCRIBE @"describe"
+
+#define STRIP_INSERTION_STATUS @"insertion_status"
 
 #define kACTION_GET_ALL_CONNECTED_DEVICES   @"ACTION_GET_ALL_CONNECTED_DEVICES"
 
-#define BG1S_RESULT @"result"
+#define MEASURE_RESULT @"measure_result"
 
-#define BG1S_UNIT_FLAG @"unit_flag"
+#define MEASURE_MODE @"measure_mode"
 
-#define BG1S_THERMOMETER_TYPE @"thermometer_type"
+#define ACTION_CODE_ANALYSIS                @"action_get_device_info"
 
+#define INFO_BATTERY_BG1S                   @"battery"
 
-#define kRN_ACTION_STRIP_IN                 @"ACTION_STRIP_IN"
-#define kRN_ACTION_STRIP_OUT                @"ACTION_STRIP_OUT"
-#define kRN_ACTION_GET_BLOOD                @"ACTION_GET_BLOOD"
-#define kRN_ACTION_ONLINE_RESULT_BG         @"ACTION_ONLINE_RESULT_BG"
-#define kRN_ACTION_GET_FUNCTION             @"ACTION_GET_FUNCTION"
+#define INFO_VERSION_CODE_BLOOD_BG1S                   @"info_version_code_blood_bg1s"
+
+#define INFO_VERSION_CODE_CTL_BG1S                   @"info_version_code_ctl_bg1s"
+
+#define ACTION_ERROR_BG1S                   @"action_error"
+
+#define ERROR_NUM_BG1S                   @"error_num"
+
+#define ERROR_DESCRIPTION_BG1S                   @"error_description"
+
+#define ACTION_STRIP_INSERTION_STATUS                 @"action_strip_insertion_status"
+
+#define ACTION_GET_BLOOD                @"action_get_blood"
+
+#define ACTION_MEASURE_RESULT         @"action_measure_result"
+
 
 @end
 
